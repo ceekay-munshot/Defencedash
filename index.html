@@ -287,30 +287,53 @@
       </div>
     </div>
 
-    <!-- Budget mix chart -->
+    <!-- 60-second read · navigator -->
     <div class="panel p-6 lg:col-span-2">
       <div class="flex items-center justify-between mb-4">
-        <div class="section-title">FY25-26 MoD budget mix</div>
-        <span class="pill">₹6.81 L Cr</span>
+        <div class="section-title">Read in 60 seconds</div>
+        <span class="pill">Navigator</span>
       </div>
-      <div class="relative h-56">
-        <canvas id="budgetDonut"></canvas>
-      </div>
-      <div class="mt-4 space-y-1.5 text-[12.5px]">
-        <div class="flex items-center justify-between">
-          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#E8B339"></span>Capital outlay (Defence Services)</span>
-          <span class="font-mono text-white">₹1,48,839 Cr</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#4CC9F0"></span>DRDO</span>
-          <span class="font-mono text-white">₹26,817 Cr</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#2A3C63"></span>Revenue / pensions / other</span>
-          <span class="font-mono text-white">₹5,05,554 Cr*</span>
-        </div>
-      </div>
-      <p class="src-tag mt-3">*Residual = total MoD – capital (Defence Services) – DRDO. Union Budget / PIB / MP-IDSA note.</p>
+
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center text-[13px] font-mono text-ink"
+                style="background:#E8B339">$</span>
+          <div class="text-[13px]">
+            <span class="text-white font-medium">Big number is misleading.</span>
+            <span class="text-dim"> ₹6.81 L Cr is total MoD, but only ₹1.49 L Cr is capital outlay that actually drives procurement.</span>
+            <button class="block mt-1 text-[11px] text-cyansoft hover:text-goldsoft transition" data-go-tab="budget">→ Budget &amp; Spending</button>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center text-[13px] font-mono text-ink"
+                style="background:#4CC9F0">▦</span>
+          <div class="text-[13px]">
+            <span class="text-white font-medium">Not one basket.</span>
+            <span class="text-dim"> 18 listed names span Tier-1 primes to Tier-3 component vendors &mdash; different economics in every bucket.</span>
+            <button class="block mt-1 text-[11px] text-cyansoft hover:text-goldsoft transition" data-go-tab="companies">→ Companies</button>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center text-[13px] font-mono text-ink"
+                style="background:#EF4444">!</span>
+          <div class="text-[13px]">
+            <span class="text-white font-medium">Choke points still imported.</span>
+            <span class="text-dim"> Engines, advanced seekers, RF chips and EO/IR detectors remain meaningfully foreign-sourced.</span>
+            <button class="block mt-1 text-[11px] text-cyansoft hover:text-goldsoft transition" data-go-tab="supply">→ Supply Chain</button>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center text-[13px] font-mono text-ink"
+                style="background:#3DD68C">⌖</span>
+          <div class="text-[13px]">
+            <span class="text-white font-medium">Cadence is the moat.</span>
+            <span class="text-dim"> Weekly scans · monthly trackers · quarterly cash audits · yearly remap. Discipline beats narrative.</span>
+            <button class="block mt-1 text-[11px] text-cyansoft hover:text-goldsoft transition" data-go-tab="monitoring">→ Monitoring</button>
+          </div>
+        </li>
+      </ul>
+
+      <p class="src-tag mt-4 pt-3 border-t hairline">Composition split (Capital / DRDO / Revenue) lives in the Budget tab.</p>
     </div>
   </div>
 
@@ -4558,43 +4581,6 @@
   Chart.defaults.borderColor = 'rgba(30,43,71,0.6)';
   Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
 
-  // Budget donut — total ₹6,81,210 Cr; Capital ₹1,48,839 Cr; DRDO ₹26,817 Cr; Other residual
-  const total = 681210;
-  const cap   = 148839;
-  const drdo  = 26817;
-  const other = Math.max(0, total - cap - drdo); // 505554
-  const ctx = document.getElementById('budgetDonut');
-  if (ctx) {
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Capital outlay (Defence Services)', 'DRDO', 'Revenue / pensions / other'],
-        datasets: [{
-          data: [cap, drdo, other],
-          backgroundColor: ['#E8B339', '#4CC9F0', '#2A3C63'],
-          borderColor: '#0E1628',
-          borderWidth: 2,
-          hoverOffset: 6,
-        }]
-      },
-      options: {
-        cutout: '68%',
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: '#0E1628',
-            borderColor: '#1E2B47',
-            borderWidth: 1,
-            padding: 10,
-            callbacks: {
-              label: (c) => ` ${c.label}: ₹${c.parsed.toLocaleString('en-IN')} Cr (${((c.parsed/total)*100).toFixed(1)}%)`
-            }
-          }
-        }
-      }
-    });
-  }
-
   // ===== Charts: Budget tab =====
   const yoyOpts = (label, growthPct, accent) => ({
     type: 'bar',
@@ -4696,23 +4682,28 @@
     monitoring:   document.getElementById('tab-monitoring'),
     diligence:    document.getElementById('tab-diligence'),
   };
-  tabs.forEach(t => {
-    t.addEventListener('click', () => {
-      if (t.hasAttribute('disabled')) return;
-      const target = t.dataset.tab;
-      tabs.forEach(x => x.classList.remove('active'));
-      t.classList.add('active');
-      Object.entries(sections).forEach(([key, el]) => {
-        if (!el) return;
-        if (key === target) {
-          el.classList.remove('hidden');
-          el.classList.remove('fade-in'); void el.offsetWidth; el.classList.add('fade-in');
-        } else {
-          el.classList.add('hidden');
-        }
-      });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  function activateTab(target) {
+    const targetBtn = Array.from(tabs).find(x => x.dataset.tab === target);
+    if (!targetBtn || targetBtn.hasAttribute('disabled')) return;
+    tabs.forEach(x => x.classList.remove('active'));
+    targetBtn.classList.add('active');
+    Object.entries(sections).forEach(([key, el]) => {
+      if (!el) return;
+      if (key === target) {
+        el.classList.remove('hidden');
+        el.classList.remove('fade-in'); void el.offsetWidth; el.classList.add('fade-in');
+      } else {
+        el.classList.add('hidden');
+      }
     });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tabs.forEach(t => {
+    t.addEventListener('click', () => activateTab(t.dataset.tab));
+  });
+  // Cross-tab navigation triggers (e.g. Overview "Read in 60 seconds" links)
+  document.querySelectorAll('[data-go-tab]').forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.goTab));
   });
 
   // ===== Companies tab: data + render + filter =====
