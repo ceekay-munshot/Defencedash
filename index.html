@@ -132,7 +132,7 @@
       <button class="tabbtn" data-tab="valuechain">Value Chain</button>
       <button class="tabbtn" data-tab="companies">Companies</button>
       <button class="tabbtn" data-tab="supply">Supply Chain</button>
-      <button class="tabbtn" data-tab="trends" disabled>Trends</button>
+      <button class="tabbtn" data-tab="trends">Trends</button>
       <button class="tabbtn" data-tab="monitoring" disabled>Monitoring</button>
       <button class="tabbtn" data-tab="diligence" disabled>Red Flags &amp; Diligence</button>
     </nav>
@@ -3189,6 +3189,365 @@
 
 </section>
 
+<!-- ============ TRENDS ============ -->
+<section id="tab-trends" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Trends</span>
+        <span class="pill muted">10 trends · 3 horizons</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Some themes pay this year.
+        Some pay <span class="text-cyansoft">in the next decade</span>.
+        <span class="text-goldsoft">Don&rsquo;t mix them up.</span>
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        Ten trends shape Indian defence demand. They split cleanly into near-term revenue themes,
+        medium-term structural themes, and long-term optionality. Each horizon needs a different
+        valuation lens &mdash; what you pay for ammunition replenishment is not what you pay for AI/autonomy.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Horizon key</div>
+      <ul class="text-[12.5px] space-y-1.5">
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#3DD68C"></span><span class="text-slate-200">Near-term</span><span class="text-dim ml-auto">FY revenue today</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#4CC9F0"></span><span class="text-slate-200">Medium-term</span><span class="text-dim ml-auto">structural compounding</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#E8B339"></span><span class="text-slate-200">Long-term</span><span class="text-dim ml-auto">optionality</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Horizon timeline -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Horizon timeline</div>
+        <h2 class="text-xl font-semibold mt-1">Where each trend pays</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 10 · investor interpretation</span>
+    </div>
+
+    <div class="panel p-6">
+      <!-- Three-lane horizontal -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="rounded-lg border hairline p-4" style="border-color:#0e3d27;background:linear-gradient(180deg, rgba(14,61,39,0.4), rgba(17,28,51,0.6));">
+          <div class="flex items-center justify-between mb-3">
+            <div class="kpi-value text-positive text-lg">Near-term</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Pays today</span>
+          </div>
+          <ul class="space-y-2 text-[13px]">
+            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Missiles &amp; ammunition</span></li>
+            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Radar &amp; EW</span></li>
+            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Naval execution</span></li>
+            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Upgrades &amp; MRO</span></li>
+            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Secure communications</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-lg border hairline p-4" style="border-color:#143142;background:linear-gradient(180deg, rgba(20,49,66,0.4), rgba(17,28,51,0.6));">
+          <div class="flex items-center justify-between mb-3">
+            <div class="kpi-value text-cyansoft text-lg">Medium-term</div>
+            <span class="pill !text-[10px] !py-0 !px-2">Structural</span>
+          </div>
+          <ul class="space-y-2 text-[13px]">
+            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">Indigenous electronics</span></li>
+            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">Materials &amp; precision manufacturing</span></li>
+            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">Propulsion localisation</span></li>
+            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">C4ISR integration</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-lg border hairline p-4" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.4), rgba(17,28,51,0.6));">
+          <div class="flex items-center justify-between mb-3">
+            <div class="kpi-value text-goldsoft text-lg">Long-term</div>
+            <span class="pill gold !text-[10px] !py-0 !px-2">Optionality</span>
+          </div>
+          <ul class="space-y-2 text-[13px]">
+            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">AI / autonomy</span></li>
+            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">Space-defence convergence</span></li>
+            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">Advanced seekers</span></li>
+            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">Next-gen propulsion</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 trend cards -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">10 sector trends</div>
+        <h2 class="text-xl font-semibold mt-1">What is happening · who benefits · revenue profile</h2>
+      </div>
+      <span class="src-tag hidden md:block">DRDO · iDEX · Company AR · MoD AR</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+      <!-- 1. Drones -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #3DD68C;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 01</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Drones &amp; counter-drone</h4>
+          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Near-term + optionality</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Rising operational focus across surveillance and force protection.</p>
+        <p class="text-[12px] text-dim mb-3">Fastest-changing segment &mdash; can create winners and traps.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">ideaForge</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Zen</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. EW -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #4CC9F0;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 02</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Electronic warfare</h4>
+          </div>
+          <span class="pill !text-[10px] !py-0 !px-2">Near- to medium-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">EW is becoming central to survivability.</p>
+        <p class="text-[12px] text-dim mb-3">High-value electronics content per platform.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Radar & surveillance -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #3DD68C;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 03</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Radar &amp; surveillance</h4>
+          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Near-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Indigenous radar push continues.</p>
+        <p class="text-[12px] text-dim mb-3">Repeat orders · upgrades · networked warfare.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Missiles & guided munitions -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #3DD68C;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 04</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Missiles &amp; guided munitions</h4>
+          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Near-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Replenishment and precision-strike demand rising.</p>
+        <p class="text-[12px] text-dim mb-3">Strong order visibility if programmes mature.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Solar</span>
+            <span class="pill muted !text-[10px] !py-0 !px-2">Missile vendors</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Naval indigenisation -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #4CC9F0;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 05</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Naval indigenisation</h4>
+          </div>
+          <span class="pill !text-[10px] !py-0 !px-2">Medium-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Warships, sensors, weapons, support vessels.</p>
+        <p class="text-[12px] text-dim mb-3">Long-cycle but large-ticket opportunity.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">MDL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
+            <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Space-defence convergence -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #E8B339;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 06</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Space-defence convergence</h4>
+          </div>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Optionality + some near-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">ISR · satcom · navigation resilience gaining importance.</p>
+        <p class="text-[12px] text-dim mb-3">Benefits dual-use electronics and payload players.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
+            <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. AI & autonomy -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #4CC9F0;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 07</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">AI &amp; autonomy</h4>
+          </div>
+          <span class="pill !text-[10px] !py-0 !px-2">Mostly medium-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">More autonomy in drones, surveillance, decision support.</p>
+        <p class="text-[12px] text-dim mb-3">Software and mission-system differentiation.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">ideaForge</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            <span class="pill muted !text-[10px] !py-0 !px-2">Startups</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Secure communications / C4ISR -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #3DD68C;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 08</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Secure comms / C4ISR</h4>
+          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Near-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Network-centric warfare needs secure links and integrated command systems.</p>
+        <p class="text-[12px] text-dim mb-3">Sticky · upgrade-heavy · high-value electronics.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Simulation & training -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #4CC9F0;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 09</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Simulation &amp; training</h4>
+          </div>
+          <span class="pill !text-[10px] !py-0 !px-2">Near- to medium-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Cost-effective readiness and modernisation.</p>
+        <p class="text-[12px] text-dim mb-3">Better margins · export potential.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">Zen</span>
+            <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
+            <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Ammunition & energetics -->
+      <div class="panel p-5 panel-hover transition flex flex-col" style="border-left:4px solid #3DD68C;">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Trend 10</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Ammunition &amp; energetics</h4>
+          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Near-term</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-2">Stocking and replenishment matter more.</p>
+        <p class="text-[12px] text-dim mb-3">Consumables can be less cyclical than platforms.</p>
+        <div class="mt-auto pt-3 border-t hairline">
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Beneficiaries</div>
+          <div class="flex flex-wrap gap-1">
+            <span class="pill !text-[10px] !py-0 !px-2">Solar</span>
+            <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+            <span class="pill muted !text-[10px] !py-0 !px-2">Munitions ecosystem</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Investor takeaway -->
+  <div class="panel p-6 mb-10" style="background:linear-gradient(180deg, rgba(48,36,16,0.4) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+          <path d="M11 3h2v10h-2zM11 15h2v2h-2zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+        <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+          Buy <strong class="text-positive">near-term</strong> themes on
+          <strong class="text-white">execution and order conversion</strong>. Buy
+          <strong class="text-cyansoft">medium-term</strong> themes on
+          <strong class="text-white">indigenisation depth and IP</strong>. Buy
+          <strong class="text-goldsoft">long-term</strong> optionality only at
+          <strong class="text-white">prices that don&rsquo;t require it to work</strong>.
+          Drones and AI sit across horizons &mdash; separate the structural-programme exposure from the narrative.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">DRDO official</span> ·
+      <span class="text-slate-200">iDEX official</span> ·
+      <span class="text-slate-200">Company ARs</span> ·
+      <span class="text-slate-200">MoD Annual Report</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Horizon assignment (near / medium / long) follows the PDF&rsquo;s revenue-profile column.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -3347,6 +3706,7 @@
     valuechain:   document.getElementById('tab-valuechain'),
     companies:    document.getElementById('tab-companies'),
     supply:       document.getElementById('tab-supply'),
+    trends:       document.getElementById('tab-trends'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
