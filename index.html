@@ -129,7 +129,7 @@
       <button class="tabbtn" data-tab="budget">Budget &amp; Spending</button>
       <button class="tabbtn" data-tab="architecture">Industry Architecture</button>
       <button class="tabbtn" data-tab="procurement">Procurement</button>
-      <button class="tabbtn" data-tab="valuechain" disabled>Value Chain</button>
+      <button class="tabbtn" data-tab="valuechain">Value Chain</button>
       <button class="tabbtn" data-tab="companies" disabled>Companies</button>
       <button class="tabbtn" data-tab="supply" disabled>Supply Chain</button>
       <button class="tabbtn" data-tab="trends" disabled>Trends</button>
@@ -2035,6 +2035,554 @@
 
 </section>
 
+<!-- ============ VALUE CHAIN ============ -->
+<section id="tab-valuechain" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Value Chain</span>
+        <span class="pill muted">11 layers · 3 tiers</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Defence is <span class="text-goldsoft">eleven</span> different businesses
+        in a <span class="text-cyansoft">three-tier</span> stack &mdash;
+        not one theme.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        Aerospace, shipbuilding, electronics, missiles, drones, materials, and MRO each have different
+        economics, foreign dependencies, and investor profiles. Map every name onto a layer and a tier
+        before comparing &mdash; otherwise you are averaging companies that don't belong in the same bucket.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Attractiveness key</div>
+      <ul class="text-[12.5px] space-y-1.5">
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#3DD68C"></span><span class="text-slate-200">Attractive</span><span class="text-dim ml-auto">value-add / replenishment / sticky</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#E8B339"></span><span class="text-slate-200">Niche</span><span class="text-dim ml-auto">qualification barriers</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#F59E0B"></span><span class="text-slate-200">Tech-gated</span><span class="text-dim ml-auto">import-dependent</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#EF4444"></span><span class="text-slate-200">Crowded / hype-prone</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 11-layer value chain map -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">11-layer value chain</div>
+        <h2 class="text-xl font-semibold mt-1">Layer · listed players · foreign dependency · investor view</h2>
+      </div>
+      <span class="src-tag hidden md:block">Source: PDF Section 4 · Company AR · MoD AR · DDP / SRIJAN</span>
+    </div>
+
+    <!-- Group tag: Build front-end -->
+    <div class="text-[10px] uppercase tracking-widest text-dim mb-2 mt-2">Build front-end · Platforms &amp; integration</div>
+    <div class="space-y-3">
+
+      <!-- 1. Platforms / primes -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[11px] text-positive">L01</span>
+            </div>
+            <h4 class="font-semibold text-white">Platforms / primes</h4>
+            <div class="text-[11px] text-dim mt-1">Aircraft · helicopters · warships · submarines · missile systems · mobility</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">MDL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
+              <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEML</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Engines · propulsion · combat systems · some weapons / sensors
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Scale · visibility · long-cycle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. System integration -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[11px] text-positive">L02</span>
+            </div>
+            <h4 class="font-semibold text-white">System integration</h4>
+            <div class="text-[11px] text-dim mt-1">Radar · EW · C4ISR · avionics · mission systems · drones</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+              <span class="pill !text-[10px] !py-0 !px-2">ideaForge</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Zen</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Chips · RF components · detectors · some software/hardware modules
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Higher value-add</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Missiles / munitions -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-[11px] text-positive">L03</span>
+            </div>
+            <h4 class="font-semibold text-white">Missiles / munitions</h4>
+            <div class="text-[11px] text-dim mt-1">Missiles · torpedoes · rockets · warheads · propellants · ammunition</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Solar Industries</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Premier Explosives</span>
+              <span class="pill muted !text-[10px] !py-0 !px-2">Munitions India</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Seekers · guidance · some propulsion / electronics
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Attractive on replenishment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group tag: Subsystem layer -->
+    <div class="text-[10px] uppercase tracking-widest text-dim mb-2 mt-6">Subsystem layer · Electronics · Sensors · Propulsion</div>
+    <div class="space-y-3">
+
+      <!-- 4. Electronics / RF / radar / EW -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px] text-positive">L04</span>
+            <h4 class="font-semibold text-white">Electronics / RF / radar / EW</h4>
+            <div class="text-[11px] text-dim mt-1">RF modules · radars · jammers · communication systems</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
+              <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            MMICs · semiconductors · imported RF parts
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Sticky · tech-gated</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Optronics / sensors -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px] text-goldsoft">L05</span>
+            <h4 class="font-semibold text-white">Optronics / sensors</h4>
+            <div class="text-[11px] text-dim mt-1">EO/IR payloads · sights · imaging systems</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Detectors · some imaging components
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill gold !text-[10px] !py-0 !px-2">High barrier · import-sensitive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Propulsion / engines -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px]" style="color:#F59E0B">L06</span>
+            <h4 class="font-semibold text-white">Propulsion / engines</h4>
+            <div class="text-[11px] text-dim mt-1">Aero engines · marine engines · propulsion modules</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
+              <span class="pill !text-[10px] !py-0 !px-2">HAL (integration)</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEML (mobility)</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            <span class="text-warn">Very high foreign dependence</span>
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Strategic but difficult</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group tag: Inputs -->
+    <div class="text-[10px] uppercase tracking-widest text-dim mb-2 mt-6">Inputs · Materials · Precision · Structures</div>
+    <div class="space-y-3">
+
+      <!-- 7. Materials / alloys -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px] text-goldsoft">L07</span>
+            <h4 class="font-semibold text-white">Materials / alloys</h4>
+            <div class="text-[11px] text-dim mt-1">Special steels · titanium · superalloys · armor materials</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">MIDHANI</span>
+              <span class="pill !text-[10px] !py-0 !px-2">PTC Industries</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Some specialty inputs and equipment
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill gold !text-[10px] !py-0 !px-2">Attractive niche</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Precision manufacturing -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px] text-goldsoft">L08</span>
+            <h4 class="font-semibold text-white">Precision manufacturing</h4>
+            <div class="text-[11px] text-dim mt-1">Machining · forgings · castings · structures</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Cyient DLM</span>
+              <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+              <span class="pill !text-[10px] !py-0 !px-2">PTC</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Machine tools · specialty materials
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill gold !text-[10px] !py-0 !px-2">Good if qualification-heavy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Aerospace structures / assemblies -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px] text-positive">L09</span>
+            <h4 class="font-semibold text-white">Aerospace structures / assemblies</h4>
+            <div class="text-[11px] text-dim mt-1">Harnesses · LRUs · structures · rugged electronics</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">Cyient DLM</span>
+              <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Imported electronics and aerospace parts
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Good export optionality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group tag: Frontier -->
+    <div class="text-[10px] uppercase tracking-widest text-dim mb-2 mt-6">Frontier · Drones &amp; autonomy</div>
+    <div class="space-y-3">
+
+      <!-- 10. Drones / autonomy -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px]" style="color:#F87171">L10</span>
+            <h4 class="font-semibold text-white">Drones / autonomy</h4>
+            <div class="text-[11px] text-dim mt-1">UAVs · anti-drone · payloads · software</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">ideaForge</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Zen</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Sensors · chips · batteries · payload electronics
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Fast-growing · crowded</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group tag: Lifecycle tail -->
+    <div class="text-[10px] uppercase tracking-widest text-dim mb-2 mt-6">Lifecycle tail · MRO &amp; upgrades</div>
+    <div class="space-y-3">
+
+      <!-- 11. MRO / lifecycle support -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-start">
+          <div class="col-span-12 md:col-span-3">
+            <span class="font-mono text-[11px] text-positive">L11</span>
+            <h4 class="font-semibold text-white">MRO / lifecycle support</h4>
+            <div class="text-[11px] text-dim mt-1">Spares · overhaul · upgrades</div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1.5">Listed players</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Shipyards</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEML</span>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12px] text-slate-300">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Foreign dependency</div>
+            Imported spares in some fleets
+          </div>
+          <div class="col-span-12 md:col-span-2">
+            <div class="text-[10px] uppercase tracking-wider text-dim mb-1">Investor view</div>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Sticky annuity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tier mapping -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Tier mapping</div>
+        <h2 class="text-xl font-semibold mt-1">Where economics actually live</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 4 · Company AR</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="panel p-6 panel-hover transition" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-2xl text-goldsoft">Tier-1</span>
+          <span class="pill gold !py-0 !px-2 !text-[10px]">Best visibility</span>
+        </div>
+        <h4 class="font-semibold text-white mb-2">Prime / system integrator</h4>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">MDL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
+          <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+        </div>
+        <p class="text-[12.5px] text-slate-300">Best visibility · mixed margins · large-ticket · long-cycle.</p>
+      </div>
+
+      <div class="panel p-6 panel-hover transition" style="border-color:#143142;background:linear-gradient(180deg, rgba(20,49,66,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-2xl text-cyansoft">Tier-2</span>
+          <span class="pill !py-0 !px-2 !text-[10px]">Niche margin</span>
+        </div>
+        <h4 class="font-semibold text-white mb-2">Major subsystem supplier</h4>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
+          <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Cyient DLM</span>
+          <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+        </div>
+        <p class="text-[12.5px] text-slate-300">Better niche margins · concentration risk · qualification-heavy.</p>
+      </div>
+
+      <div class="panel p-6 panel-hover transition">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-2xl text-dim">Tier-3</span>
+          <span class="pill muted !py-0 !px-2 !text-[10px]">Squeezed</span>
+        </div>
+        <h4 class="font-semibold text-white mb-2">Components / process vendors</h4>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="pill muted !text-[10px] !py-0 !px-2">MSME machining</span>
+          <span class="pill muted !text-[10px] !py-0 !px-2">PCB vendors</span>
+          <span class="pill muted !text-[10px] !py-0 !px-2">Cable harness</span>
+          <span class="pill muted !text-[10px] !py-0 !px-2">Composites</span>
+        </div>
+        <p class="text-[12.5px] text-slate-300">Lower margins · weaker bargaining power · low pricing leverage.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attractiveness segmentation -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Attractive · niche · crowded · import-dependent</div>
+        <h2 class="text-xl font-semibold mt-1">Investor segmentation of the chain</h2>
+      </div>
+    </div>
+
+    <div class="panel overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="text-left text-dim bg-panel2/50">
+            <tr class="border-b hairline">
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Segment</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Why</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px] text-right">Investor view</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Defence electronics, radar, EW</td>
+              <td class="px-4 py-3 text-slate-300">High value-add · repeat content · upgrade cycle</td>
+              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Missiles and ammunition</td>
+              <td class="px-4 py-3 text-slate-300">Replenishment demand · strategic priority</td>
+              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Naval systems and upgrades</td>
+              <td class="px-4 py-3 text-slate-300">Large-ticket · long visibility</td>
+              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">MRO and lifecycle support</td>
+              <td class="px-4 py-3 text-slate-300">Sticky annuity-like revenue</td>
+              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Special materials &amp; precision manufacturing</td>
+              <td class="px-4 py-3 text-slate-300">Qualification barriers</td>
+              <td class="px-4 py-3 text-right"><span class="pill gold !text-[10px] !py-0 !px-2">Niche</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Generic fabrication</td>
+              <td class="px-4 py-3 text-slate-300">Lower pricing power</td>
+              <td class="px-4 py-3 text-right"><span class="pill muted !text-[10px] !py-0 !px-2">Less attractive</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Small drones without scale</td>
+              <td class="px-4 py-3 text-slate-300">Fast obsolescence · uncertain procurement</td>
+              <td class="px-4 py-3 text-right"><span class="pill warn !text-[10px] !py-0 !px-2">Crowded · hype-prone</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Aero engines · advanced seekers · high-end chips</td>
+              <td class="px-4 py-3 text-slate-300">Hardest to localize</td>
+              <td class="px-4 py-3 text-right"><span class="pill warn !text-[10px] !py-0 !px-2">Tech-gated</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Investor takeaway -->
+  <div class="panel p-6 mb-10" style="background:linear-gradient(180deg, rgba(48,36,16,0.4) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+          <path d="M11 3h2v10h-2zM11 15h2v2h-2zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+        <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+          Map every name onto a <strong class="text-goldsoft">layer</strong> and a <strong class="text-cyansoft">tier</strong>
+          before comparing. A Tier-1 platform prime, a Tier-2 RF subsystem house, and a Tier-3 cable-harness
+          vendor are not in the same business &mdash; even if all three sit inside the same Tejas program.
+          The chain has 11 layers; pick which one you are actually buying.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">Company ARs</span> ·
+      <span class="text-slate-200">MoD Annual Report</span> ·
+      <span class="text-slate-200">DDP / SRIJAN</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Layer grouping (Build front-end / Subsystem / Inputs / Frontier / Lifecycle tail) is editorial.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -2190,6 +2738,7 @@
     budget:       document.getElementById('tab-budget'),
     architecture: document.getElementById('tab-architecture'),
     procurement:  document.getElementById('tab-procurement'),
+    valuechain:   document.getElementById('tab-valuechain'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
