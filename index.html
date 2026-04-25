@@ -2682,6 +2682,14 @@
         <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="valuation-trap">Valuation trap</button>
       </div>
 
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[10px] uppercase tracking-wider text-dim mr-1">View:</span>
+        <button id="watchFilterBtn" class="filter-chip pill !text-[10px] !py-0 !px-2"
+                data-filter="watch" data-value="watch" title="Show only starred companies">
+          ★ Watchlist <span id="watchCount" class="ml-1 font-mono">0</span>
+        </button>
+      </div>
+
       <div class="ml-auto flex items-center gap-2">
         <span id="companyCount" class="text-[11px] text-dim font-mono">18 of 18</span>
         <button id="clearFilters" class="text-[11px] text-cyansoft hover:text-goldsoft transition">Clear</button>
@@ -4863,6 +4871,33 @@
     return '<span class="pill muted !text-[10px] !py-0 !px-2">Specialist</span>';
   }
 
+  // ===== Watchlist + notes (localStorage-backed) =====
+  const WATCH_KEY = 'defencedash.watchlist';
+  const NOTES_KEY = 'defencedash.notes';
+  function loadWatch() { try { return JSON.parse(localStorage.getItem(WATCH_KEY) || '[]'); } catch { return []; } }
+  function saveWatch(arr) { try { localStorage.setItem(WATCH_KEY, JSON.stringify(arr)); } catch {} }
+  function loadNotes() { try { return JSON.parse(localStorage.getItem(NOTES_KEY) || '{}'); } catch { return {}; } }
+  function saveNotes(obj) { try { localStorage.setItem(NOTES_KEY, JSON.stringify(obj)); } catch {} }
+  let watchSet = new Set(loadWatch());
+  let notesMap = loadNotes();
+
+  function isWatched(name) { return watchSet.has(name); }
+  function toggleWatch(name) {
+    if (watchSet.has(name)) watchSet.delete(name); else watchSet.add(name);
+    saveWatch(Array.from(watchSet));
+    updateWatchCount();
+  }
+  function setNote(name, text) {
+    if (text && text.trim()) notesMap[name] = text;
+    else delete notesMap[name];
+    saveNotes(notesMap);
+  }
+  function updateWatchCount() {
+    const el = document.getElementById('watchCount');
+    if (el) el.textContent = String(watchSet.size);
+  }
+  function escapeHtml(s) { return (s || '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
   function renderCard(c) {
     const labelHtml = c.labels.map(l => {
       const m = labelMeta[l] || { txt:l, cls:'' };
@@ -4870,15 +4905,26 @@
     }).join('');
     const customerHtml = c.customers.map(x => `<span class="pill muted !text-[10px] !py-0 !px-2">${x}</span>`).join('');
     const riskHtml = c.risks.map(x => `<li class="flex gap-1.5"><span class="text-warn">•</span><span>${x}</span></li>`).join('');
+    const watched = isWatched(c.name);
+    const noteVal = notesMap[c.name] || '';
+    const hasNote = !!noteVal;
     return `
       <div class="company-card panel p-5 panel-hover transition flex flex-col"
            data-name="${c.name.toLowerCase()}"
            data-tier="${c.tier}"
-           data-labels="${c.labels.join(' ')}">
+           data-labels="${c.labels.join(' ')}"
+           data-watched="${watched ? '1' : '0'}">
         <div class="flex items-start justify-between gap-2 mb-1">
-          <div>
-            <h4 class="text-base font-semibold text-white leading-tight">${c.name}</h4>
-            <div class="text-[11px] text-dim">${c.full}</div>
+          <div class="flex items-start gap-2">
+            <button class="watch-btn shrink-0 mt-0.5 transition" data-name="${c.name}"
+                    title="${watched ? 'Remove from watchlist' : 'Add to watchlist'}"
+                    style="color:${watched ? '#E8B339' : '#4E5E80'};font-size:18px;line-height:1;">
+              ${watched ? '★' : '☆'}
+            </button>
+            <div>
+              <h4 class="text-base font-semibold text-white leading-tight">${c.name}</h4>
+              <div class="text-[11px] text-dim">${c.full}</div>
+            </div>
           </div>
           <div class="flex flex-col items-end gap-1">
             ${tierBadge(c.tier)}
@@ -4908,7 +4954,24 @@
           </div>
         </div>
 
-        <div class="mt-auto pt-3 border-t hairline flex flex-wrap gap-1.5">${labelHtml}</div>
+        <div class="pt-3 border-t hairline flex flex-wrap gap-1.5 mb-3">${labelHtml}</div>
+
+        <div class="mt-auto">
+          <button class="notes-toggle text-[11px] text-cyansoft hover:text-goldsoft transition flex items-center gap-1" data-name="${c.name}">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v2H3V4Zm0 7h18v2H3v-2Zm0 7h12v2H3v-2Z"/></svg>
+            <span class="notes-toggle-label">${hasNote ? `Notes (${noteVal.length} chars)` : '+ Add notes'}</span>
+          </button>
+          <div class="notes-wrap mt-2 ${hasNote ? '' : 'hidden'}">
+            <textarea class="notes-input w-full bg-ink/60 border hairline rounded-md p-2 text-[12.5px] text-slate-100 placeholder:text-dim outline-none focus:border-goldsoft transition resize-y"
+                      data-name="${c.name}"
+                      rows="3"
+                      placeholder="Your private notes — saved to this browser…">${escapeHtml(noteVal)}</textarea>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-[10px] text-dim">Saved locally to your browser only.</span>
+              <span class="notes-saved text-[10px] text-positive opacity-0 transition">Saved</span>
+            </div>
+          </div>
+        </div>
       </div>
     `;
   }
@@ -4917,7 +4980,7 @@
   if (grid) grid.innerHTML = companies.map(renderCard).join('');
 
   // Filters
-  const filterState = { tier: 'all', label: 'all', search: '' };
+  const filterState = { tier: 'all', label: 'all', watch: 'all', search: '' };
   const chips = document.querySelectorAll('.filter-chip');
   const countEl = document.getElementById('companyCount');
   const searchEl = document.getElementById('companySearch');
@@ -4938,8 +5001,9 @@
     cards.forEach(card => {
       const tierOk  = filterState.tier === 'all'  || String(card.dataset.tier) === filterState.tier;
       const labelOk = filterState.label === 'all' || card.dataset.labels.split(' ').includes(filterState.label);
+      const watchOk = filterState.watch === 'all' || card.dataset.watched === '1';
       const searchOk = !filterState.search || card.dataset.name.includes(filterState.search);
-      const visible = tierOk && labelOk && searchOk;
+      const visible = tierOk && labelOk && watchOk && searchOk;
       card.style.display = visible ? '' : 'none';
       if (visible) shown++;
     });
@@ -4961,11 +5025,64 @@
   }
   if (clearEl) {
     clearEl.addEventListener('click', () => {
-      filterState.tier = 'all'; filterState.label = 'all'; filterState.search = '';
+      filterState.tier = 'all'; filterState.label = 'all'; filterState.watch = 'all'; filterState.search = '';
       if (searchEl) searchEl.value = '';
       applyFilters();
     });
   }
+
+  // Star toggle + notes auto-save (event delegation on the grid)
+  if (grid) {
+    grid.addEventListener('click', (e) => {
+      const star = e.target.closest('.watch-btn');
+      if (star) {
+        const name = star.dataset.name;
+        toggleWatch(name);
+        const watched = isWatched(name);
+        star.textContent = watched ? '★' : '☆';
+        star.style.color = watched ? '#E8B339' : '#4E5E80';
+        star.title = watched ? 'Remove from watchlist' : 'Add to watchlist';
+        const card = star.closest('.company-card');
+        if (card) card.dataset.watched = watched ? '1' : '0';
+        applyFilters();
+        return;
+      }
+      const toggle = e.target.closest('.notes-toggle');
+      if (toggle) {
+        const card = toggle.closest('.company-card');
+        const wrap = card && card.querySelector('.notes-wrap');
+        if (wrap) {
+          wrap.classList.toggle('hidden');
+          if (!wrap.classList.contains('hidden')) {
+            const ta = wrap.querySelector('.notes-input');
+            ta && ta.focus();
+          }
+        }
+      }
+    });
+
+    let saveTimer = null;
+    grid.addEventListener('input', (e) => {
+      const ta = e.target.closest('.notes-input');
+      if (!ta) return;
+      const name = ta.dataset.name;
+      const val = ta.value;
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        setNote(name, val);
+        const card = ta.closest('.company-card');
+        const label = card && card.querySelector('.notes-toggle-label');
+        if (label) label.textContent = val.trim() ? `Notes (${val.length} chars)` : '+ Add notes';
+        const saved = card && card.querySelector('.notes-saved');
+        if (saved) {
+          saved.style.opacity = '1';
+          setTimeout(() => { saved.style.opacity = '0'; }, 900);
+        }
+      }, 350);
+    });
+  }
+
+  updateWatchCount();
   applyFilters();
 
   // ===== Stress / scenario simulator (Supply Chain tab) =====
