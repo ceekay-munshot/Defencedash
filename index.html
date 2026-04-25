@@ -2692,6 +2692,31 @@
   <!-- Company grid -->
   <div id="companyGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10"></div>
 
+  <!-- Side-by-side comparator -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Compare side-by-side</div>
+        <h2 class="text-xl font-semibold mt-1">Pick up to 4 names · see them lined up across every dimension</h2>
+      </div>
+      <div class="flex items-center gap-2 text-[11px] text-dim">
+        <span id="cmpCount" class="font-mono">0 of 4 selected</span>
+        <button id="cmpClear" class="text-cyansoft hover:text-goldsoft transition">Clear</button>
+      </div>
+    </div>
+
+    <div class="panel p-5 mb-4">
+      <div class="text-[11px] uppercase tracking-wider text-dim mb-3">Choose companies</div>
+      <div id="cmpPicker" class="flex flex-wrap gap-1.5"></div>
+    </div>
+
+    <div id="cmpResult" class="panel overflow-hidden">
+      <div class="flex items-center justify-center text-center py-10 text-dim text-[13px]">
+        Select 2-4 companies above to compare them side by side.
+      </div>
+    </div>
+  </div>
+
   <!-- Featured company notes (from PDF "Company notes that matter most") -->
   <div class="mb-10">
     <div class="section-title mb-3">Notes that matter most</div>
@@ -5171,6 +5196,144 @@
   }
 
   renderStressors();
+
+  // ===== Cross-company comparator (Companies tab) =====
+  const cmpState = { selected: [] };
+  const MAX_CMP = 4;
+
+  function tierLabel(t) {
+    if (t === 1) return 'Tier-1';
+    if (t === 2) return 'Tier-2';
+    return 'Specialist';
+  }
+
+  function renderCmpPicker() {
+    const picker = document.getElementById('cmpPicker');
+    if (!picker) return;
+    picker.innerHTML = companies.map(c => {
+      const active = cmpState.selected.includes(c.name);
+      const cls = active
+        ? 'pill !text-[11px] !py-1 !px-2.5 cursor-pointer'
+        : 'pill !text-[11px] !py-1 !px-2.5 cursor-pointer';
+      const style = active
+        ? 'background:rgba(232,179,57,0.18);color:#F5D27A;border-color:#3A2C12;'
+        : '';
+      return `<button class="cmp-chip ${cls}" data-name="${c.name}" style="${style}">
+                ${active ? '✓ ' : ''}${c.name}
+              </button>`;
+    }).join('');
+    picker.querySelectorAll('.cmp-chip').forEach(b => {
+      b.addEventListener('click', () => {
+        const n = b.dataset.name;
+        const idx = cmpState.selected.indexOf(n);
+        if (idx > -1) {
+          cmpState.selected.splice(idx, 1);
+        } else {
+          if (cmpState.selected.length >= MAX_CMP) return;
+          cmpState.selected.push(n);
+        }
+        renderCmpPicker();
+        renderCmpResult();
+      });
+    });
+
+    const countEl = document.getElementById('cmpCount');
+    if (countEl) countEl.textContent = `${cmpState.selected.length} of ${MAX_CMP} selected`;
+  }
+
+  function renderCmpResult() {
+    const result = document.getElementById('cmpResult');
+    if (!result) return;
+
+    if (cmpState.selected.length < 2) {
+      result.innerHTML = `
+        <div class="flex items-center justify-center text-center py-10 text-dim text-[13px]">
+          ${cmpState.selected.length === 0
+            ? 'Select 2-4 companies above to compare them side by side.'
+            : 'Pick at least one more company to start comparing.'}
+        </div>`;
+      return;
+    }
+
+    const selectedCos = cmpState.selected
+      .map(n => companies.find(c => c.name === n))
+      .filter(Boolean);
+
+    const headers = selectedCos.map(c => `
+      <th class="px-4 py-4 text-left align-top" style="min-width:220px;">
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <div class="text-[15px] font-semibold text-white leading-tight">${c.name}</div>
+            <div class="text-[11px] text-dim mt-0.5">${c.full}</div>
+          </div>
+          ${tierBadge(c.tier)}
+        </div>
+        <div class="flex items-center gap-1.5 mt-2 text-[11px]">
+          <span class="w-1.5 h-1.5 rounded-full" style="background:${depDot(c.dep)}"></span>
+          <span class="text-dim">${c.dep}</span>
+        </div>
+      </th>
+    `).join('');
+
+    const rowMaker = (rowLabel, mapper) => `
+      <tr class="hover:bg-panel2/30 transition">
+        <td class="px-4 py-3 text-[10px] uppercase tracking-wider text-dim align-top whitespace-nowrap">${rowLabel}</td>
+        ${selectedCos.map(c => `<td class="px-4 py-3 align-top">${mapper(c)}</td>`).join('')}
+      </tr>`;
+
+    const labelChips = (c) => c.labels.map(l => {
+      const m = labelMeta[l] || { txt: l, cls: '' };
+      return `<span class="pill ${m.cls} !text-[10px] !py-0 !px-2">${m.txt}</span>`;
+    }).join(' ');
+
+    const customerChips = (c) => c.customers.map(x =>
+      `<span class="pill muted !text-[10px] !py-0 !px-2">${x}</span>`).join(' ');
+
+    const riskList = (c) => `<ul class="space-y-1">${
+      c.risks.map(r => `<li class="flex gap-1.5 text-[12.5px] text-slate-200"><span class="text-warn">•</span><span>${r}</span></li>`).join('')
+    }</ul>`;
+
+    const rows = [
+      rowMaker('Tier',           c => `<span class="text-[12.5px] text-slate-100">${tierLabel(c.tier)}</span>`),
+      rowMaker('Bucket',         c => `<span class="text-[12.5px] text-slate-100">${c.bucket}</span>`),
+      rowMaker('Role',           c => `<span class="text-[12.5px] text-slate-100">${c.role}</span>`),
+      rowMaker('Defence dep.',   c => `<span class="text-[12.5px] text-slate-100">${c.dep}</span>`),
+      rowMaker('What they do',   c => `<span class="text-[12.5px] text-slate-100">${c.what}</span>`),
+      rowMaker('Customers',      c => `<div class="flex flex-wrap gap-1">${customerChips(c)}</div>`),
+      rowMaker('Core moat',      c => `<span class="text-[12.5px] text-slate-100">${c.moat}</span>`),
+      rowMaker('Main risks',     c => riskList(c)),
+      rowMaker('Growth driver',  c => `<span class="text-[12.5px] text-slate-100">${c.growth}</span>`),
+      rowMaker('Investor labels',c => `<div class="flex flex-wrap gap-1">${labelChips(c)}</div>`),
+    ].join('');
+
+    result.innerHTML = `
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="bg-panel2/40">
+            <tr class="border-b hairline">
+              <th class="px-4 py-4 text-left text-[11px] uppercase tracking-wider text-dim" style="min-width:140px;">Attribute</th>
+              ${headers}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            ${rows}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  const cmpClearBtn = document.getElementById('cmpClear');
+  if (cmpClearBtn) {
+    cmpClearBtn.addEventListener('click', () => {
+      cmpState.selected = [];
+      renderCmpPicker();
+      renderCmpResult();
+    });
+  }
+
+  renderCmpPicker();
+  renderCmpResult();
 </script>
 </body>
 </html>
