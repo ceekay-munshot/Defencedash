@@ -126,7 +126,7 @@
 
     <nav class="ml-6 flex items-center gap-1 overflow-x-auto">
       <button class="tabbtn active" data-tab="overview">Overview</button>
-      <button class="tabbtn" data-tab="budget" disabled>Budget &amp; Spending</button>
+      <button class="tabbtn" data-tab="budget">Budget &amp; Spending</button>
       <button class="tabbtn" data-tab="architecture" disabled>Industry Architecture</button>
       <button class="tabbtn" data-tab="procurement" disabled>Procurement</button>
       <button class="tabbtn" data-tab="valuechain" disabled>Value Chain</button>
@@ -470,6 +470,443 @@
 
 </section>
 
+<!-- ============ BUDGET & SPENDING ============ -->
+<section id="tab-budget" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Budget &amp; Spending</span>
+        <span class="pill muted">Top-down demand envelope</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Allocation is the demand <span class="text-goldsoft">envelope</span> &mdash;
+        <span class="text-cyansoft">not</span> the contract, not the delivery, not the revenue.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        Budget headlines tell you the ceiling of opportunity, not the timing of cash.
+        What converts is gated by procurement category, trials, contracting, milestone billing and inspection.
+        Track allocation alongside DAC approvals, Positive List additions, SRIJAN closures, and exports
+        to see whether the envelope is actually moving downstream.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Budget read-through</div>
+      <ul class="text-[13px] space-y-2 text-dim">
+        <li class="flex gap-2"><span class="text-goldsoft">$</span> <span class="text-slate-200">Total MoD</span> = ceiling of demand</li>
+        <li class="flex gap-2"><span class="text-goldsoft">$</span> <span class="text-slate-200">Capital outlay</span> = procurement engine</li>
+        <li class="flex gap-2"><span class="text-goldsoft">$</span> <span class="text-slate-200">DRDO</span> = indigenous-development intensity</li>
+        <li class="flex gap-2"><span class="text-goldsoft">$</span> <span class="text-slate-200">Revenue spend</span> = salaries / maintenance / stores</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+    <div class="panel p-5 panel-hover transition">
+      <div class="text-[11px] text-dim uppercase tracking-wider">Total MoD · FY25-26</div>
+      <div class="kpi-value text-3xl mt-1 text-white">₹6,81,210<span class="text-dim text-sm ml-1">Cr</span></div>
+      <div class="mt-2 flex items-center gap-2">
+        <span class="text-positive text-xs font-semibold">▲ 9.53% YoY</span>
+        <span class="text-[11px] text-dim">≈ ₹6.81 L Cr</span>
+      </div>
+      <div class="src-tag mt-2">Union Budget / PIB</div>
+    </div>
+
+    <div class="panel p-5 panel-hover transition" style="border-color:#3A2C12;">
+      <div class="text-[11px] uppercase tracking-wider" style="color:#F5D27A">Capital · Defence Services</div>
+      <div class="kpi-value text-3xl mt-1 text-white">₹1,48,839<span class="text-dim text-sm ml-1">Cr</span></div>
+      <div class="mt-2 flex items-center gap-2">
+        <span class="pill gold !py-0 !px-2 !text-[10px]">21.85% of MoD</span>
+      </div>
+      <div class="src-tag mt-2">FY25-26 BE · MP-IDSA / Budget docs</div>
+    </div>
+
+    <div class="panel p-5 panel-hover transition" style="border-color:#143142;">
+      <div class="text-[11px] uppercase tracking-wider" style="color:#93E1FA">DRDO · FY25-26</div>
+      <div class="kpi-value text-3xl mt-1 text-white">₹26,817<span class="text-dim text-sm ml-1">Cr</span></div>
+      <div class="mt-2 flex items-center gap-2">
+        <span class="text-positive text-xs font-semibold">▲ 12.41% YoY</span>
+        <span class="text-[11px] text-dim">3.94% of MoD</span>
+      </div>
+      <div class="src-tag mt-2">Union Budget / PIB</div>
+    </div>
+
+    <div class="panel p-5 panel-hover transition">
+      <div class="text-[11px] text-dim uppercase tracking-wider">Revenue / pensions / other</div>
+      <div class="kpi-value text-3xl mt-1 text-white">₹5,05,554<span class="text-dim text-sm ml-1">Cr*</span></div>
+      <div class="mt-2 flex items-center gap-2">
+        <span class="text-[11px] text-dim">74.21% of MoD · residual</span>
+      </div>
+      <div class="src-tag mt-2">*Implied: Total − Capital − DRDO</div>
+    </div>
+  </div>
+
+  <!-- YoY charts -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+
+    <div class="panel p-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <div class="section-title">MoD allocation · YoY</div>
+          <div class="text-xs text-dim mt-1">FY24-25 implied from stated +9.53% growth</div>
+        </div>
+        <span class="pill pos">+9.53%</span>
+      </div>
+      <div class="relative h-64">
+        <canvas id="modYoY"></canvas>
+      </div>
+      <div class="mt-3 grid grid-cols-2 gap-3 text-[12.5px]">
+        <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
+          <span class="text-dim">FY24-25 (implied)</span>
+          <span class="font-mono text-white">₹6,21,940 Cr</span>
+        </div>
+        <div class="flex items-center justify-between rounded-md border hairline px-3 py-2"
+             style="border-color:#3A2C12;background:rgba(48,36,16,0.25);">
+          <span style="color:#F5D27A">FY25-26 BE</span>
+          <span class="font-mono text-white">₹6,81,210 Cr</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel p-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <div class="section-title">DRDO allocation · YoY</div>
+          <div class="text-xs text-dim mt-1">Indigenous-development intensity signal</div>
+        </div>
+        <span class="pill pos">+12.41%</span>
+      </div>
+      <div class="relative h-64">
+        <canvas id="drdoYoY"></canvas>
+      </div>
+      <div class="mt-3 grid grid-cols-2 gap-3 text-[12.5px]">
+        <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
+          <span class="text-dim">FY24-25</span>
+          <span class="font-mono text-white">₹23,855.61 Cr</span>
+        </div>
+        <div class="flex items-center justify-between rounded-md border hairline px-3 py-2"
+             style="border-color:#143142;background:rgba(20,49,66,0.25);">
+          <span style="color:#93E1FA">FY25-26</span>
+          <span class="font-mono text-white">₹26,816.82 Cr</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Composition stacked bar -->
+  <div class="panel p-6 mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">FY25-26 budget composition</div>
+        <h3 class="text-lg font-semibold mt-1">How ₹6.81 L Cr breaks down</h3>
+      </div>
+      <div class="text-[11px] text-dim">Capital outlay (Defence Services) drives procurement; revenue spend covers salaries, maintenance, stores.</div>
+    </div>
+    <div class="relative h-24">
+      <canvas id="budgetComp"></canvas>
+    </div>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-[12.5px]">
+      <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
+        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#E8B339"></span>Capital · Defence Services</span>
+        <span class="font-mono text-white">21.85%</span>
+      </div>
+      <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
+        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#4CC9F0"></span>DRDO</span>
+        <span class="font-mono text-white">3.94%</span>
+      </div>
+      <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
+        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#2A3C63"></span>Revenue / pensions / other</span>
+        <span class="font-mono text-white">74.21%</span>
+      </div>
+    </div>
+    <p class="src-tag mt-3">Sources: Union Budget / PIB · DRDO official · MP-IDSA budget note citing budget documents.</p>
+  </div>
+
+  <!-- Sector-level metrics tracker -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Sector-level metrics worth tracking</div>
+        <h2 class="text-xl font-semibold mt-1">The 9 budget &amp; demand signals</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 6A — sector metrics</span>
+    </div>
+
+    <div class="panel overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="text-left text-dim bg-panel2/50">
+            <tr class="border-b hairline">
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Metric</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Why it matters</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Best source</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px] text-right">Latest</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Total MoD allocation</td>
+              <td class="px-4 py-3 text-slate-300">Top-down demand envelope</td>
+              <td class="px-4 py-3 text-dim">Union Budget / India Budget</td>
+              <td class="px-4 py-3 text-right font-mono text-goldsoft">₹6.81 L Cr</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Capital vs revenue split</td>
+              <td class="px-4 py-3 text-slate-300">Capital drives procurement; revenue covers salaries, maintenance, stores</td>
+              <td class="px-4 py-3 text-dim">India Budget</td>
+              <td class="px-4 py-3 text-right font-mono text-goldsoft">₹1.49 L Cr cap.</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">DRDO allocation</td>
+              <td class="px-4 py-3 text-slate-300">Signals indigenous-development intensity</td>
+              <td class="px-4 py-3 text-dim">Union Budget / PIB</td>
+              <td class="px-4 py-3 text-right font-mono text-goldsoft">₹26,817 Cr</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Share earmarked for domestic procurement</td>
+              <td class="px-4 py-3 text-slate-300">Direct demand support for local industry</td>
+              <td class="px-4 py-3 text-dim">MoD / budget statements</td>
+              <td class="px-4 py-3 text-right text-dim italic">Not in source</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Defence exports value</td>
+              <td class="px-4 py-3 text-slate-300">Indicates external competitiveness and diversification</td>
+              <td class="px-4 py-3 text-dim">DDP / MoD</td>
+              <td class="px-4 py-3 text-right text-dim italic">Not in source</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">DAC approvals</td>
+              <td class="px-4 py-3 text-slate-300">Pipeline indicator <em class="not-italic text-white">before</em> contracts</td>
+              <td class="px-4 py-3 text-dim">PIB / MoD</td>
+              <td class="px-4 py-3 text-right text-dim italic">Track weekly</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Positive Indigenisation List additions</td>
+              <td class="px-4 py-3 text-slate-300">Future import-substitution opportunity</td>
+              <td class="px-4 py-3 text-dim">DDP / MoD</td>
+              <td class="px-4 py-3 text-right font-mono text-goldsoft">5th list · 346 items</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">SRIJAN opportunity count &amp; closure</td>
+              <td class="px-4 py-3 text-slate-300">Bottom-up indigenisation pipeline</td>
+              <td class="px-4 py-3 text-dim">SRIJAN / DDP</td>
+              <td class="px-4 py-3 text-right font-mono text-goldsoft">14k+ / 38k+</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">FDI policy changes</td>
+              <td class="px-4 py-3 text-slate-300">Affects JV appetite and competition</td>
+              <td class="px-4 py-3 text-dim">DDP / PIB</td>
+              <td class="px-4 py-3 text-right font-mono text-goldsoft">74% auto / 100% govt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Allocation → Revenue conversion flow -->
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-10">
+    <div class="panel p-6 lg:col-span-3">
+      <div class="section-title mb-1">Allocation ≠ revenue</div>
+      <h3 class="text-lg font-semibold mb-4">From budget line to company P&amp;L: 8 gated steps</h3>
+
+      <ol class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#E8B339">1</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Capability gap</span>
+            <span class="text-dim"> &mdash; service identifies what they need</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#E8B339">2</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Requirement framed</span>
+            <span class="text-dim"> &mdash; spec, quantity, schedule</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#E8B339">3</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Procurement category selected</span>
+            <span class="text-dim"> &mdash; under DAP (IDDM, Indian, Buy &amp; Make, Make, SP, Global)</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#4CC9F0">4</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Tender / RFP issued</span>
+            <span class="text-dim"> &mdash; bidders qualify</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#4CC9F0">5</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Technical evaluation &amp; trials</span>
+            <span class="text-dim"> &mdash; major gating factor</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#4CC9F0">6</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Commercial bids opened</span>
+            <span class="text-dim"> &mdash; among technically compliant bidders only</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#3DD68C">7</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Contract negotiation &amp; approvals</span>
+            <span class="text-dim"> &mdash; L1 disputes, legal scrutiny, CCS sign-off</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink"
+                style="background:#3DD68C">8</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Production, inspection, delivery, milestone payments</span>
+            <span class="text-dim"> &mdash; multi-year revenue + cash recognition</span>
+          </div>
+        </li>
+      </ol>
+      <p class="src-tag mt-4">Source: DAP / procurement policy.</p>
+    </div>
+
+    <div class="panel p-6 lg:col-span-2">
+      <div class="section-title mb-1">Where delays happen</div>
+      <h3 class="text-lg font-semibold mb-4">And what it does to your model</h3>
+
+      <ul class="space-y-3">
+        <li class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Requirement setting</span>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Tendering delay</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">User specs change mid-cycle</div>
+        </li>
+        <li class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Trials</span>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Revenue slippage</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">Product immaturity, repeated testing</div>
+        </li>
+        <li class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Commercial closure</span>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Order timing</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">L1 disputes, negotiation, approvals</div>
+        </li>
+        <li class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Localization</span>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Margin / execution</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">Imported parts unavailable, vendor qual slow</div>
+        </li>
+        <li class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Acceptance &amp; inspection</span>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Cash flow lag</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">Inspection and milestone sign-off delays</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Domestic procurement push panel -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+    <div class="panel p-5 panel-hover transition">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="pill gold">Push 01</span>
+        <span class="text-[11px] text-dim">Indigenisation lever</span>
+      </div>
+      <h4 class="font-semibold text-white">Positive Indigenisation Lists</h4>
+      <p class="text-[13px] text-slate-300 mt-2">
+        Items to be procured domestically after notified timelines. The 5th list included
+        <strong class="text-white">346 items</strong> &mdash; LRUs, systems, sub-systems, assemblies, spares, components, raw materials.
+      </p>
+      <div class="src-tag mt-3">DDP / PIB note</div>
+    </div>
+
+    <div class="panel p-5 panel-hover transition">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="pill gold">Push 02</span>
+        <span class="text-[11px] text-dim">Bottom-up pipeline</span>
+      </div>
+      <h4 class="font-semibold text-white">SRIJAN portal</h4>
+      <p class="text-[13px] text-slate-300 mt-2">
+        Make-in-India in Defence opportunity portal.
+        <strong class="text-white">38,000+</strong> items available;
+        <strong class="text-white">14,000+</strong> indigenised as of Feb 2025.
+      </p>
+      <div class="src-tag mt-3">DDP / PIB note · Feb 2025</div>
+    </div>
+
+    <div class="panel p-5 panel-hover transition">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="pill gold">Push 03</span>
+        <span class="text-[11px] text-dim">Capital access</span>
+      </div>
+      <h4 class="font-semibold text-white">Liberalised FDI</h4>
+      <p class="text-[13px] text-slate-300 mt-2">
+        Up to <strong class="text-white">74%</strong> automatic route and up to
+        <strong class="text-white">100%</strong> via government route. Affects JV appetite, technology access, competitive intensity.
+      </p>
+      <div class="src-tag mt-3">DDP / PIB note</div>
+    </div>
+  </div>
+
+  <!-- Investor takeaway -->
+  <div class="panel p-6 mb-10" style="background:linear-gradient(180deg, rgba(48,36,16,0.4) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+          <path d="M11 3h2v10h-2zM11 15h2v2h-2zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+        <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+          The Union Budget defines the <strong class="text-goldsoft">demand ceiling</strong>, not the cash flow.
+          Use the budget number to size the opportunity. Use DAC approvals, contract awards, executable order book,
+          milestone billing and OCF to model the conversion. The gap between &ldquo;allocation announced&rdquo; and
+          &ldquo;cash received&rdquo; is where defence-stock dispersion is created.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">Union Budget</span> ·
+      <span class="text-slate-200">PIB MoD releases</span> ·
+      <span class="text-slate-200">DRDO official</span> ·
+      <span class="text-slate-200">MP-IDSA budget note</span> ·
+      <span class="text-slate-200">DAP</span> ·
+      <span class="text-slate-200">DDP / SRIJAN</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Items not in the source set are flagged as &ldquo;not in source&rdquo; rather than fabricated.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -531,14 +968,115 @@
     });
   }
 
-  // Tab switching (scaffold — only Overview currently populated)
+  // ===== Charts: Budget tab =====
+  const yoyOpts = (label, growthPct, accent) => ({
+    type: 'bar',
+    data: {
+      labels: ['FY24-25', 'FY25-26'],
+      datasets: [{
+        label,
+        data: [],
+        backgroundColor: ['rgba(134,150,181,0.35)', accent],
+        borderColor: ['rgba(134,150,181,0.6)', accent],
+        borderWidth: 1.2,
+        borderRadius: 6,
+        maxBarThickness: 60,
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0E1628',
+          borderColor: '#1E2B47',
+          borderWidth: 1,
+          padding: 10,
+          callbacks: {
+            label: (c) => ` ₹${c.parsed.y.toLocaleString('en-IN')} Cr`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#8696B5' } },
+        y: {
+          grid: { color: 'rgba(30,43,71,0.5)' },
+          ticks: { color: '#8696B5', callback: (v) => '₹' + (v/1000).toFixed(0) + 'k Cr' }
+        }
+      }
+    }
+  });
+
+  const modCanvas = document.getElementById('modYoY');
+  if (modCanvas) {
+    const cfg = yoyOpts('MoD allocation (Cr)', 9.53, '#E8B339');
+    cfg.data.datasets[0].data = [621940, 681210];
+    new Chart(modCanvas, cfg);
+  }
+  const drdoCanvas = document.getElementById('drdoYoY');
+  if (drdoCanvas) {
+    const cfg = yoyOpts('DRDO allocation (Cr)', 12.41, '#4CC9F0');
+    cfg.data.datasets[0].data = [23856, 26817];
+    new Chart(drdoCanvas, cfg);
+  }
+
+  const compCanvas = document.getElementById('budgetComp');
+  if (compCanvas) {
+    new Chart(compCanvas, {
+      type: 'bar',
+      data: {
+        labels: ['FY25-26'],
+        datasets: [
+          { label: 'Capital · Defence Services', data: [148839], backgroundColor: '#E8B339', borderRadius: 4, borderSkipped: false, barThickness: 48 },
+          { label: 'DRDO',                       data: [26817],  backgroundColor: '#4CC9F0', borderRadius: 4, borderSkipped: false, barThickness: 48 },
+          { label: 'Revenue / pensions / other', data: [505554], backgroundColor: '#2A3C63', borderRadius: 4, borderSkipped: false, barThickness: 48 },
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#0E1628',
+            borderColor: '#1E2B47',
+            borderWidth: 1,
+            padding: 10,
+            callbacks: {
+              label: (c) => ` ${c.dataset.label}: ₹${c.parsed.x.toLocaleString('en-IN')} Cr (${((c.parsed.x/681210)*100).toFixed(2)}%)`
+            }
+          }
+        },
+        scales: {
+          x: { stacked: true, display: false, grid: { display: false } },
+          y: { stacked: true, display: false, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  // ===== Tab switching (functional) =====
   const tabs = document.querySelectorAll('.tabbtn');
+  const sections = {
+    overview:     document.getElementById('tab-overview'),
+    budget:       document.getElementById('tab-budget'),
+  };
   tabs.forEach(t => {
-    t.addEventListener('click', (e) => {
+    t.addEventListener('click', () => {
       if (t.hasAttribute('disabled')) return;
+      const target = t.dataset.tab;
       tabs.forEach(x => x.classList.remove('active'));
       t.classList.add('active');
-      // Future: show/hide panels here.
+      Object.entries(sections).forEach(([key, el]) => {
+        if (!el) return;
+        if (key === target) {
+          el.classList.remove('hidden');
+          el.classList.remove('fade-in'); void el.offsetWidth; el.classList.add('fade-in');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 </script>
