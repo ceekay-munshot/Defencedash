@@ -127,7 +127,7 @@
     <nav class="ml-6 flex items-center gap-1 overflow-x-auto">
       <button class="tabbtn active" data-tab="overview">Overview</button>
       <button class="tabbtn" data-tab="budget">Budget &amp; Spending</button>
-      <button class="tabbtn" data-tab="architecture" disabled>Industry Architecture</button>
+      <button class="tabbtn" data-tab="architecture">Industry Architecture</button>
       <button class="tabbtn" data-tab="procurement" disabled>Procurement</button>
       <button class="tabbtn" data-tab="valuechain" disabled>Value Chain</button>
       <button class="tabbtn" data-tab="companies" disabled>Companies</button>
@@ -907,6 +907,569 @@
 
 </section>
 
+<!-- ============ INDUSTRY ARCHITECTURE ============ -->
+<section id="tab-architecture" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Industry Architecture</span>
+        <span class="pill muted">Top-down sector map</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Demand is <span class="text-goldsoft">state-controlled</span>,
+        technology ownership is <span class="text-cyansoft">fragmented</span>,
+        and economics are <em class="not-italic text-white">captured differently by layer</em>.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        The Indian defence sector runs as a nine-layer stack &mdash; from policy and demand at the top,
+        through procurement and R&amp;D, into production primes, private integrators, and an MSME base,
+        with foreign OEMs intersecting at tech-gated layers and a testing &amp; certification regime gating
+        the entire flow. Each layer has a different demand driver and a different failure mode.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Layer count</div>
+      <div class="grid grid-cols-3 gap-2 text-center">
+        <div class="rounded-md border hairline p-2">
+          <div class="kpi-value text-xl text-white">2</div>
+          <div class="text-[10px] text-dim mt-1 uppercase tracking-wider">Steering</div>
+        </div>
+        <div class="rounded-md border hairline p-2">
+          <div class="kpi-value text-xl text-white">2</div>
+          <div class="text-[10px] text-dim mt-1 uppercase tracking-wider">Process</div>
+        </div>
+        <div class="rounded-md border hairline p-2">
+          <div class="kpi-value text-xl text-white">3</div>
+          <div class="text-[10px] text-dim mt-1 uppercase tracking-wider">Build</div>
+        </div>
+        <div class="rounded-md border hairline p-2">
+          <div class="kpi-value text-xl text-white">1</div>
+          <div class="text-[10px] text-dim mt-1 uppercase tracking-wider">Foreign</div>
+        </div>
+        <div class="rounded-md border hairline p-2 col-span-2">
+          <div class="kpi-value text-xl text-white">1 cross-cutting</div>
+          <div class="text-[10px] text-dim mt-1 uppercase tracking-wider">Testing &amp; cert.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Architecture stack -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">The 9-layer stack</div>
+        <h2 class="text-xl font-semibold mt-1">Who does what — and where each layer breaks</h2>
+      </div>
+      <span class="src-tag hidden md:block">Source: PDF Section 2 · MoD AR · DAP · DRDO · Company AR</span>
+    </div>
+
+    <div class="space-y-3">
+      <!-- Layer 01 - Policy -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #E8B339;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-goldsoft">01</span>
+              <span class="pill gold !py-0 !px-2 !text-[10px]">Steering</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Policy &amp; budget</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            MoD · Ministry of Finance · Cabinet Committee on Security · Defence Acquisition Council
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Budgeting, approvals, acquisition priorities, policy
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">Government</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Fiscal limits · approval delays</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 02 - Demand owner -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #E8B339;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-goldsoft">02</span>
+              <span class="pill gold !py-0 !px-2 !text-[10px]">Steering</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Demand owner</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            Indian Army · Navy · Air Force · Coast Guard · Integrated Defence Staff
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Define capability need and user requirements
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">Services + MoD</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Requirement changes · trial failures</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 03 - Procurement machinery -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #4CC9F0;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-cyansoft">03</span>
+              <span class="pill !py-0 !px-2 !text-[10px]">Process</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Procurement machinery</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            Acquisition Wing · procurement boards · contract negotiation bodies
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Tendering, evaluation, contracting
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">MoD</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Tech-comm. sequencing · L1 pressure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 04 - R&D and design -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #4CC9F0;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-cyansoft">04</span>
+              <span class="pill !py-0 !px-2 !text-[10px]">Process</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">R&amp;D and design</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            DRDO · service design agencies · DPSU R&amp;D · private R&amp;D
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Develop systems, subsystems, prototypes
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">Mixed</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Tech maturity · user acceptance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 05 - Production primes -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-positive">05</span>
+              <span class="pill pos !py-0 !px-2 !text-[10px]">Build</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Production primes</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            HAL · BEL · BDL · MDL · GRSE · CSL · BEML · OFB-successor entities
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Manufacture and integrate at scale
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">DPSUs / nominated</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Capacity · imports · vendor readiness</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 06 - Private integrators -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-positive">06</span>
+              <span class="pill pos !py-0 !px-2 !text-[10px]">Build</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Private integrators &amp; specialists</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            Data Patterns · Astra · Paras · Solar · MTAR · ideaForge · Zen · Cyient DLM · Centum · DCX · Bharat Forge
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Subsystems, electronics, drones, ammunition, structures, assemblies
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">Niche economics</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Qualification · concentration · scale-up</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 07 - MSMEs -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #3DD68C;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-positive">07</span>
+              <span class="pill pos !py-0 !px-2 !text-[10px]">Build</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">MSMEs &amp; lower tiers</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            Machine shops · PCB vendors · cable harness · composites · castings · software · test fixtures
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Components and process capability
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">Low bargaining</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Certification · payment cycles</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 08 - Foreign OEMs -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #F59E0B;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs" style="color:#F59E0B">08</span>
+              <span class="pill warn !py-0 !px-2 !text-[10px]">Foreign</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Foreign OEMs</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            Global aerospace, naval, missile, electronics firms
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Platforms · kits · ToT · JV · critical subsystems
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">Tech-gated areas</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Export controls · sanctions · shallow ToT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 09 - Testing & certification (cross-cutting) -->
+      <div class="panel p-5 panel-hover transition" style="border-left: 3px solid #93E1FA; background:linear-gradient(180deg, rgba(20,49,66,0.45), rgba(14,22,40,0.9));">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs text-cyansoft">09</span>
+              <span class="pill !py-0 !px-2 !text-[10px]">Cross-cutting</span>
+            </div>
+            <h4 class="font-semibold mt-1 text-white">Testing &amp; certification</h4>
+          </div>
+          <div class="col-span-12 md:col-span-4 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">Main entities</span>
+            DGQA · CEMILAC · DGAQA · naval/airworthiness agencies · user trial agencies
+          </div>
+          <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+            <span class="text-dim text-[11px] uppercase tracking-wider block mb-1">What they do</span>
+            Qualification, inspection, acceptance
+          </div>
+          <div class="col-span-6 md:col-span-1 text-[12px]">
+            <span class="text-dim text-[10px] uppercase tracking-wider block">Driver</span>
+            <span class="text-cyansoft">State + users</span>
+          </div>
+          <div class="col-span-6 md:col-span-2">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Long validation cycles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layer color legend -->
+    <div class="mt-4 flex flex-wrap items-center gap-3 text-[11px] text-dim">
+      <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-1 rounded-sm" style="background:#E8B339"></span>Steering (policy + demand)</span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-1 rounded-sm" style="background:#4CC9F0"></span>Process (procurement + R&amp;D)</span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-1 rounded-sm" style="background:#3DD68C"></span>Build (primes + private + MSMEs)</span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-1 rounded-sm" style="background:#F59E0B"></span>Foreign OEMs</span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-1 rounded-sm" style="background:#93E1FA"></span>Testing (cross-cutting gate)</span>
+    </div>
+  </div>
+
+  <!-- Who captures economics -->
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-10">
+    <div class="panel p-6 lg:col-span-3">
+      <div class="section-title mb-1">Who decides demand · who develops · who manufactures · who captures</div>
+      <h3 class="text-lg font-semibold mb-4">The four-question test</h3>
+
+      <div class="space-y-4 text-[13.5px]">
+        <div class="flex gap-3">
+          <div class="shrink-0 w-8 h-8 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#E8B339">D</div>
+          <div>
+            <div class="text-white font-medium">Demand</div>
+            <p class="text-slate-300">
+              Armed forces define operational need; the MoD acquisition system processes procurement.
+              <span class="text-dim"> &mdash; demand is state-controlled.</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="shrink-0 w-8 h-8 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#4CC9F0">R</div>
+          <div>
+            <div class="text-white font-medium">R&amp;D</div>
+            <p class="text-slate-300">
+              DRDO remains central in missiles, radars, EW, sensors, strategic systems &mdash;
+              <span class="text-dim">but private R&amp;D is increasingly relevant in electronics, drones, ammunition, precision subsystems.</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="shrink-0 w-8 h-8 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#3DD68C">M</div>
+          <div>
+            <div class="text-white font-medium">Manufacture</div>
+            <p class="text-slate-300">
+              DPSUs still dominate large platforms and many strategic programs;
+              private firms increasingly visible in electronics, drones, ammunition, structures, precision subsystems.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="shrink-0 w-8 h-8 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F5D27A">$</div>
+          <div>
+            <div class="text-white font-medium">Capture</div>
+            <p class="text-slate-300">
+              Economics flow unevenly. Platform primes capture <strong class="text-white">scale and visibility</strong>;
+              electronics/system houses often capture <strong class="text-white">better value-add</strong>;
+              build-to-print vendors get <strong class="text-white">lower pricing power</strong>.
+              Imported critical content can <strong class="text-white">cap domestic margin expansion</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="src-tag mt-4">Sources: DAP / procurement policy · MoD AR · DRDO official · DDP / SRIJAN · Company AR.</p>
+    </div>
+
+    <!-- Economics capture matrix -->
+    <div class="panel p-6 lg:col-span-2">
+      <div class="section-title mb-1">Value capture by layer</div>
+      <h3 class="text-lg font-semibold mb-4">Where the rupee actually lands</h3>
+
+      <div class="space-y-3">
+        <div class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Platform primes</span>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Scale + visibility</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">HAL · MDL · GRSE · CSL · BDL · BEML</div>
+        </div>
+        <div class="rounded-lg border hairline p-3" style="border-color:#3A2C12;background:rgba(48,36,16,0.18)">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Electronics / system houses</span>
+            <span class="pill gold !text-[10px] !py-0 !px-2">Best value-add</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">BEL · Data Patterns · Astra · Centum</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Niche subsystem specialists</span>
+            <span class="pill !text-[10px] !py-0 !px-2">Higher margin · concentration risk</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">Paras · MTAR · MIDHANI · Solar · DCX</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Build-to-print / EMS</span>
+            <span class="pill muted !text-[10px] !py-0 !px-2">Lower pricing power</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">Cyient DLM · MSME vendor base</div>
+        </div>
+        <div class="rounded-lg border hairline p-3" style="border-color:#3A2812;background:rgba(48,28,18,0.18)">
+          <div class="flex items-center justify-between">
+            <span class="text-white font-medium text-[13.5px]">Imported critical content</span>
+            <span class="pill warn !text-[10px] !py-0 !px-2">Caps domestic margin</span>
+          </div>
+          <div class="text-[12px] text-dim mt-1">Engines · seekers · chips · detectors · propulsion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottlenecks failure modes -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Failure modes</div>
+        <h2 class="text-xl font-semibold mt-1">Where bottlenecks usually happen</h2>
+      </div>
+      <span class="src-tag hidden md:block">Source: PDF Section 2 · DAP · MoD AR · Company AR</span>
+    </div>
+
+    <div class="panel overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="text-left text-dim bg-panel2/50">
+            <tr class="border-b hairline">
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Bottleneck</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Why it happens</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Investor impact</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px] text-right">Severity</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Requirement definition</td>
+              <td class="px-4 py-3 text-slate-300">Specs change or become unrealistic</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Tender delays</span></td>
+              <td class="px-4 py-3 text-right">
+                <span class="inline-flex gap-0.5">
+                  <span class="w-2 h-3 rounded-sm" style="background:#F59E0B"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#F59E0B"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#2A3C63"></span>
+                </span>
+              </td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Trials &amp; qualification</td>
+              <td class="px-4 py-3 text-slate-300">Product immaturity, repeated testing, user feedback loops</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Revenue slippage</span></td>
+              <td class="px-4 py-3 text-right">
+                <span class="inline-flex gap-0.5">
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                </span>
+              </td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Contract closure</td>
+              <td class="px-4 py-3 text-slate-300">Commercial negotiation, approvals, legal scrutiny</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Order inflow volatility</span></td>
+              <td class="px-4 py-3 text-right">
+                <span class="inline-flex gap-0.5">
+                  <span class="w-2 h-3 rounded-sm" style="background:#F59E0B"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#F59E0B"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#2A3C63"></span>
+                </span>
+              </td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Prototype → serial production</td>
+              <td class="px-4 py-3 text-slate-300">Vendor ecosystem not ready, process transfer weak</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Margin pressure · delays</span></td>
+              <td class="px-4 py-3 text-right">
+                <span class="inline-flex gap-0.5">
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#2A3C63"></span>
+                </span>
+              </td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Imported critical parts</td>
+              <td class="px-4 py-3 text-slate-300">Engines · chips · detectors · seekers · propulsion modules</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Execution risk</span></td>
+              <td class="px-4 py-3 text-right">
+                <span class="inline-flex gap-0.5">
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#EF4444"></span>
+                </span>
+              </td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Inspection &amp; acceptance</td>
+              <td class="px-4 py-3 text-slate-300">Dispatch and billing depend on sign-off</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Cash flow lag</span></td>
+              <td class="px-4 py-3 text-right">
+                <span class="inline-flex gap-0.5">
+                  <span class="w-2 h-3 rounded-sm" style="background:#F59E0B"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#F59E0B"></span>
+                  <span class="w-2 h-3 rounded-sm" style="background:#2A3C63"></span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="src-tag mt-3">Severity bars are an editorial visualization based on the qualitative descriptions in the source.</p>
+  </div>
+
+  <!-- Investor inferences -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+    <div class="panel p-5 panel-hover transition">
+      <div class="text-[11px] text-dim uppercase tracking-wider mb-2">Inference 01</div>
+      <div class="text-white font-semibold">Demand is state-controlled</div>
+      <p class="text-[12.5px] text-slate-300 mt-2">No private buyer at scale. Procurement-rule changes immediately reset competitive intensity.</p>
+    </div>
+    <div class="panel p-5 panel-hover transition">
+      <div class="text-[11px] text-dim uppercase tracking-wider mb-2">Inference 02</div>
+      <div class="text-white font-semibold">Tech ownership is fragmented</div>
+      <p class="text-[12.5px] text-slate-300 mt-2">DRDO, DPSUs, private R&amp;D, and foreign OEMs each hold pieces. ToT depth varies sharply.</p>
+    </div>
+    <div class="panel p-5 panel-hover transition">
+      <div class="text-[11px] text-dim uppercase tracking-wider mb-2">Inference 03</div>
+      <div class="text-white font-semibold">Economics by layer ≠ uniform</div>
+      <p class="text-[12.5px] text-slate-300 mt-2">Primes get scale; electronics houses get margin; build-to-print gets squeezed. Layer the analysis.</p>
+    </div>
+    <div class="panel p-5 panel-hover transition">
+      <div class="text-[11px] text-dim uppercase tracking-wider mb-2">Inference 04</div>
+      <div class="text-white font-semibold">Imports cap margin expansion</div>
+      <p class="text-[12.5px] text-slate-300 mt-2">Engines, seekers, chips, detectors stay foreign. That ceiling shows up in domestic value-add %.</p>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">MoD Annual Report</span> ·
+      <span class="text-slate-200">DAP / procurement policy</span> ·
+      <span class="text-slate-200">DRDO official</span> ·
+      <span class="text-slate-200">DDP / SRIJAN</span> ·
+      <span class="text-slate-200">Company ARs</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Layer grouping into Steering / Process / Build / Foreign / Cross-cutting is editorial.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -1060,6 +1623,7 @@
   const sections = {
     overview:     document.getElementById('tab-overview'),
     budget:       document.getElementById('tab-budget'),
+    architecture: document.getElementById('tab-architecture'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
