@@ -128,7 +128,7 @@
       <button class="tabbtn active" data-tab="overview">Overview</button>
       <button class="tabbtn" data-tab="budget">Budget &amp; Spending</button>
       <button class="tabbtn" data-tab="architecture">Industry Architecture</button>
-      <button class="tabbtn" data-tab="procurement" disabled>Procurement</button>
+      <button class="tabbtn" data-tab="procurement">Procurement</button>
       <button class="tabbtn" data-tab="valuechain" disabled>Value Chain</button>
       <button class="tabbtn" data-tab="companies" disabled>Companies</button>
       <button class="tabbtn" data-tab="supply" disabled>Supply Chain</button>
@@ -1470,6 +1470,571 @@
 
 </section>
 
+<!-- ============ PROCUREMENT ============ -->
+<section id="tab-procurement" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Procurement</span>
+        <span class="pill muted">DAP categories &amp; mechanisms</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        The procurement category sets the <span class="text-goldsoft">economics</span>,
+        the <span class="text-cyansoft">eligibility</span>, and the <em class="not-italic text-white">moat depth</em>.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        DAP defines eight categories. Each one changes who can bid, how much domestic content is required,
+        whether you are a prime or a supplier, your margin structure, IP ownership, export rights,
+        and long-term localization potential. &ldquo;Indian programme&rdquo; alone is not enough &mdash;
+        you have to know <em>which</em> category, and <em>where</em> in the value chain the rupee lands.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">What category decides</div>
+      <ul class="text-[12.5px] space-y-1.5 text-dim">
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> Who can bid</li>
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> Required domestic content</li>
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> Prime vs supplier role</li>
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> Margin structure</li>
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> IP ownership</li>
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> Export rights</li>
+        <li class="flex gap-2"><span class="text-goldsoft">·</span> Long-term localization potential</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Preference ladder -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">DAP preference ladder</div>
+        <h2 class="text-xl font-semibold mt-1">8 categories, ranked by indigenisation preference</h2>
+      </div>
+      <span class="src-tag hidden md:block">Source: PDF Section 3 · DAP / procurement policy</span>
+    </div>
+
+    <!-- Ladder visual -->
+    <div class="relative">
+      <!-- Vertical preference axis label -->
+      <div class="hidden lg:flex absolute -left-1 top-0 bottom-0 flex-col items-center justify-between text-[10px] uppercase tracking-widest text-dim pointer-events-none" style="width:30px;">
+        <span class="rotate-180" style="writing-mode:vertical-rl;color:#F5D27A">Highest preference</span>
+        <span class="rotate-180" style="writing-mode:vertical-rl;color:#8696B5">Lowest preference</span>
+      </div>
+
+      <div class="space-y-3 lg:ml-10">
+
+        <!-- 1. Buy (Indian-IDDM) -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339; background:linear-gradient(90deg, rgba(48,36,16,0.4), rgba(14,22,40,0.9) 35%);">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-goldsoft">01</span>
+                <span class="pill gold !py-0 !px-2 !text-[10px]">Highest preference</span>
+              </div>
+              <h4 class="font-semibold text-white">Buy (Indian-IDDM)</h4>
+              <div class="text-[11px] text-dim mt-0.5">Indigenously Designed, Developed &amp; Manufactured</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Indigenous design, development and manufacture &mdash; highest preference under DAP.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              Best for domestic IP, local value-add, and stronger moats.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill pos !py-0 !px-2 !text-[10px]">Best</span>
+            </div>
+          </div>
+          <!-- Domestic content visual -->
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:95%;background:linear-gradient(90deg,#E8B339,#F5D27A)"></div>
+            </div>
+            <span class="font-mono text-goldsoft">Highest</span>
+          </div>
+        </div>
+
+        <!-- 2. Buy (Indian) -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #D6A733;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-goldsoft">02</span>
+              </div>
+              <h4 class="font-semibold text-white">Buy (Indian)</h4>
+              <div class="text-[11px] text-dim mt-0.5">Indian vendor with content threshold</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Indian vendor supplies with a domestic content threshold.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              Good for local assembly/integration players &mdash; <span class="text-white">but check true value-add</span>.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill pos !py-0 !px-2 !text-[10px]">Good</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:75%;background:#D6A733"></div>
+            </div>
+            <span class="font-mono">High</span>
+          </div>
+        </div>
+
+        <!-- 3. Buy & Make (Indian) -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #B89230;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-goldsoft">03</span>
+              </div>
+              <h4 class="font-semibold text-white">Buy &amp; Make (Indian)</h4>
+              <div class="text-[11px] text-dim mt-0.5">Indian-led with foreign tech support</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Indian company leads, often with foreign technology support.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              Good for firms with JV/ToT capability; <span class="text-white">localization pace matters</span>.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill !py-0 !px-2 !text-[10px]">Selective</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:60%;background:#B89230"></div>
+            </div>
+            <span class="font-mono">Mixed</span>
+          </div>
+        </div>
+
+        <!-- 4. Buy & Make -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #4CC9F0;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-cyansoft">04</span>
+              </div>
+              <h4 class="font-semibold text-white">Buy &amp; Make</h4>
+              <div class="text-[11px] text-dim mt-0.5">Initial import → local manufacture</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Initial import followed by local manufacture.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              Manufacturing opportunity, but <span class="text-white">often with limited IP capture</span>.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill !py-0 !px-2 !text-[10px]">Selective</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:45%;background:#4CC9F0"></div>
+            </div>
+            <span class="font-mono">Build-up</span>
+          </div>
+        </div>
+
+        <!-- 5. Make -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #4CC9F0;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-cyansoft">05</span>
+              </div>
+              <h4 class="font-semibold text-white">Make</h4>
+              <div class="text-[11px] text-dim mt-0.5">Development route</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Development route &mdash; government-supported or industry-funded.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              Important for emerging private players; <span class="text-white">long gestation, uncertain conversion</span>.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill !py-0 !px-2 !text-[10px]">Optionality</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:55%;background:#4CC9F0"></div>
+            </div>
+            <span class="font-mono">Targeted</span>
+          </div>
+        </div>
+
+        <!-- 6. Strategic Partnership -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #93E1FA;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-cyansoft">06</span>
+              </div>
+              <h4 class="font-semibold text-white">Strategic Partnership</h4>
+              <div class="text-[11px] text-dim mt-0.5">Private prime + foreign OEM</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Private Indian strategic partner with a foreign OEM in selected segments.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              <span class="text-white">Potentially transformative</span> but slow and selective.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill !py-0 !px-2 !text-[10px]">Slow</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:50%;background:#93E1FA"></div>
+            </div>
+            <span class="font-mono">Negotiated</span>
+          </div>
+        </div>
+
+        <!-- 7. Leasing -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #8696B5;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px] text-dim">07</span>
+              </div>
+              <h4 class="font-semibold text-white">Leasing</h4>
+              <div class="text-[11px] text-dim mt-0.5">Capability access without buy</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Capability access without outright purchase.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              Useful operationally, but <span class="text-white">lower manufacturing opportunity</span>.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill muted !py-0 !px-2 !text-[10px]">Limited</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:15%;background:#8696B5"></div>
+            </div>
+            <span class="font-mono">Minimal</span>
+          </div>
+        </div>
+
+        <!-- 8. Buy (Global) -->
+        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-12 md:col-span-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-[11px]" style="color:#F87171">08</span>
+                <span class="pill warn !py-0 !px-2 !text-[10px]">Lowest preference</span>
+              </div>
+              <h4 class="font-semibold text-white">Buy (Global)</h4>
+              <div class="text-[11px] text-dim mt-0.5">Direct import</div>
+            </div>
+            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
+              Direct import.
+            </div>
+            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
+              <span class="text-white">Weakest</span> direct opportunity for domestic listed names &mdash; except offsets / JV spillover.
+            </div>
+            <div class="col-span-12 md:col-span-1 flex md:justify-end">
+              <span class="pill warn !py-0 !px-2 !text-[10px]">Weakest</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
+            <span class="uppercase tracking-wider">Domestic content</span>
+            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
+              <div class="h-full" style="width:5%;background:#EF4444"></div>
+            </div>
+            <span class="font-mono" style="color:#F87171">None / offsets only</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="src-tag mt-4">Domestic-content bars are a directional visualization based on the qualitative description of each category. Exact thresholds vary by category and policy version (DAP).</p>
+  </div>
+
+  <!-- Domestic content questions + What category determines -->
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-10">
+    <div class="panel p-6 lg:col-span-3" style="background:linear-gradient(180deg, rgba(48,36,16,0.35) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+      <div class="section-title mb-1" style="color:#F5D27A">Don't accept &ldquo;Indian&rdquo; at face value</div>
+      <h3 class="text-lg font-semibold mb-4">Three questions before believing the indigenisation claim</h3>
+
+      <ol class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink" style="background:#E8B339">Q1</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">What is the domestic content percentage?</span>
+            <p class="text-slate-300 mt-1">Headline category alone tells you preference, not realised local content.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink" style="background:#E8B339">Q2</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Is the high-value content local or imported?</span>
+            <p class="text-slate-300 mt-1">A locally fabricated shell with imported guts is not a value-add story.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="shrink-0 w-7 h-7 rounded-md flex items-center justify-center font-mono text-[12px] text-ink" style="background:#E8B339">Q3</span>
+          <div class="text-[13.5px]">
+            <span class="text-white font-medium">Are engines, seekers, chips, RF modules, optronics, or propulsion still foreign-sourced?</span>
+            <p class="text-slate-300 mt-1">These are the structural ceilings on margin and resilience.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="panel p-6 lg:col-span-2">
+      <div class="section-title mb-1">Why category matters</div>
+      <h3 class="text-lg font-semibold mb-4">For listed companies, the category sets:</h3>
+
+      <div class="grid grid-cols-2 gap-2.5">
+        <div class="rounded-lg border hairline p-3">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Eligibility</div>
+          <div class="text-[13px] text-white mt-0.5">Who can bid</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Local content</div>
+          <div class="text-[13px] text-white mt-0.5">Required %</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Role</div>
+          <div class="text-[13px] text-white mt-0.5">Prime vs supplier</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Margin</div>
+          <div class="text-[13px] text-white mt-0.5">Structure</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="text-[11px] uppercase tracking-wider text-dim">IP</div>
+          <div class="text-[13px] text-white mt-0.5">Ownership</div>
+        </div>
+        <div class="rounded-lg border hairline p-3">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Exports</div>
+          <div class="text-[13px] text-white mt-0.5">Rights</div>
+        </div>
+        <div class="rounded-lg border hairline p-3 col-span-2">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Long-term</div>
+          <div class="text-[13px] text-white mt-0.5">Localization potential</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mechanisms (ToT, Offsets, Positive Lists, SRIJAN) -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Indigenisation mechanisms</div>
+        <h2 class="text-xl font-semibold mt-1">Four levers between policy and supply chain</h2>
+      </div>
+      <span class="src-tag hidden md:block">Source: PDF Section 3 · DDP / SRIJAN · DAP</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <div class="panel p-5 panel-hover transition">
+        <div class="flex items-center justify-between mb-2">
+          <span class="pill gold !py-0 !px-2 !text-[10px]">M1</span>
+          <span class="text-[10px] text-dim uppercase tracking-wider">Tech transfer</span>
+        </div>
+        <h4 class="font-semibold text-white">ToT</h4>
+        <p class="text-[12.5px] text-slate-300 mt-2">
+          Transfer of technology from foreign OEM, DRDO, or another entity.
+        </p>
+        <p class="text-[12.5px] text-dim mt-2">
+          Can be meaningful or superficial &mdash; <span class="text-white">often manufacturing know-how without core design IP</span>.
+        </p>
+        <div class="mt-3 grid grid-cols-3 gap-1 text-[10px] text-center">
+          <div class="rounded border hairline p-1.5"><div class="text-positive">Real</div><div class="text-dim mt-0.5">Process + IP</div></div>
+          <div class="rounded border hairline p-1.5"><div class="text-goldsoft">Partial</div><div class="text-dim mt-0.5">Mfg only</div></div>
+          <div class="rounded border hairline p-1.5"><div class="text-warn">CKD/SKD</div><div class="text-dim mt-0.5">Assembly</div></div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition">
+        <div class="flex items-center justify-between mb-2">
+          <span class="pill gold !py-0 !px-2 !text-[10px]">M2</span>
+          <span class="text-[10px] text-dim uppercase tracking-wider">Counter-trade</span>
+        </div>
+        <h4 class="font-semibold text-white">Offsets</h4>
+        <p class="text-[12.5px] text-slate-300 mt-2">
+          Foreign vendor sourcing/investment obligations linked to imports.
+        </p>
+        <p class="text-[12.5px] text-dim mt-2">
+          Can create supplier opportunities, <span class="text-white">but quality varies</span>.
+        </p>
+        <div class="mt-3 rounded border hairline p-2 text-[11px]">
+          <div class="text-dim">Track:</div>
+          <div class="text-slate-200">Discharge quality &gt; nominal value</div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.18), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-2">
+          <span class="pill gold !py-0 !px-2 !text-[10px]">M3</span>
+          <span class="text-[10px] uppercase tracking-wider" style="color:#F5D27A">Embargo lever</span>
+        </div>
+        <h4 class="font-semibold text-white">Positive Indigenisation Lists</h4>
+        <p class="text-[12.5px] text-slate-300 mt-2">
+          Items to be procured domestically after notified timelines.
+        </p>
+        <p class="text-[12.5px] text-dim mt-2">
+          Creates protected domestic opportunity &mdash; <span class="text-white">if local capability actually exists</span>.
+        </p>
+        <div class="mt-3 grid grid-cols-2 gap-2 text-center">
+          <div class="rounded border hairline p-2">
+            <div class="kpi-value text-base text-goldsoft">5th</div>
+            <div class="text-[10px] text-dim mt-0.5">Latest list</div>
+          </div>
+          <div class="rounded border hairline p-2">
+            <div class="kpi-value text-base text-goldsoft">346</div>
+            <div class="text-[10px] text-dim mt-0.5">Items added</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition" style="border-color:#143142;background:linear-gradient(180deg, rgba(20,49,66,0.18), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-2">
+          <span class="pill !py-0 !px-2 !text-[10px]">M4</span>
+          <span class="text-[10px] uppercase tracking-wider" style="color:#93E1FA">Bottom-up portal</span>
+        </div>
+        <h4 class="font-semibold text-white">SRIJAN</h4>
+        <p class="text-[12.5px] text-slate-300 mt-2">
+          Portal listing indigenisation opportunities from DPSUs and services.
+        </p>
+        <p class="text-[12.5px] text-dim mt-2">
+          <span class="text-white">Lead indicator</span> for substitution opportunities at item level.
+        </p>
+        <div class="mt-3 grid grid-cols-2 gap-2 text-center">
+          <div class="rounded border hairline p-2">
+            <div class="kpi-value text-base text-cyansoft">38k+</div>
+            <div class="text-[10px] text-dim mt-0.5">Items listed</div>
+          </div>
+          <div class="rounded border hairline p-2">
+            <div class="kpi-value text-base text-cyansoft">14k+</div>
+            <div class="text-[10px] text-dim mt-0.5">Indigenised</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="src-tag mt-3">Item counts as of February 2025. Source: DDP / PIB note.</p>
+  </div>
+
+  <!-- ToT depth matrix -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">ToT depth — what it actually means</div>
+        <h2 class="text-xl font-semibold mt-1">Real vs partial vs superficial</h2>
+      </div>
+    </div>
+
+    <div class="panel overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="text-left text-dim bg-panel2/50">
+            <tr class="border-b hairline">
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Type</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">What it usually means</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Investor interpretation</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px] text-right">Moat</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Real ToT</td>
+              <td class="px-4 py-3 text-slate-300">Process transfer · local vendor ecosystem build-out · increasing local content · production learning</td>
+              <td class="px-4 py-3 text-slate-300">Better long-term moat</td>
+              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Strong</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Partial ToT</td>
+              <td class="px-4 py-3 text-slate-300">Assembly + some manufacturing know-how, but no core design control</td>
+              <td class="px-4 py-3 text-slate-300">Useful but limited</td>
+              <td class="px-4 py-3 text-right"><span class="pill !text-[10px] !py-0 !px-2">Limited</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Superficial ToT</td>
+              <td class="px-4 py-3 text-slate-300">CKD/SKD assembly · no source code · no materials recipe · no critical process IP</td>
+              <td class="px-4 py-3 text-slate-300">Weak moat, low strategic value-add</td>
+              <td class="px-4 py-3 text-right"><span class="pill warn !text-[10px] !py-0 !px-2">Weak</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FDI + Investor takeaway -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+    <div class="panel p-6 panel-hover transition lg:col-span-1">
+      <div class="section-title mb-3">Liberalised FDI</div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-lg border hairline p-4 text-center">
+          <div class="text-[11px] uppercase tracking-wider text-dim">Automatic</div>
+          <div class="kpi-value text-3xl text-white mt-1">74<span class="text-dim text-base">%</span></div>
+        </div>
+        <div class="rounded-lg border hairline p-4 text-center" style="border-color:#3A2C12;">
+          <div class="text-[11px] uppercase tracking-wider" style="color:#F5D27A">Govt route</div>
+          <div class="kpi-value text-3xl text-white mt-1">100<span class="text-dim text-base">%</span></div>
+        </div>
+      </div>
+      <p class="text-[12.5px] text-dim mt-3">
+        Affects JV appetite, technology access, and competitive intensity.
+      </p>
+      <div class="src-tag mt-2">DDP / PIB note</div>
+    </div>
+
+    <div class="panel p-6 lg:col-span-2" style="background:linear-gradient(180deg, rgba(48,36,16,0.35) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+      <div class="flex items-start gap-4">
+        <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+            <path d="M12 2 1 21h22L12 2Zm0 5.8 8.5 14.7h-17L12 7.8Zm-1 4.7v4h2v-4h-2Zm0 5v2h2v-2h-2Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+          <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+            Don't read &ldquo;defence order&rdquo; without reading the <strong class="text-goldsoft">category</strong>.
+            A Buy (Indian-IDDM) win on a missile system has a different shareholder outcome than a Buy &amp; Make
+            assembly contract or a Buy (Global) offset spillover &mdash; even if the headline rupee value is similar.
+            Map every order onto the ladder before you size the opportunity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">DAP / procurement policy</span> ·
+      <span class="text-slate-200">DDP / PIB notes</span> ·
+      <span class="text-slate-200">SRIJAN</span> ·
+      <span class="text-slate-200">MoD AR</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      8-step procurement flow lives in the <span class="text-goldsoft">Budget &amp; Spending</span> tab.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -1624,6 +2189,7 @@
     overview:     document.getElementById('tab-overview'),
     budget:       document.getElementById('tab-budget'),
     architecture: document.getElementById('tab-architecture'),
+    procurement:  document.getElementById('tab-procurement'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
