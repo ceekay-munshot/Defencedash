@@ -130,7 +130,7 @@
       <button class="tabbtn" data-tab="architecture">Industry Architecture</button>
       <button class="tabbtn" data-tab="procurement">Procurement</button>
       <button class="tabbtn" data-tab="valuechain">Value Chain</button>
-      <button class="tabbtn" data-tab="companies" disabled>Companies</button>
+      <button class="tabbtn" data-tab="companies">Companies</button>
       <button class="tabbtn" data-tab="supply" disabled>Supply Chain</button>
       <button class="tabbtn" data-tab="trends" disabled>Trends</button>
       <button class="tabbtn" data-tab="monitoring" disabled>Monitoring</button>
@@ -2583,6 +2583,230 @@
 
 </section>
 
+<!-- ============ COMPANIES ============ -->
+<section id="tab-companies" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Companies</span>
+        <span class="pill muted">18 listed names</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Eighteen names. <span class="text-goldsoft">Seven</span> investor labels.
+        <span class="text-cyansoft">Different</span> economics in every bucket.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        Each row below maps a listed name onto its bucket, role, defence dependence, moat, risks,
+        growth driver, and investor label. Filter by tier or label to see how the basket actually splits &mdash;
+        and why HAL, BEL, BDL, MTAR, and ideaForge cannot be valued the same way.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Investor labels (PDF Section 13)</div>
+      <ul class="text-[12.5px] space-y-1.5">
+        <li class="flex items-center gap-2"><span class="pill pos !text-[10px] !py-0 !px-2">Platform winner</span><span class="text-dim">large strategic platforms</span></li>
+        <li class="flex items-center gap-2"><span class="pill !text-[10px] !py-0 !px-2">Electronics proxy</span><span class="text-dim">rising electronics intensity</span></li>
+        <li class="flex items-center gap-2"><span class="pill !text-[10px] !py-0 !px-2">Subsystem enabler</span><span class="text-dim">high-value components</span></li>
+        <li class="flex items-center gap-2"><span class="pill pos !text-[10px] !py-0 !px-2">Execution compounder</span><span class="text-dim">order conversion + cash</span></li>
+        <li class="flex items-center gap-2"><span class="pill gold !text-[10px] !py-0 !px-2">Export optionality</span><span class="text-dim">domestic + export upside</span></li>
+        <li class="flex items-center gap-2"><span class="pill gold !text-[10px] !py-0 !px-2">Policy beneficiary</span><span class="text-dim">indigenisation tailwind</span></li>
+        <li class="flex items-center gap-2"><span class="pill warn !text-[10px] !py-0 !px-2">Valuation trap risk</span><span class="text-dim">narrative &gt; conversion</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Investor-label summary classification (PDF "Practical classification of listed names") -->
+  <div class="mb-8">
+    <div class="section-title mb-3">Practical classification of listed names</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="panel p-4">
+        <div class="text-[11px] uppercase tracking-wider text-positive mb-2">Platform winner</div>
+        <div class="text-[12.5px] text-slate-200">HAL · MDL · GRSE</div>
+      </div>
+      <div class="panel p-4">
+        <div class="text-[11px] uppercase tracking-wider text-cyansoft mb-2">Electronics proxy</div>
+        <div class="text-[12.5px] text-slate-200">BEL · Data Patterns</div>
+      </div>
+      <div class="panel p-4">
+        <div class="text-[11px] uppercase tracking-wider text-cyansoft mb-2">Subsystem enabler</div>
+        <div class="text-[12.5px] text-slate-200">Astra · Data Patterns · Centum · MTAR · MIDHANI</div>
+      </div>
+      <div class="panel p-4">
+        <div class="text-[11px] uppercase tracking-wider text-positive mb-2">Execution compounder</div>
+        <div class="text-[12.5px] text-slate-200">BEL · GRSE · Solar · Cyient DLM</div>
+      </div>
+      <div class="panel p-4">
+        <div class="text-[11px] uppercase tracking-wider text-goldsoft mb-2">Export optionality play</div>
+        <div class="text-[12.5px] text-slate-200">Zen · Paras · BDL · some shipyards</div>
+      </div>
+      <div class="panel p-4">
+        <div class="text-[11px] uppercase tracking-wider text-goldsoft mb-2">Policy beneficiary</div>
+        <div class="text-[12.5px] text-slate-200">BDL · BEML · ideaForge · Bharat Forge</div>
+      </div>
+      <div class="panel p-4 md:col-span-2">
+        <div class="text-[11px] uppercase tracking-wider text-warn mb-2">Valuation trap risk</div>
+        <div class="text-[12.5px] text-slate-200">Hype-heavy drone or &ldquo;defence exposure&rdquo; names where procurement scale, repeat orders, or cash conversion are not yet proven.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter / search bar -->
+  <div class="panel p-4 mb-6 sticky top-[64px] z-30 backdrop-blur" style="background:rgba(14,22,40,0.92);">
+    <div class="flex flex-col lg:flex-row lg:items-center gap-3">
+      <div class="flex items-center gap-2">
+        <svg viewBox="0 0 24 24" class="w-4 h-4 text-dim" fill="currentColor"><path d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm6.32-2.094 4.387 4.387-1.414 1.414-4.387-4.387a8 8 0 0 1 1.414-1.414Z"/></svg>
+        <input id="companySearch" type="search" placeholder="Search company name…"
+               class="bg-transparent border border-border rounded-md px-3 py-1.5 text-[13px] outline-none focus:border-goldsoft transition w-full lg:w-64 text-white placeholder:text-dim" />
+      </div>
+
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Tier:</span>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="tier" data-value="all">All</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="tier" data-value="1">Tier-1</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="tier" data-value="2">Tier-2</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="tier" data-value="specialist">Specialist</button>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Label:</span>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="all">All</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="platform-winner">Platform winner</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="electronics-proxy">Electronics proxy</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="subsystem-enabler">Subsystem enabler</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="execution-compounder">Execution compounder</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="export-optionality">Export optionality</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="policy-beneficiary">Policy beneficiary</button>
+        <button class="filter-chip pill !text-[10px] !py-0 !px-2" data-filter="label" data-value="valuation-trap">Valuation trap</button>
+      </div>
+
+      <div class="ml-auto flex items-center gap-2">
+        <span id="companyCount" class="text-[11px] text-dim font-mono">18 of 18</span>
+        <button id="clearFilters" class="text-[11px] text-cyansoft hover:text-goldsoft transition">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Company grid -->
+  <div id="companyGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10"></div>
+
+  <!-- Featured company notes (from PDF "Company notes that matter most") -->
+  <div class="mb-10">
+    <div class="section-title mb-3">Notes that matter most</div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-lg font-semibold text-white">HAL</h4>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Platform winner</span>
+        </div>
+        <p class="text-[13px] text-slate-300 mb-3"><span class="text-dim">Fact:</span> HAL is the dominant listed aerospace prime with aircraft, helicopters, upgrades, and MRO exposure.</p>
+        <p class="text-[13px] text-slate-300 mb-3"><span class="text-dim">Inference:</span> Best listed way to play Indian military aviation scale, but <em class="not-italic text-white">not</em> the cleanest way to play high-margin electronics.</p>
+        <p class="text-[13px] text-goldsoft"><span class="text-dim">Watch:</span> Tejas ramp · helicopter programs · engine dependence · receivables · export conversion.</p>
+      </div>
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-lg font-semibold text-white">BEL</h4>
+          <div class="flex gap-1.5">
+            <span class="pill !text-[10px] !py-0 !px-2">Electronics proxy</span>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Execution compounder</span>
+          </div>
+        </div>
+        <p class="text-[13px] text-slate-300 mb-3"><span class="text-dim">Fact:</span> BEL is the broadest listed defence electronics franchise.</p>
+        <p class="text-[13px] text-slate-300 mb-3"><span class="text-dim">Inference:</span> Often the cleanest listed proxy for rising indigenous electronics intensity across multiple platforms.</p>
+        <p class="text-[13px] text-goldsoft"><span class="text-dim">Watch:</span> Order mix · export scale · margin sustainability · working capital.</p>
+      </div>
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-lg font-semibold text-white">BDL</h4>
+          <div class="flex gap-1.5">
+            <span class="pill gold !text-[10px] !py-0 !px-2">Policy beneficiary</span>
+            <span class="pill pos !text-[10px] !py-0 !px-2">Platform-linked winner</span>
+          </div>
+        </div>
+        <p class="text-[13px] text-slate-300 mb-3"><span class="text-dim">Fact:</span> BDL is central to missile production.</p>
+        <p class="text-[13px] text-slate-300 mb-3"><span class="text-dim">Inference:</span> Strong beneficiary of guided munitions and replenishment demand, but program concentration is real.</p>
+        <p class="text-[13px] text-goldsoft"><span class="text-dim">Watch:</span> Seeker localization · export orders · execution cadence.</p>
+      </div>
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-lg font-semibold text-white">MDL · GRSE · CSL</h4>
+          <span class="pill !text-[10px] !py-0 !px-2">Naval (not interchangeable)</span>
+        </div>
+        <ul class="text-[13px] text-slate-300 space-y-1.5">
+          <li><span class="text-white font-medium">MDL</span> &mdash; strategic naval and submarine premium</li>
+          <li><span class="text-white font-medium">GRSE</span> &mdash; execution-focused warship builder</li>
+          <li><span class="text-white font-medium">CSL</span> &mdash; broader shipyard and repair optionality, less pure defence</li>
+        </ul>
+        <p class="text-[13px] text-goldsoft mt-3"><span class="text-dim">Watch:</span> Shipyards are attractive but should be valued on execution and pipeline realism, not just order book size.</p>
+      </div>
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-lg font-semibold text-white">Subsystem enablers</h4>
+          <span class="pill !text-[10px] !py-0 !px-2">Higher value-add bucket</span>
+        </div>
+        <p class="text-[13px] text-slate-300 mb-3">Data Patterns · Astra · Paras · Centum · Cyient DLM · MTAR &mdash; investors can find higher value-add subsystem exposure here.</p>
+        <p class="text-[13px] text-goldsoft"><span class="text-dim">Diligence focus:</span> actual IP ownership · customer concentration · qualification depth · repeatability of orders · scale-up ability.</p>
+      </div>
+
+      <div class="panel p-5" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-lg font-semibold text-white">ideaForge · Zen</h4>
+          <span class="pill warn !text-[10px] !py-0 !px-2">Valuation trap risk</span>
+        </div>
+        <p class="text-[13px] text-slate-300 mb-3">Most vulnerable to narrative overshoot. You must separate:</p>
+        <ul class="text-[13px] text-slate-200 space-y-1.5 list-disc list-inside marker:text-goldsoft">
+          <li>Emergency buys vs. structural programs</li>
+          <li>Pilot deployments vs. scaled procurement</li>
+          <li>Product relevance vs. rapid obsolescence</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Investor takeaway -->
+  <div class="panel p-6 mb-10" style="background:linear-gradient(180deg, rgba(48,36,16,0.4) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+          <path d="M11 3h2v10h-2zM11 15h2v2h-2zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+        <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+          Use <strong class="text-goldsoft">BEL</strong> as a broad electronics read-through,
+          <strong class="text-goldsoft">HAL</strong> as aerospace platform exposure,
+          <strong class="text-goldsoft">BDL</strong> as guided-munitions exposure, and the
+          <strong class="text-goldsoft">subsystem enabler</strong> group selectively based on IP depth and customer concentration.
+          Be cautious on high-valuation drone and &ldquo;defence exposure&rdquo; names where procurement
+          scale, repeat orders, or cash conversion are not yet proven.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">Company Annual Reports</span> ·
+      <span class="text-slate-200">MoD Annual Report</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Tier and label assignments follow the PDF&rsquo;s positioning matrix and classification table.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -2739,6 +2963,7 @@
     architecture: document.getElementById('tab-architecture'),
     procurement:  document.getElementById('tab-procurement'),
     valuechain:   document.getElementById('tab-valuechain'),
+    companies:    document.getElementById('tab-companies'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
@@ -2758,6 +2983,267 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
+
+  // ===== Companies tab: data + render + filter =====
+  const companies = [
+    { name:'HAL', full:'Hindustan Aeronautics', bucket:'Aerospace platform', role:'Prime', tier:1, dep:'Very high',
+      what:'Aircraft, helicopters, upgrades, MRO, engine integration',
+      customers:['IAF','Army','Navy'],
+      moat:'Installed base · manufacturing scale · MRO · strategic role',
+      risks:['Program concentration','Engine dependence','Execution timing'],
+      growth:'Domestic procurement · upgrades · some exports · platform ramp-up',
+      labels:['platform-winner'] },
+    { name:'BEL', full:'Bharat Electronics', bucket:'Defence electronics', role:'Prime / system integrator', tier:1, dep:'Very high',
+      what:'Radars, EW, communication, C4I, naval systems, electronics',
+      customers:['All services','Paramilitary','Exports'],
+      moat:'Breadth · qualification · installed base · repeat orders',
+      risks:['PSU pace','Imported electronics','Customer concentration'],
+      growth:'Domestic electronics intensity · upgrades · exports',
+      labels:['electronics-proxy','execution-compounder'] },
+    { name:'BDL', full:'Bharat Dynamics', bucket:'Missiles', role:'Prime / production agency', tier:1, dep:'Very high',
+      what:'Missiles, torpedoes, guided systems',
+      customers:['MoD','Exports'],
+      moat:'Strategic missile production role',
+      risks:['Program concentration','Imported critical content','Lumpy execution'],
+      growth:'Missile replenishment · exports · DRDO-linked programs',
+      labels:['policy-beneficiary','platform-winner','export-optionality'] },
+    { name:'Mazagon Dock', full:'Mazagon Dock Shipbuilders (MDL)', bucket:'Naval platform', role:'Prime', tier:1, dep:'High',
+      what:'Submarines, destroyers, warships',
+      customers:['Indian Navy'],
+      moat:'Complex shipbuilding capability · submarine franchise',
+      risks:['Project concentration','Long cycles','Margin normalization'],
+      growth:'Naval capex · submarine pipeline',
+      labels:['platform-winner'] },
+    { name:'GRSE', full:'Garden Reach Shipbuilders & Engineers', bucket:'Naval platform', role:'Prime', tier:1, dep:'High',
+      what:'Frigates, patrol vessels, support vessels',
+      customers:['Navy','Coast Guard'],
+      moat:'Warship execution capability',
+      risks:['Order timing','Lower strategic depth than submarine players'],
+      growth:'Navy and Coast Guard orders · exports',
+      labels:['execution-compounder','platform-winner'] },
+    { name:'Cochin Shipyard', full:'Cochin Shipyard Ltd', bucket:'Naval / MRO', role:'Prime', tier:1, dep:'Mixed',
+      what:'Shipbuilding, repairs, naval support, selected strategic builds',
+      customers:['Navy','Coast Guard','Commercial'],
+      moat:'Repair + build mix · dock infrastructure',
+      risks:['Commercial cyclicality','Defence mix variability'],
+      growth:'Naval support vessels · MRO · selected strategic builds',
+      labels:['execution-compounder'] },
+    { name:'BEML', full:'BEML Ltd', bucket:'Mobility / support', role:'Prime / supplier', tier:1, dep:'Moderate',
+      what:'Mobility platforms, support vehicles, engineering systems',
+      customers:['Army','Rail','Mining'],
+      moat:'Engineering base · mobility platforms',
+      risks:['Conglomerate mix','Lower pure defence leverage'],
+      growth:'Defence mobility · restructuring · exports',
+      labels:['policy-beneficiary'] },
+    { name:'Data Patterns', full:'Data Patterns India', bucket:'Electronics / subsystems', role:'Niche system house', tier:2, dep:'High',
+      what:'Defence electronics, radars, avionics, space-defence electronics, systems',
+      customers:['DRDO','DPSUs','MoD'],
+      moat:'Design-led custom engineering',
+      risks:['Customer concentration','Program concentration','Scale-up'],
+      growth:'Indigenous electronics · space-defence · exports',
+      labels:['subsystem-enabler','electronics-proxy'] },
+    { name:'Astra Microwave', full:'Astra Microwave Products', bucket:'RF electronics', role:'Subsystem supplier', tier:2, dep:'Moderate-high',
+      what:'RF, microwave, radar and EW subsystems',
+      customers:['DRDO','BEL','Defence labs'],
+      moat:'RF / microwave specialization',
+      risks:['Project concentration','Execution variability'],
+      growth:'Radar / EW growth · indigenous RF content',
+      labels:['subsystem-enabler'] },
+    { name:'Paras Defence', full:'Paras Defence and Space Technologies', bucket:'Optronics / niche tech', role:'Niche vendor', tier:2, dep:'High',
+      what:'Optronics, defence engineering, optics, niche systems',
+      customers:['DPSUs','DRDO','Private primes'],
+      moat:'Niche optronics and engineering',
+      risks:['Small scale','Concentration','Hype risk'],
+      growth:'Optronics · anti-drone · space-defence optionality',
+      labels:['export-optionality'] },
+    { name:'Solar Industries', full:'Solar Industries India', bucket:'Ammunition / energetics', role:'Specialist', tier:2, dep:'Defence growing (group not pure-play)',
+      what:'Ammunition, explosives, propellants, defence munitions through defence arm',
+      customers:['MoD','Exports'],
+      moat:'Energetics capability · manufacturing discipline',
+      risks:['Safety / regulatory risk','Defence scaling execution'],
+      growth:'Ammunition · rockets · exports',
+      labels:['execution-compounder'] },
+    { name:'MTAR', full:'MTAR Technologies', bucket:'Precision manufacturing', role:'Tier-2 specialist', tier:2, dep:'Mixed',
+      what:'Precision engineering for propulsion, nuclear, aerospace, defence',
+      customers:['Strategic customers','Aerospace / defence'],
+      moat:'High-precision manufacturing',
+      risks:['Customer concentration','Mixed end-markets'],
+      growth:'Propulsion · strategic manufacturing',
+      labels:['subsystem-enabler'] },
+    { name:'ideaForge', full:'ideaForge Technology', bucket:'Drones', role:'Product OEM', tier:'specialist', dep:'High',
+      what:'UAVs and drone systems',
+      customers:['Defence','Security','Civil agencies'],
+      moat:'Indigenous UAV brand · field deployment',
+      risks:['Crowding','Obsolescence','Procurement lags'],
+      growth:'Defence drone adoption · exports',
+      labels:['policy-beneficiary','valuation-trap'] },
+    { name:'Zen Technologies', full:'Zen Technologies', bucket:'Simulation / anti-drone', role:'Niche vendor', tier:2, dep:'High',
+      what:'Training simulators, anti-drone, combat training systems',
+      customers:['Army','Security agencies','Exports'],
+      moat:'Training niche · anti-drone positioning',
+      risks:['Product concentration','Order lumpiness'],
+      growth:'Simulation · anti-drone · exports',
+      labels:['export-optionality'] },
+    { name:'Cyient DLM', full:'Cyient DLM', bucket:'EMS / assemblies', role:'Tier-2', tier:2, dep:'Moderate',
+      what:'Rugged electronics, aerospace / defence assemblies, manufacturing services',
+      customers:['Global OEMs','Aerospace / defence customers'],
+      moat:'Manufacturing quality · export linkage',
+      risks:['Lower IP','Margin ceiling','Customer concentration'],
+      growth:'Outsourcing · aerospace-defence electronics',
+      labels:['execution-compounder'] },
+    { name:'Centum Electronics', full:'Centum Electronics', bucket:'Electronics', role:'Tier-2 / niche', tier:2, dep:'Moderate-high',
+      what:'Mission-critical electronics, subsystems, EMS',
+      customers:['Defence','Aerospace','Industrial'],
+      moat:'High-reliability electronics',
+      risks:['Scale','Concentration','Execution'],
+      growth:'Electronics outsourcing · defence subsystems',
+      labels:['subsystem-enabler'] },
+    { name:'MIDHANI', full:'Mishra Dhatu Nigam', bucket:'Materials', role:'Strategic supplier', tier:2, dep:'High strategic relevance',
+      what:'Special alloys, titanium, superalloys',
+      customers:['HAL','BDL','DRDO','Strategic users'],
+      moat:'Qualification-heavy materials moat',
+      risks:['Capacity','Customer concentration'],
+      growth:'Indigenous materials substitution',
+      labels:['subsystem-enabler'] },
+    { name:'Bharat Forge', full:'Bharat Forge / Kalyani group', bucket:'Platforms + components', role:'Emerging prime / supplier', tier:'specialist', dep:'Mixed',
+      what:'Artillery, armored systems, components, aerospace / defence manufacturing',
+      customers:['MoD','Exports'],
+      moat:'Forging scale · private-sector ambition',
+      risks:['Program conversion risk'],
+      growth:'Artillery · vehicles · exports',
+      labels:['policy-beneficiary'] },
+  ];
+
+  const labelMeta = {
+    'platform-winner':       { txt:'Platform winner',       cls:'pos' },
+    'electronics-proxy':     { txt:'Electronics proxy',     cls:'' },
+    'subsystem-enabler':     { txt:'Subsystem enabler',     cls:'' },
+    'execution-compounder':  { txt:'Execution compounder',  cls:'pos' },
+    'export-optionality':    { txt:'Export optionality',    cls:'gold' },
+    'policy-beneficiary':    { txt:'Policy beneficiary',    cls:'gold' },
+    'valuation-trap':        { txt:'Valuation trap risk',   cls:'warn' },
+  };
+
+  function depDot(dep) {
+    const d = dep.toLowerCase();
+    let color = '#3DD68C';
+    if (d.includes('very high') || d.includes('high strategic')) color = '#EF4444';
+    else if (d.includes('high'))     color = '#F59E0B';
+    else if (d.includes('moderate-high') || d.includes('mixed')) color = '#E8B339';
+    else if (d.includes('moderate')) color = '#4CC9F0';
+    return color;
+  }
+
+  function tierBadge(t) {
+    if (t === 1) return '<span class="pill !text-[10px] !py-0 !px-2" style="color:#F5D27A;border-color:#3A2C12;background:rgba(48,36,16,0.4);">Tier-1</span>';
+    if (t === 2) return '<span class="pill !text-[10px] !py-0 !px-2" style="color:#93E1FA;border-color:#143142;background:rgba(20,49,66,0.4);">Tier-2</span>';
+    return '<span class="pill muted !text-[10px] !py-0 !px-2">Specialist</span>';
+  }
+
+  function renderCard(c) {
+    const labelHtml = c.labels.map(l => {
+      const m = labelMeta[l] || { txt:l, cls:'' };
+      return `<span class="pill ${m.cls} !text-[10px] !py-0 !px-2">${m.txt}</span>`;
+    }).join('');
+    const customerHtml = c.customers.map(x => `<span class="pill muted !text-[10px] !py-0 !px-2">${x}</span>`).join('');
+    const riskHtml = c.risks.map(x => `<li class="flex gap-1.5"><span class="text-warn">•</span><span>${x}</span></li>`).join('');
+    return `
+      <div class="company-card panel p-5 panel-hover transition flex flex-col"
+           data-name="${c.name.toLowerCase()}"
+           data-tier="${c.tier}"
+           data-labels="${c.labels.join(' ')}">
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div>
+            <h4 class="text-base font-semibold text-white leading-tight">${c.name}</h4>
+            <div class="text-[11px] text-dim">${c.full}</div>
+          </div>
+          <div class="flex flex-col items-end gap-1">
+            ${tierBadge(c.tier)}
+            <div class="flex items-center gap-1.5 text-[10px]">
+              <span class="w-1.5 h-1.5 rounded-full" style="background:${depDot(c.dep)}"></span>
+              <span class="text-dim">${c.dep}</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mt-3 mb-1">${c.bucket} · ${c.role}</div>
+        <p class="text-[12.5px] text-slate-200 leading-snug mb-3">${c.what}</p>
+
+        <div class="flex flex-wrap gap-1 mb-3">${customerHtml}</div>
+
+        <div class="space-y-2 text-[12px] mb-3">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Core moat</div>
+            <div class="text-slate-100 mt-0.5">${c.moat}</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Main risks</div>
+            <ul class="text-slate-300 mt-0.5 space-y-0.5">${riskHtml}</ul>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-dim">Growth depends on</div>
+            <div class="text-slate-100 mt-0.5">${c.growth}</div>
+          </div>
+        </div>
+
+        <div class="mt-auto pt-3 border-t hairline flex flex-wrap gap-1.5">${labelHtml}</div>
+      </div>
+    `;
+  }
+
+  const grid = document.getElementById('companyGrid');
+  if (grid) grid.innerHTML = companies.map(renderCard).join('');
+
+  // Filters
+  const filterState = { tier: 'all', label: 'all', search: '' };
+  const chips = document.querySelectorAll('.filter-chip');
+  const countEl = document.getElementById('companyCount');
+  const searchEl = document.getElementById('companySearch');
+  const clearEl = document.getElementById('clearFilters');
+
+  function paintActive() {
+    chips.forEach(ch => {
+      const f = ch.dataset.filter, v = ch.dataset.value;
+      const active = filterState[f] === v;
+      ch.style.background = active ? 'rgba(232,179,57,0.18)' : '';
+      ch.style.color = active ? '#F5D27A' : '';
+      ch.style.borderColor = active ? '#3A2C12' : '';
+    });
+  }
+  function applyFilters() {
+    const cards = document.querySelectorAll('.company-card');
+    let shown = 0;
+    cards.forEach(card => {
+      const tierOk  = filterState.tier === 'all'  || String(card.dataset.tier) === filterState.tier;
+      const labelOk = filterState.label === 'all' || card.dataset.labels.split(' ').includes(filterState.label);
+      const searchOk = !filterState.search || card.dataset.name.includes(filterState.search);
+      const visible = tierOk && labelOk && searchOk;
+      card.style.display = visible ? '' : 'none';
+      if (visible) shown++;
+    });
+    if (countEl) countEl.textContent = `${shown} of ${companies.length}`;
+    paintActive();
+  }
+  chips.forEach(ch => {
+    ch.addEventListener('click', () => {
+      const f = ch.dataset.filter, v = ch.dataset.value;
+      filterState[f] = (filterState[f] === v) ? 'all' : v;
+      applyFilters();
+    });
+  });
+  if (searchEl) {
+    searchEl.addEventListener('input', e => {
+      filterState.search = e.target.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
+  if (clearEl) {
+    clearEl.addEventListener('click', () => {
+      filterState.tier = 'all'; filterState.label = 'all'; filterState.search = '';
+      if (searchEl) searchEl.value = '';
+      applyFilters();
+    });
+  }
+  applyFilters();
 </script>
 </body>
 </html>
