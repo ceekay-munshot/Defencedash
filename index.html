@@ -133,7 +133,7 @@
       <button class="tabbtn" data-tab="companies">Companies</button>
       <button class="tabbtn" data-tab="supply">Supply Chain</button>
       <button class="tabbtn" data-tab="trends">Trends</button>
-      <button class="tabbtn" data-tab="monitoring" disabled>Monitoring</button>
+      <button class="tabbtn" data-tab="monitoring">Monitoring</button>
       <button class="tabbtn" data-tab="diligence" disabled>Red Flags &amp; Diligence</button>
     </nav>
 
@@ -3548,6 +3548,449 @@
 
 </section>
 
+<!-- ============ MONITORING ============ -->
+<section id="tab-monitoring" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Monitoring</span>
+        <span class="pill muted">Cadence · sources · onboarding</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Same data <span class="text-goldsoft">every week</span>.
+        Different questions <span class="text-cyansoft">every quarter</span>.
+        Full rebuild <span class="text-positive">every year</span>.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        Defence requires a recurring monitoring discipline because the gap between announcement, contract,
+        and revenue is long and uneven. Below: what to scan weekly, update monthly, compare quarterly,
+        and rebuild yearly &mdash; plus the 17-source monitoring stack and a 30-day onboarding plan.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Why this cadence</div>
+      <ul class="text-[12.5px] space-y-1.5 text-dim">
+        <li class="flex gap-2"><span class="text-positive">▸</span><span class="text-slate-200">Weekly</span> &mdash; orders, contracts, policy</li>
+        <li class="flex gap-2"><span class="text-cyansoft">▸</span><span class="text-slate-200">Monthly</span> &mdash; momentum, indigenisation</li>
+        <li class="flex gap-2"><span class="text-goldsoft">▸</span><span class="text-slate-200">Quarterly</span> &mdash; cash + execution reality</li>
+        <li class="flex gap-2"><span class="text-warn">▸</span><span class="text-slate-200">Yearly</span> &mdash; full sector remap</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cadence panel: 4 columns -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Cadence</div>
+        <h2 class="text-xl font-semibold mt-1">Weekly · Monthly · Quarterly · Yearly</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 11</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+
+      <!-- Weekly -->
+      <div class="panel p-5" style="border-color:#0e3d27;background:linear-gradient(180deg, rgba(14,61,39,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <div class="kpi-value text-positive text-lg">Weekly</div>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Scan</span>
+        </div>
+        <ul class="space-y-3 text-[13px]">
+          <li>
+            <div class="text-white font-medium">PIB MoD releases</div>
+            <div class="text-dim text-[11.5px]">DAC approvals · contracts · policy</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">BSE / NSE filings</div>
+            <div class="text-dim text-[11.5px]">Orders · JV · capex · mgmt commentary</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">DRDO releases</div>
+            <div class="text-dim text-[11.5px]">Trials · ToT · production signals</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">DDP / SRIJAN updates</div>
+            <div class="text-dim text-[11.5px]">New indigenisation opportunities</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Export / geopolitical headlines</div>
+            <div class="text-dim text-[11.5px]">Approvals and urgency-driven sentiment</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Monthly -->
+      <div class="panel p-5" style="border-color:#143142;background:linear-gradient(180deg, rgba(20,49,66,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <div class="kpi-value text-cyansoft text-lg">Monthly</div>
+          <span class="pill !text-[10px] !py-0 !px-2">Update</span>
+        </div>
+        <ul class="space-y-3 text-[13px]">
+          <li>
+            <div class="text-white font-medium">Order inflow tracker by company</div>
+            <div class="text-dim text-[11.5px]">Momentum · valuation support</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">SRIJAN &amp; Positive List developments</div>
+            <div class="text-dim text-[11.5px]">New substitution opportunities</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Import bottleneck watchlist</div>
+            <div class="text-dim text-[11.5px]">Execution risk</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Defence export tracker</div>
+            <div class="text-dim text-[11.5px]">Diversification signal</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Valuation vs order conversion</div>
+            <div class="text-dim text-[11.5px]">Avoid narrative-only rerating</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quarterly -->
+      <div class="panel p-5" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <div class="kpi-value text-goldsoft text-lg">Quarterly</div>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Compare</span>
+        </div>
+        <ul class="space-y-3 text-[13px]">
+          <li>
+            <div class="text-white font-medium">Revenue vs order-book conversion</div>
+            <div class="text-dim text-[11.5px]">Execution quality</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Receivables · inventory · OCF</div>
+            <div class="text-dim text-[11.5px]">Cash reality</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Margin by business mix</div>
+            <div class="text-dim text-[11.5px]">Product quality of growth</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Localisation commentary</div>
+            <div class="text-dim text-[11.5px]">Future margin and resilience</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Programme concentration changes</div>
+            <div class="text-dim text-[11.5px]">Risk concentration</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Yearly -->
+      <div class="panel p-5" style="border-color:#3A1E12;background:linear-gradient(180deg, rgba(48,30,18,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <div class="kpi-value text-lg" style="color:#FCD34D">Yearly</div>
+          <span class="pill warn !text-[10px] !py-0 !px-2">Rebuild</span>
+        </div>
+        <ul class="space-y-3 text-[13px]">
+          <li>
+            <div class="text-white font-medium">Full sector map</div>
+            <div class="text-dim text-[11.5px]">New entrants · policy shifts</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Budget model</div>
+            <div class="text-dim text-[11.5px]">Top-down demand assumptions</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Company positioning matrix</div>
+            <div class="text-dim text-[11.5px]">Winners change by programme cycle</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">Supply-chain dependency map</div>
+            <div class="text-dim text-[11.5px]">Localisation progress</div>
+          </li>
+          <li>
+            <div class="text-white font-medium">3-year programme pipeline</div>
+            <div class="text-dim text-[11.5px]">Better than 1-year order chasing</div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Source stack -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Monitoring stack</div>
+        <h2 class="text-xl font-semibold mt-1">17 sources · what to extract · how often</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 8</span>
+    </div>
+
+    <div class="panel overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="text-left text-dim bg-panel2/50">
+            <tr class="border-b hairline">
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Source</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Useful for</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Frequency</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Signals to extract</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">MoD Annual Report</td>
+              <td class="px-4 py-3 text-slate-300">Best official sector overview</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Yearly · revisit Q</span></td>
+              <td class="px-4 py-3 text-dim">Procurement, indigenisation, DRDO highlights, exports, policy</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">India Budget · Demand for Grants · Capital Outlay on Defence Services</td>
+              <td class="px-4 py-3 text-slate-300">Budget structure &amp; spending mix</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Yearly + budget season</span></td>
+              <td class="px-4 py-3 text-dim">Total alloc · capital outlay · service-wise capex · DRDO</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">PIB MoD releases</td>
+              <td class="px-4 py-3 text-slate-300">Fastest official updates</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Weekly</span></td>
+              <td class="px-4 py-3 text-dim">DAC approvals · contracts · export milestones · policy</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">DDP MoD website</td>
+              <td class="px-4 py-3 text-slate-300">Production &amp; indigenisation policy</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Weekly</span></td>
+              <td class="px-4 py-3 text-dim">Positive lists · export data · licensing · circulars</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">SRIJAN portal</td>
+              <td class="px-4 py-3 text-slate-300">Indigenisation opportunities</td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2">Monthly</span></td>
+              <td class="px-4 py-3 text-dim">Item categories · participants · closure progress</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">DAP document &amp; amendments</td>
+              <td class="px-4 py-3 text-slate-300">Procurement rules</td>
+              <td class="px-4 py-3"><span class="pill muted !text-[10px] !py-0 !px-2">On change</span></td>
+              <td class="px-4 py-3 text-dim">Categories · local content · offsets</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">DRDO official</td>
+              <td class="px-4 py-3 text-slate-300">R&amp;D and trials</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Weekly</span></td>
+              <td class="px-4 py-3 text-dim">Tests · ToT · production agency tie-ups</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">iDEX / DIO official</td>
+              <td class="px-4 py-3 text-slate-300">Startup / innovation pipeline</td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2">Monthly</span></td>
+              <td class="px-4 py-3 text-dim">Challenge winners · procurement conversion · funded themes</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">TDF official</td>
+              <td class="px-4 py-3 text-slate-300">Indigenous tech development</td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2">Monthly</span></td>
+              <td class="px-4 py-3 text-dim">Sanctioned projects · technology areas</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Nifty India Defence factsheet</td>
+              <td class="px-4 py-3 text-slate-300">Market basket context</td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2">Monthly</span></td>
+              <td class="px-4 py-3 text-dim">Constituents · weight changes · eligibility</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Company annual reports</td>
+              <td class="px-4 py-3 text-slate-300">Core company understanding</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Yearly</span></td>
+              <td class="px-4 py-3 text-dim">Segment mix · customers · order book · risks · capex · R&amp;D</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Investor presentations · concalls · exchange filings</td>
+              <td class="px-4 py-3 text-slate-300">Most current company updates</td>
+              <td class="px-4 py-3"><span class="pill gold !text-[10px] !py-0 !px-2">Quarterly · event</span></td>
+              <td class="px-4 py-3 text-dim">Order inflow · execution · margins · receivables · localisation</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">BSE / NSE corporate announcements</td>
+              <td class="px-4 py-3 text-slate-300">Contract wins &amp; disclosures</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Weekly</span></td>
+              <td class="px-4 py-3 text-dim">Orders · capex · JV · management commentary</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">SIPRI</td>
+              <td class="px-4 py-3 text-slate-300">Global arms transfer context</td>
+              <td class="px-4 py-3"><span class="pill warn !text-[10px] !py-0 !px-2">Yearly · project</span></td>
+              <td class="px-4 py-3 text-dim">Import dependence · export positioning</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">UN Comtrade · ITC Trade Map</td>
+              <td class="px-4 py-3 text-slate-300">Trade trend context</td>
+              <td class="px-4 py-3"><span class="pill gold !text-[10px] !py-0 !px-2">Quarterly · project</span></td>
+              <td class="px-4 py-3 text-dim">Import / export categories: electronics, aerospace parts, explosives</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Aero India · DefExpo</td>
+              <td class="px-4 py-3 text-slate-300">Product launches &amp; MoUs</td>
+              <td class="px-4 py-3"><span class="pill muted !text-[10px] !py-0 !px-2">Event-driven</span></td>
+              <td class="px-4 py-3 text-dim">Actual contracts vs MoUs · partner ecosystem</td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">SIDM</td>
+              <td class="px-4 py-3 text-slate-300">Industry ecosystem context</td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2">Monthly</span></td>
+              <td class="px-4 py-3 text-dim">Member landscape · policy advocacy themes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 30-day onboarding plan -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">30-day onboarding plan</div>
+        <h2 class="text-xl font-semibold mt-1">How to get smart on this sector in 30 days</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF appendix · How to get smart</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-goldsoft text-lg">Week 1</span>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Build the map</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2">Read</div>
+        <ul class="text-[12.5px] space-y-1.5 text-slate-200 mb-3">
+          <li class="flex gap-2"><span class="text-goldsoft">1.</span>MoD Annual Report</li>
+          <li class="flex gap-2"><span class="text-goldsoft">2.</span>India Budget defence demand documents</li>
+          <li class="flex gap-2"><span class="text-goldsoft">3.</span>DAP 2020</li>
+          <li class="flex gap-2"><span class="text-goldsoft">4.</span>DDP MoD site + Positive Lists + SRIJAN</li>
+        </ul>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2 pt-3 border-t hairline">Build</div>
+        <ul class="text-[12.5px] space-y-1 text-dim">
+          <li>One-page procurement flow</li>
+          <li>One-page policy glossary</li>
+          <li>One-page list of listed names by value-chain layer</li>
+        </ul>
+      </div>
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-cyansoft text-lg">Week 2</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Primes</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2">Read latest AR + IP</div>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Mazagon Dock</span>
+          <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
+          <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BEML</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2 pt-3 border-t hairline">Extract</div>
+        <ul class="text-[12.5px] space-y-1 text-dim">
+          <li>Order book · top programmes</li>
+          <li>Import dependence</li>
+          <li>Receivables · capex</li>
+          <li>Export commentary</li>
+          <li>Customer concentration</li>
+        </ul>
+      </div>
+
+      <div class="panel p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-positive text-lg">Week 3</span>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Enablers</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2">Read latest AR + IP</div>
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Solar</span>
+          <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
+          <span class="pill !text-[10px] !py-0 !px-2">ideaForge</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Zen</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Cyient DLM</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
+          <span class="pill !text-[10px] !py-0 !px-2">MIDHANI</span>
+          <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Bharat Forge</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2 pt-3 border-t hairline">Extract</div>
+        <ul class="text-[12.5px] space-y-1 text-dim">
+          <li>Exact defence products</li>
+          <li>IP-led vs build-to-print</li>
+          <li>Top customers · R&amp;D intensity</li>
+          <li>Export mix</li>
+          <li>Valuation vs execution reality</li>
+        </ul>
+      </div>
+
+      <div class="panel p-5" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.32), rgba(17,28,51,0.85));">
+        <div class="flex items-center justify-between mb-3">
+          <span class="kpi-value text-lg" style="color:#F5D27A">Week 4</span>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Dashboard</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-wider text-dim mb-2">Build 4 trackers</div>
+        <ul class="text-[12.5px] space-y-2 text-slate-200 mb-3">
+          <li class="flex gap-2"><span class="text-goldsoft">1.</span><span><strong class="text-white">Sector tracker</strong> &mdash; budget, DAC approvals, exports, Positive Lists, SRIJAN</span></li>
+          <li class="flex gap-2"><span class="text-goldsoft">2.</span><span><strong class="text-white">Company tracker</strong> &mdash; order inflow, order book, receivables, OCF, capex, localisation</span></li>
+          <li class="flex gap-2"><span class="text-goldsoft">3.</span><span><strong class="text-white">Programme tracker</strong> &mdash; Tejas, helicopters, missile families, warships/submarines, drones, radars</span></li>
+          <li class="flex gap-2"><span class="text-goldsoft">4.</span><span><strong class="text-white">Supply-chain tracker</strong> &mdash; engines, seekers, semiconductors, optronics, materials</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Investor takeaway -->
+  <div class="panel p-6 mb-10" style="background:linear-gradient(180deg, rgba(48,36,16,0.4) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+          <path d="M11 3h2v10h-2zM11 15h2v2h-2zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+        <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+          The hardest part of defence investing is not finding ideas &mdash; it is staying disciplined between
+          announcements. Run the <strong class="text-positive">weekly scan</strong>, refresh the
+          <strong class="text-cyansoft">monthly trackers</strong>, audit
+          <strong class="text-goldsoft">quarterly cash &amp; execution</strong>, and rebuild the map
+          <strong class="text-warn">yearly</strong>. That cadence is the moat between &ldquo;defence theme&rdquo; investors and people who actually compound here.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">PDF Sections 8 &amp; 11</span> ·
+      <span class="text-slate-200">MoD AR</span> ·
+      <span class="text-slate-200">Union Budget</span> ·
+      <span class="text-slate-200">PIB MoD</span> ·
+      <span class="text-slate-200">DDP / SRIJAN</span> ·
+      <span class="text-slate-200">DAP</span> ·
+      <span class="text-slate-200">DRDO</span> ·
+      <span class="text-slate-200">iDEX / DIO</span> ·
+      <span class="text-slate-200">SIPRI</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Cadence and source list reproduced from the PDF; signals to extract are paraphrased verbatim.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -3707,6 +4150,7 @@
     companies:    document.getElementById('tab-companies'),
     supply:       document.getElementById('tab-supply'),
     trends:       document.getElementById('tab-trends'),
+    monitoring:   document.getElementById('tab-monitoring'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
