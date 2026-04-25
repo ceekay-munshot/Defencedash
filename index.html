@@ -131,7 +131,7 @@
       <button class="tabbtn" data-tab="procurement">Procurement</button>
       <button class="tabbtn" data-tab="valuechain">Value Chain</button>
       <button class="tabbtn" data-tab="companies">Companies</button>
-      <button class="tabbtn" data-tab="supply" disabled>Supply Chain</button>
+      <button class="tabbtn" data-tab="supply">Supply Chain</button>
       <button class="tabbtn" data-tab="trends" disabled>Trends</button>
       <button class="tabbtn" data-tab="monitoring" disabled>Monitoring</button>
       <button class="tabbtn" data-tab="diligence" disabled>Red Flags &amp; Diligence</button>
@@ -2807,6 +2807,388 @@
 
 </section>
 
+<!-- ============ SUPPLY CHAIN ============ -->
+<section id="tab-supply" class="fade-in hidden">
+
+  <!-- Hero -->
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="pill gold">Supply Chain</span>
+        <span class="pill muted">Dependency &amp; localization map</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        India has <span class="text-positive">scale</span> in some areas,
+        and <span class="text-warn">deep import dependence</span> in others.
+        Margins live in the gap.
+      </h1>
+      <p class="mt-4 text-dim leading-relaxed">
+        &ldquo;Indian programme&rdquo; does not mean &ldquo;Indian content&rdquo;.
+        Engines, advanced seekers, high-end semiconductors, EO/IR detectors, and parts of naval propulsion
+        remain meaningfully imported &mdash; capping margin expansion and adding lead-time risk for primes
+        and electronics players. The map below shows where the dependency lives, where domestic scale is real,
+        and how exposure splits across listed names.
+      </p>
+    </div>
+
+    <div class="panel p-4 w-full lg:w-[320px] shrink-0">
+      <div class="section-title mb-2">Severity key</div>
+      <ul class="text-[12.5px] space-y-1.5">
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#EF4444"></span><span class="text-slate-200">High</span><span class="text-dim ml-auto">structural · hard to localize</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#F59E0B"></span><span class="text-slate-200">Meaningful</span><span class="text-dim ml-auto">execution-critical</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#E8B339"></span><span class="text-slate-200">Partial</span><span class="text-dim ml-auto">localization in progress</span></li>
+        <li class="flex items-center gap-2"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#3DD68C"></span><span class="text-slate-200">Domestic scale</span><span class="text-dim ml-auto">strong / improving</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Import dependency heatmap -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Where India is still import-dependent</div>
+        <h2 class="text-xl font-semibold mt-1">6 dependency hotspots · who is affected</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 9 · MoD AR · Company AR</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+      <!-- 1. Aero engines -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-dim">Hotspot 01</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Aero engines</h4>
+          </div>
+          <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">High</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Limits true aerospace indigenisation. Engine programmes are multi-decade and tech-gated.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Affected:</span>
+          <span class="pill !text-[10px] !py-0 !px-2">HAL <span class="text-warn ml-1">most directly</span></span>
+        </div>
+      </div>
+
+      <!-- 2. Advanced seekers -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-dim">Hotspot 02</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Advanced seekers</h4>
+          </div>
+          <span class="pill warn !text-[10px] !py-0 !px-2">Meaningful</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Drives missile precision and autonomy economics. Localization is selective.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Affected:</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+          <span class="pill muted !text-[10px] !py-0 !px-2">Missile ecosystem</span>
+        </div>
+      </div>
+
+      <!-- 3. Semiconductors / MMICs / RF -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-dim">Hotspot 03</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">High-end semiconductors / MMICs / RF chips</h4>
+          </div>
+          <span class="pill warn !text-[10px] !py-0 !px-2">Meaningful</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Radar, EW, and communications execution risk. Lead times can move multiple programmes at once.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Affected:</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
+          <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+        </div>
+      </div>
+
+      <!-- 4. EO/IR detectors / optronics -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-dim">Hotspot 04</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">EO/IR detectors and some optronics</h4>
+          </div>
+          <span class="pill warn !text-[10px] !py-0 !px-2">Meaningful</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Impacts payloads, sights, and imaging systems. High barrier to localize at sensor-element level.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Affected:</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+          <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+        </div>
+      </div>
+
+      <!-- 5. Naval propulsion / combat system elements -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-dim">Hotspot 05</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Naval propulsion &amp; combat system elements</h4>
+          </div>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Partial</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Affects ship execution and localization quality. Long-lead equipment can slip critical-path schedules.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Affected:</span>
+          <span class="pill !text-[10px] !py-0 !px-2">MDL</span>
+          <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
+          <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+        </div>
+      </div>
+
+      <!-- 6. Specialty materials / machine tools -->
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-dim">Hotspot 06</div>
+            <h4 class="text-base font-semibold text-white mt-0.5">Specialty materials &amp; machine tools</h4>
+          </div>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Partial</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Qualification and lead-time risk in selected niches.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-[10px] uppercase tracking-wider text-dim mr-1">Affected:</span>
+          <span class="pill !text-[10px] !py-0 !px-2">MIDHANI ecosystem</span>
+          <span class="pill muted !text-[10px] !py-0 !px-2">Precision manufacturers</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Where India has domestic scale -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">Where India has domestic scale</div>
+        <h2 class="text-xl font-semibold mt-1">5 areas of strength · where margin can compound</h2>
+      </div>
+      <span class="src-tag hidden md:block">PDF Section 9</span>
+    </div>
+
+    <div class="panel overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-[13px]">
+          <thead class="text-left text-dim bg-panel2/50">
+            <tr class="border-b hairline">
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Area</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Status</th>
+              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Likely beneficiaries</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Warship construction</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Strong</span></td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2 mr-1">MDL</span><span class="pill !text-[10px] !py-0 !px-2 mr-1">GRSE</span><span class="pill !text-[10px] !py-0 !px-2">CSL</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Defence electronics integration</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Strong &amp; improving</span></td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2 mr-1">BEL</span><span class="pill !text-[10px] !py-0 !px-2 mr-1">Data Patterns</span><span class="pill !text-[10px] !py-0 !px-2 mr-1">Astra</span><span class="pill !text-[10px] !py-0 !px-2">Centum</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Missile production &amp; munitions</td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2">Improving</span></td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2 mr-1">BDL</span><span class="pill !text-[10px] !py-0 !px-2 mr-1">Solar</span><span class="pill muted !text-[10px] !py-0 !px-2">Related vendors</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">Special materials</td>
+              <td class="px-4 py-3"><span class="pill gold !text-[10px] !py-0 !px-2">Selective strength</span></td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2 mr-1">MIDHANI</span><span class="pill !text-[10px] !py-0 !px-2 mr-1">PTC</span><span class="pill muted !text-[10px] !py-0 !px-2">Precision suppliers</span></td>
+            </tr>
+            <tr class="hover:bg-panel2/40 transition">
+              <td class="px-4 py-3 font-medium text-white">MRO &amp; upgrades</td>
+              <td class="px-4 py-3"><span class="pill pos !text-[10px] !py-0 !px-2">Strong in certain fleets</span></td>
+              <td class="px-4 py-3"><span class="pill !text-[10px] !py-0 !px-2 mr-1">HAL</span><span class="pill !text-[10px] !py-0 !px-2 mr-1">BEL</span><span class="pill !text-[10px] !py-0 !px-2">Shipyards</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ToT spectrum -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">ToT spectrum · real vs superficial</div>
+        <h2 class="text-xl font-semibold mt-1">What &ldquo;Transfer of Technology&rdquo; actually means</h2>
+      </div>
+      <span class="src-tag hidden md:block">DAP · Company AR · DRDO</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+      <div class="panel p-6 panel-hover transition" style="border-left:4px solid #3DD68C;">
+        <div class="flex items-center justify-between mb-2">
+          <span class="kpi-value text-lg text-positive">Real ToT</span>
+          <span class="pill pos !text-[10px] !py-0 !px-2">Better long-term moat</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Process transfer · local vendor ecosystem build-out · increasing local content · production learning.</p>
+        <div class="text-[12px] text-dim border-t hairline pt-3">
+          What to verify: process documentation, materials recipe, qualification protocols, second-source enablement.
+        </div>
+      </div>
+
+      <div class="panel p-6 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="flex items-center justify-between mb-2">
+          <span class="kpi-value text-lg text-goldsoft">Partial ToT</span>
+          <span class="pill gold !text-[10px] !py-0 !px-2">Useful but limited</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">Assembly plus some manufacturing know-how, but no core design control.</p>
+        <div class="text-[12px] text-dim border-t hairline pt-3">
+          What to verify: who owns the BoM, IP for design changes, who certifies new variants.
+        </div>
+      </div>
+
+      <div class="panel p-6 panel-hover transition" style="border-left:4px solid #EF4444;">
+        <div class="flex items-center justify-between mb-2">
+          <span class="kpi-value text-lg" style="color:#FCA5A5">Superficial ToT</span>
+          <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Weak moat</span>
+        </div>
+        <p class="text-[13px] text-slate-200 mb-3">CKD/SKD assembly · no source code · no materials recipe · no critical process IP.</p>
+        <div class="text-[12px] text-dim border-t hairline pt-3">
+          What to verify: import-content %, dependency on foreign OEM for variants, exit-clause economics.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Company exposure -->
+  <div class="mb-10">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <div class="section-title">How exposure splits across listed names</div>
+        <h2 class="text-xl font-semibold mt-1">Different supply-chain risks · different valuation lens</h2>
+      </div>
+    </div>
+
+    <div class="space-y-3">
+
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-3">
+            <h4 class="font-semibold text-white">HAL</h4>
+            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Aerospace prime</span>
+          </div>
+          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
+            Most exposed to <strong class="text-warn">engine</strong> and imported aerospace subsystem dependence.
+          </div>
+          <div class="col-span-12 md:col-span-2 text-right">
+            <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Highest exposure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-3">
+            <h4 class="font-semibold text-white">BEL · Data Patterns · Astra · Centum · DCX</h4>
+            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Electronics group</span>
+          </div>
+          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
+            Exposed to <strong class="text-warn">semiconductor / RF / imported electronic component</strong> lead times. Single supply shock can move multiple programmes.
+          </div>
+          <div class="col-span-12 md:col-span-2 text-right">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Lead-time risk</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-3">
+            <h4 class="font-semibold text-white">BDL</h4>
+            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Missiles</span>
+          </div>
+          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
+            Exposed to <strong class="text-warn">seeker</strong> and critical missile subsystem localization timelines.
+          </div>
+          <div class="col-span-12 md:col-span-2 text-right">
+            <span class="pill warn !text-[10px] !py-0 !px-2">Subsystem risk</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-3">
+            <h4 class="font-semibold text-white">Shipyards (MDL · GRSE · CSL)</h4>
+            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Naval</span>
+          </div>
+          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
+            Exposed to <strong class="text-goldsoft">propulsion · combat systems · long-lead imported equipment</strong>.
+          </div>
+          <div class="col-span-12 md:col-span-2 text-right">
+            <span class="pill gold !text-[10px] !py-0 !px-2">Long-lead risk</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
+        <div class="grid grid-cols-12 gap-4 items-center">
+          <div class="col-span-12 md:col-span-3">
+            <h4 class="font-semibold text-white">ideaForge · Zen · Paras</h4>
+            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Drones / sensors</span>
+          </div>
+          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
+            Exposed to <strong class="text-warn">fast-moving electronics &amp; sensor supply chains</strong> plus product-obsolescence risk.
+          </div>
+          <div class="col-span-12 md:col-span-2 text-right">
+            <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Obsolescence + lead-time</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Investor takeaway -->
+  <div class="panel p-6 mb-10" style="background:linear-gradient(180deg, rgba(48,36,16,0.4) 0%, rgba(17,28,51,0.85) 60%);border-color:#3A2C12;">
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-10 h-10 rounded-md flex items-center justify-center" style="background:#E8B339">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-ink" fill="currentColor">
+          <path d="M11 3h2v10h-2zM11 15h2v2h-2zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="section-title" style="color:#F5D27A">Investor takeaway</div>
+        <p class="text-[14.5px] text-slate-100 mt-2 leading-relaxed">
+          Treat ToT announcements <strong class="text-goldsoft">cautiously</strong> unless they include real
+          process know-how, source access, or rising local content. Watch imported bottlenecks &mdash; especially
+          <strong class="text-goldsoft">engines, seekers, RF chips, detectors, and propulsion</strong> &mdash;
+          as these can delay execution and compress margins. The dependency map is also a <em class="not-italic">margin-expansion map</em>:
+          where India localises real high-value content, primes and electronics players can re-rate.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer source bar -->
+  <div class="panel p-4 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+    <div class="text-[12px] text-dim">
+      Sources: <span class="text-slate-200">MoD Annual Report</span> ·
+      <span class="text-slate-200">Company ARs</span> ·
+      <span class="text-slate-200">DAP</span> ·
+      <span class="text-slate-200">DRDO official</span> ·
+      <span class="text-slate-200">Secondary context</span>.
+    </div>
+    <div class="text-[11px] text-dim">
+      Severity tiers (High / Meaningful / Partial) and exposure framing follow the PDF&rsquo;s dependency tables.
+    </div>
+  </div>
+
+</section>
+
 <!-- ============ Placeholder sections (inactive tabs) ============ -->
 <template id="tpl-placeholder">
   <section class="fade-in">
@@ -2964,6 +3346,7 @@
     procurement:  document.getElementById('tab-procurement'),
     valuechain:   document.getElementById('tab-valuechain'),
     companies:    document.getElementById('tab-companies'),
+    supply:       document.getElementById('tab-supply'),
   };
   tabs.forEach(t => {
     t.addEventListener('click', () => {
