@@ -2529,39 +2529,16 @@
     </div>
   </div>
 
-  <!-- Investor-label summary classification (PDF "Practical classification of listed names") -->
+  <!-- Investor-label coverage matrix -->
   <div class="mb-8">
-    <div class="section-title mb-3">Practical classification of listed names</div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-      <div class="panel p-4">
-        <div class="text-[11px] uppercase tracking-wider text-positive mb-2">Platform winner</div>
-        <div class="text-[12.5px] text-slate-200">HAL · MDL · GRSE</div>
+    <div class="flex items-end justify-between mb-3">
+      <div>
+        <div class="section-title">Practical classification of listed names</div>
+        <div class="text-[12px] text-dim mt-1">Each column is an investor label · each filled dot = the name fits that lens.</div>
       </div>
-      <div class="panel p-4">
-        <div class="text-[11px] uppercase tracking-wider text-cyansoft mb-2">Electronics proxy</div>
-        <div class="text-[12.5px] text-slate-200">BEL · Data Patterns</div>
-      </div>
-      <div class="panel p-4">
-        <div class="text-[11px] uppercase tracking-wider text-cyansoft mb-2">Subsystem enabler</div>
-        <div class="text-[12.5px] text-slate-200">Astra · Data Patterns · Centum · MTAR · MIDHANI</div>
-      </div>
-      <div class="panel p-4">
-        <div class="text-[11px] uppercase tracking-wider text-positive mb-2">Execution compounder</div>
-        <div class="text-[12.5px] text-slate-200">BEL · GRSE · Solar · Cyient DLM</div>
-      </div>
-      <div class="panel p-4">
-        <div class="text-[11px] uppercase tracking-wider text-goldsoft mb-2">Export optionality play</div>
-        <div class="text-[12.5px] text-slate-200">Zen · Paras · BDL · some shipyards</div>
-      </div>
-      <div class="panel p-4">
-        <div class="text-[11px] uppercase tracking-wider text-goldsoft mb-2">Policy beneficiary</div>
-        <div class="text-[12.5px] text-slate-200">BDL · BEML · ideaForge · Bharat Forge</div>
-      </div>
-      <div class="panel p-4 md:col-span-2">
-        <div class="text-[11px] uppercase tracking-wider text-warn mb-2">Valuation trap risk</div>
-        <div class="text-[12.5px] text-slate-200">Hype-heavy drone or &ldquo;defence exposure&rdquo; names where procurement scale, repeat orders, or cash conversion are not yet proven.</div>
-      </div>
+      <div class="text-[10.5px] text-dim hidden md:block">Multi-label names span more than one bucket.</div>
     </div>
+    <div id="labelMatrix" class="panel overflow-x-auto"></div>
   </div>
 
   <!-- Filter / search bar -->
@@ -2969,41 +2946,56 @@
       <span class="src-tag hidden md:block">DAP · Company AR · DRDO</span>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Spectrum bar -->
+    <div class="panel p-6">
+      <div class="flex items-center justify-between mb-3">
+        <span class="pill pos !text-[10px] !py-0 !px-2">◀ Strongest moat</span>
+        <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Weakest moat ▶</span>
+      </div>
 
-      <div class="panel p-6 panel-hover transition" style="border-left:4px solid #3DD68C;">
-        <div class="flex items-center justify-between mb-2">
-          <span class="kpi-value text-lg text-positive">Real ToT</span>
-          <span class="pill pos !text-[10px] !py-0 !px-2">Better long-term moat</span>
-        </div>
-        <p class="text-[13px] text-slate-200 mb-3">Process transfer · local vendor ecosystem build-out · increasing local content · production learning.</p>
-        <div class="text-[12px] text-dim border-t hairline pt-3">
-          What to verify: process documentation, materials recipe, qualification protocols, second-source enablement.
+      <!-- The gradient bar -->
+      <div class="relative h-16 rounded-lg overflow-hidden border hairline"
+           style="background:linear-gradient(90deg, #3DD68C 0%, #3DD68C 28%, #E8B339 38%, #E8B339 62%, #EF4444 72%, #EF4444 100%);">
+        <!-- Three labels overlaid -->
+        <div class="absolute inset-0 grid grid-cols-3 text-center">
+          <div class="flex flex-col items-center justify-center text-ink">
+            <div class="font-semibold text-[14px]">Real ToT</div>
+            <div class="text-[10.5px] opacity-80">Better long-term moat</div>
+          </div>
+          <div class="flex flex-col items-center justify-center text-ink">
+            <div class="font-semibold text-[14px]">Partial ToT</div>
+            <div class="text-[10.5px] opacity-80">Useful but limited</div>
+          </div>
+          <div class="flex flex-col items-center justify-center text-ink">
+            <div class="font-semibold text-[14px]">Superficial ToT</div>
+            <div class="text-[10.5px] opacity-80">Weak moat</div>
+          </div>
         </div>
       </div>
 
-      <div class="panel p-6 panel-hover transition" style="border-left:4px solid #E8B339;">
-        <div class="flex items-center justify-between mb-2">
-          <span class="kpi-value text-lg text-goldsoft">Partial ToT</span>
-          <span class="pill gold !text-[10px] !py-0 !px-2">Useful but limited</span>
+      <!-- What it means + what to verify · 3 aligned columns under the bar -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+        <div class="rounded-lg border hairline p-4" style="border-color:#0e3d27;background:rgba(14,61,39,0.18);">
+          <div class="text-[10px] uppercase tracking-wider text-positive mb-1">What it means</div>
+          <p class="text-[12.5px] text-slate-200 mb-3">Process transfer · local vendor ecosystem build-out · increasing local content · production learning.</p>
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1 pt-3 border-t hairline">Verify</div>
+          <p class="text-[11.5px] text-dim">Process documentation · materials recipe · qualification protocols · second-source enablement.</p>
         </div>
-        <p class="text-[13px] text-slate-200 mb-3">Assembly plus some manufacturing know-how, but no core design control.</p>
-        <div class="text-[12px] text-dim border-t hairline pt-3">
-          What to verify: who owns the BoM, IP for design changes, who certifies new variants.
+
+        <div class="rounded-lg border hairline p-4" style="border-color:#3A2C12;background:rgba(48,36,16,0.18);">
+          <div class="text-[10px] uppercase tracking-wider text-goldsoft mb-1">What it means</div>
+          <p class="text-[12.5px] text-slate-200 mb-3">Assembly plus some manufacturing know-how, but no core design control.</p>
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1 pt-3 border-t hairline">Verify</div>
+          <p class="text-[11.5px] text-dim">Who owns the BoM · IP for design changes · who certifies new variants.</p>
+        </div>
+
+        <div class="rounded-lg border hairline p-4" style="border-color:#7F1D1D;background:rgba(239,68,68,0.10);">
+          <div class="text-[10px] uppercase tracking-wider mb-1" style="color:#FCA5A5">What it means</div>
+          <p class="text-[12.5px] text-slate-200 mb-3">CKD/SKD assembly · no source code · no materials recipe · no critical process IP.</p>
+          <div class="text-[10px] uppercase tracking-wider text-dim mb-1 pt-3 border-t hairline">Verify</div>
+          <p class="text-[11.5px] text-dim">Import-content % · dependency on foreign OEM for variants · exit-clause economics.</p>
         </div>
       </div>
-
-      <div class="panel p-6 panel-hover transition" style="border-left:4px solid #EF4444;">
-        <div class="flex items-center justify-between mb-2">
-          <span class="kpi-value text-lg" style="color:#FCA5A5">Superficial ToT</span>
-          <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Weak moat</span>
-        </div>
-        <p class="text-[13px] text-slate-200 mb-3">CKD/SKD assembly · no source code · no materials recipe · no critical process IP.</p>
-        <div class="text-[12px] text-dim border-t hairline pt-3">
-          What to verify: import-content %, dependency on foreign OEM for variants, exit-clause economics.
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -4173,159 +4165,8 @@
       <span class="src-tag hidden md:block">PDF Section 12</span>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">01</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Order announcement ≠ revenue</div>
-            <div class="text-[12px] text-dim mt-1">Defence orders convert over years.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">02</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Ignoring procurement category</div>
-            <div class="text-[12px] text-dim mt-1">Category determines domestic value-add and eligibility.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">03</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Treating defence as one basket</div>
-            <div class="text-[12px] text-dim mt-1">Business models differ sharply across buckets.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">04</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Overvaluing ToT headlines</div>
-            <div class="text-[12px] text-dim mt-1">Many ToT deals do not transfer core IP.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">05</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Not checking domestic content</div>
-            <div class="text-[12px] text-dim mt-1">&ldquo;Indian&rdquo; can still mean imported high-value content.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">06</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Ignoring testing &amp; certification</div>
-            <div class="text-[12px] text-dim mt-1">Can delay revenue and cash flow materially.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">07</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Underestimating receivables &amp; milestone billing</div>
-            <div class="text-[12px] text-dim mt-1">PAT can look fine while cash flow weakens.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">08</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Assuming exports are easy</div>
-            <div class="text-[12px] text-dim mt-1">Export clearance and customer funding matter.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">09</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Ignoring programme concentration</div>
-            <div class="text-[12px] text-dim mt-1">One delayed programme can hit the whole year.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">10</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">PSU dominance ≠ shareholder value</div>
-            <div class="text-[12px] text-dim mt-1">Strategic importance does not guarantee best returns.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">11</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Ignoring drone / electronics obsolescence</div>
-            <div class="text-[12px] text-dim mt-1">Product cycles can be short.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">12</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Gross order book without execution filter</div>
-            <div class="text-[12px] text-dim mt-1">Inflates visibility · use executable OB instead.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">13</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Ignoring vendor ecosystem weakness</div>
-            <div class="text-[12px] text-dim mt-1">Prime execution depends on lower tiers.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #F59E0B;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#F59E0B">14</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Treating emergency procurement as structural</div>
-            <div class="text-[12px] text-dim mt-1">Can create false extrapolation.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-4 panel-hover transition" style="border-left:3px solid #EF4444;">
-        <div class="flex items-start gap-3">
-          <span class="shrink-0 w-6 h-6 rounded-md flex items-center justify-center font-mono text-[11px] text-ink" style="background:#EF4444">15</span>
-          <div>
-            <div class="text-[13px] font-semibold text-white">Paying peak multiples for policy headlines</div>
-            <div class="text-[12px] text-dim mt-1">Valuation trap risk is high.</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <!-- Severity treemap (categorised) -->
+    <div id="redflagTreemap" class="panel p-5"></div>
   </div>
 
   <!-- 20 Diligence questions -->
@@ -5477,6 +5318,165 @@
 
   renderCmpPicker();
   renderCmpResult();
+
+  // ===== Investor-label coverage matrix (Companies tab) =====
+  function renderLabelMatrix() {
+    const host = document.getElementById('labelMatrix');
+    if (!host) return;
+    const labelOrder = [
+      'platform-winner',
+      'electronics-proxy',
+      'subsystem-enabler',
+      'execution-compounder',
+      'export-optionality',
+      'policy-beneficiary',
+      'valuation-trap',
+    ];
+    const labelColor = {
+      'platform-winner':      '#3DD68C',
+      'electronics-proxy':    '#4CC9F0',
+      'subsystem-enabler':    '#93E1FA',
+      'execution-compounder': '#3DD68C',
+      'export-optionality':   '#E8B339',
+      'policy-beneficiary':   '#F5D27A',
+      'valuation-trap':       '#EF4444',
+    };
+    const sorted = [...companies].sort((a, b) => a.name.localeCompare(b.name));
+
+    const headerCells = labelOrder.map(l => {
+      const m = labelMeta[l] || { txt: l };
+      return `<th class="px-2 py-3 text-center align-bottom font-medium text-[10px] uppercase tracking-wider"
+                  style="color:${labelColor[l]};min-width:90px;">
+                ${m.txt.replace(/ /g, '<br>')}
+              </th>`;
+    }).join('');
+
+    const rows = sorted.map(c => {
+      const cells = labelOrder.map(l => {
+        const has = c.labels.includes(l);
+        if (has) {
+          const col = labelColor[l];
+          return `<td class="px-2 py-2 text-center"><span class="inline-block w-3 h-3 rounded-full"
+                    style="background:${col};box-shadow:0 0 0 2px ${col}33;"></span></td>`;
+        }
+        return `<td class="px-2 py-2 text-center"><span class="inline-block w-1.5 h-1.5 rounded-full bg-border opacity-40"></span></td>`;
+      }).join('');
+      const labelCount = c.labels.length;
+      const countPill = labelCount > 1
+        ? `<span class="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-mono"
+                  style="background:rgba(232,179,57,0.18);color:#F5D27A;">${labelCount}</span>` : '';
+      return `<tr class="hover:bg-panel2/30 transition border-t hairline">
+        <td class="px-3 py-2 text-[12.5px] font-medium text-white whitespace-nowrap">
+          ${c.name}${countPill}
+        </td>
+        ${cells}
+      </tr>`;
+    }).join('');
+
+    host.innerHTML = `
+      <div class="min-w-[760px]">
+        <table class="w-full text-[12.5px]">
+          <thead class="bg-panel2/40">
+            <tr>
+              <th class="px-3 py-3 text-left text-[10px] uppercase tracking-wider text-dim font-medium" style="min-width:170px;">Company</th>
+              ${headerCells}
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <div class="flex items-center gap-3 px-3 py-3 border-t hairline text-[11px]">
+          <span class="text-dim uppercase tracking-wider text-[10px]">Legend:</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-positive"></span>fits</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-border opacity-40"></span>doesn&rsquo;t fit</span>
+          <span class="flex items-center gap-1.5 ml-2"><span class="inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-mono" style="background:rgba(232,179,57,0.18);color:#F5D27A;">N</span>= multi-label name</span>
+          <span class="text-dim ml-auto hidden md:inline">Sorted A→Z. Source: PDF Section 13 classification.</span>
+        </div>
+      </div>
+    `;
+  }
+  renderLabelMatrix();
+
+  // ===== Red-flag severity treemap (Diligence tab) =====
+  const redFlags = [
+    { n: '01', sev: 'high', cat: 'cash',  title: 'Order announcement ≠ revenue',          why: 'Defence orders convert over years.' },
+    { n: '02', sev: 'high', cat: 'frame', title: 'Ignoring procurement category',          why: 'Category determines value-add and eligibility.' },
+    { n: '03', sev: 'high', cat: 'frame', title: 'Treating defence as one basket',         why: 'Business models differ sharply across buckets.' },
+    { n: '04', sev: 'mid',  cat: 'indig', title: 'Overvaluing ToT headlines',              why: 'Many ToT deals do not transfer core IP.' },
+    { n: '05', sev: 'mid',  cat: 'indig', title: 'Not checking domestic content',          why: '“Indian” can still mean imported high-value content.' },
+    { n: '06', sev: 'mid',  cat: 'exec',  title: 'Ignoring testing & certification',       why: 'Can delay revenue and cash flow materially.' },
+    { n: '07', sev: 'high', cat: 'cash',  title: 'Underestimating receivables & milestone billing', why: 'PAT can look fine while cash flow weakens.' },
+    { n: '08', sev: 'mid',  cat: 'cash',  title: 'Assuming exports are easy',              why: 'Export clearance and customer funding matter.' },
+    { n: '09', sev: 'high', cat: 'cash',  title: 'Ignoring programme concentration',       why: 'One delayed programme can hit the whole year.' },
+    { n: '10', sev: 'mid',  cat: 'frame', title: 'PSU dominance ≠ shareholder value',      why: 'Strategic importance ≠ best returns.' },
+    { n: '11', sev: 'high', cat: 'exec',  title: 'Ignoring drone / electronics obsolescence', why: 'Product cycles can be short.' },
+    { n: '12', sev: 'high', cat: 'cash',  title: 'Gross order book without execution filter', why: 'Inflates visibility — use executable OB.' },
+    { n: '13', sev: 'mid',  cat: 'exec',  title: 'Ignoring vendor ecosystem weakness',     why: 'Prime execution depends on lower tiers.' },
+    { n: '14', sev: 'mid',  cat: 'frame', title: 'Treating emergency procurement as structural', why: 'Can create false extrapolation.' },
+    { n: '15', sev: 'high', cat: 'frame', title: 'Paying peak multiples for policy headlines', why: 'Valuation trap risk is high.' },
+  ];
+
+  const catMeta = {
+    cash:  { label: 'Revenue · cash · conversion',     accent: '#EF4444', tint: 'rgba(239,68,68,0.14)',  border: '#7F1D1D', text: '#FCA5A5' },
+    frame: { label: 'Strategy · framing · valuation',  accent: '#E8B339', tint: 'rgba(232,179,57,0.14)', border: '#3A2C12', text: '#F5D27A' },
+    indig: { label: 'Indigenisation & IP',             accent: '#4CC9F0', tint: 'rgba(76,201,240,0.14)', border: '#143142', text: '#93E1FA' },
+    exec:  { label: 'Execution & lifecycle',           accent: '#F59E0B', tint: 'rgba(245,158,11,0.14)', border: '#92400E', text: '#FCD34D' },
+  };
+
+  function renderRedFlagTreemap() {
+    const host = document.getElementById('redflagTreemap');
+    if (!host) return;
+
+    // Group by category (preserves order within category)
+    const groups = {};
+    Object.keys(catMeta).forEach(k => groups[k] = []);
+    redFlags.forEach(rf => groups[rf.cat].push(rf));
+
+    const sections = Object.entries(groups).map(([key, items]) => {
+      const m = catMeta[key];
+      const highCount = items.filter(x => x.sev === 'high').length;
+      const tiles = items.map(rf => {
+        const isHigh = rf.sev === 'high';
+        const colSpan = isHigh ? 'col-span-2' : 'col-span-1';
+        const sevPill = isHigh
+          ? `<span class="text-[9px] uppercase tracking-wider font-mono px-1.5 py-0.5 rounded" style="background:${m.accent};color:#0E1628;">High</span>`
+          : `<span class="text-[9px] uppercase tracking-wider font-mono px-1.5 py-0.5 rounded" style="background:rgba(255,255,255,0.08);color:${m.text};">Mid</span>`;
+        return `
+          <div class="${colSpan} rounded-md p-3 panel-hover transition flex flex-col"
+               style="background:${m.tint};border:1px solid ${m.border};${isHigh ? 'border-left:3px solid '+m.accent+';' : ''}"
+               title="${rf.why.replace(/"/g, '&quot;')}">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-[10px]" style="color:${m.text};">#${rf.n}</span>
+              ${sevPill}
+            </div>
+            <div class="text-[12.5px] font-semibold text-white leading-tight mb-1">${rf.title}</div>
+            <div class="text-[11px] text-dim mt-auto">${rf.why}</div>
+          </div>`;
+      }).join('');
+
+      return `
+        <div class="mb-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-block w-2 h-2 rounded-sm" style="background:${m.accent};"></span>
+            <span class="text-[11px] uppercase tracking-wider font-medium" style="color:${m.text};">${m.label}</span>
+            <span class="text-[10.5px] text-dim">${items.length} flags · ${highCount} high-severity</span>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 auto-rows-fr" style="grid-auto-flow:dense;">
+            ${tiles}
+          </div>
+        </div>`;
+    }).join('');
+
+    host.innerHTML = `
+      ${sections}
+      <div class="flex flex-wrap items-center gap-3 pt-3 border-t hairline text-[11px] mt-2">
+        <span class="text-dim uppercase tracking-wider text-[10px]">Read:</span>
+        <span class="text-slate-300">Tile width = severity (wide = high · narrow = mid).</span>
+        <span class="text-slate-300">Tile colour = category cluster.</span>
+        <span class="text-dim ml-auto hidden md:inline">Hover any tile for the why-it&rsquo;s-dangerous one-liner.</span>
+      </div>
+    `;
+  }
+  renderRedFlagTreemap();
 </script>
 </body>
 </html>
