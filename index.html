@@ -182,63 +182,152 @@
     </div>
   </div>
 
-  <!-- KPI ribbon -->
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
-    <!-- KPI 1 -->
-    <div class="panel p-4 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">MoD allocation</div>
-      <div class="kpi-value text-2xl mt-1 text-white">₹6.81<span class="text-dim text-sm ml-0.5">L Cr</span></div>
-      <div class="mt-1 flex items-center gap-1.5">
-        <span class="text-positive text-xs font-semibold">▲ 9.53%</span>
-        <span class="text-[11px] text-dim">YoY · FY25-26</span>
+  <!-- Hero stat strip · sector at a glance -->
+  <div class="panel p-6 mb-6">
+    <div class="flex flex-wrap items-end justify-between gap-3 mb-4">
+      <div>
+        <div class="section-title">FY25-26 MoD Allocation</div>
+        <div class="flex items-baseline gap-3 mt-1">
+          <span class="kpi-value text-4xl text-white">₹6,81,210<span class="text-dim text-base ml-1">Cr</span></span>
+          <span class="pill pos !text-[11px] !py-1 !px-2.5">▲ 9.53% YoY</span>
+        </div>
       </div>
-      <div class="src-tag mt-2">Union Budget / PIB</div>
+      <div class="text-[11px] text-dim text-right">
+        <div>≈ ₹6.81 L Cr · Union Budget / PIB</div>
+        <div>FY24-25 → FY25-26</div>
+      </div>
     </div>
-    <!-- KPI 2 -->
-    <div class="panel p-4 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">Capital outlay</div>
-      <div class="kpi-value text-2xl mt-1 text-white">₹1.49<span class="text-dim text-sm ml-0.5">L Cr</span></div>
-      <div class="mt-1 flex items-center gap-1.5">
-        <span class="pill gold !py-0 !px-2 !text-[10px]">Procurement driver</span>
+
+    <!-- Annotated stacked bar -->
+    <div class="relative">
+      <div class="flex h-10 rounded-md overflow-hidden border hairline">
+        <div class="flex items-center justify-center text-[12px] font-semibold text-ink"
+             style="width:21.85%;background:#E8B339;">
+          <span class="hidden md:inline">Capital · 21.85%</span>
+          <span class="md:hidden">21.85%</span>
+        </div>
+        <div class="flex items-center justify-center text-[12px] font-semibold text-ink"
+             style="width:3.94%;background:#4CC9F0;">
+          <span class="hidden md:inline">3.94%</span>
+        </div>
+        <div class="flex items-center justify-center text-[12px] font-semibold text-slate-200"
+             style="width:74.21%;background:#2A3C63;">
+          <span class="hidden md:inline">Revenue / pensions / other · 74.21%</span>
+          <span class="md:hidden">74.21%</span>
+        </div>
       </div>
-      <div class="src-tag mt-2">Defence Services BE · FY25-26</div>
+
+      <!-- Callouts beneath bar -->
+      <div class="grid grid-cols-3 gap-2 mt-3 text-[11.5px]">
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-sm" style="background:#E8B339"></span>
+            <span class="font-semibold text-white">Capital outlay</span>
+          </div>
+          <div class="font-mono text-white mt-0.5">₹1,48,839 Cr</div>
+          <div class="text-dim">Drives procurement</div>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-sm" style="background:#4CC9F0"></span>
+            <span class="font-semibold text-white">DRDO</span>
+            <span class="pill pos !text-[9px] !py-0 !px-1.5 ml-auto">▲ 12.41%</span>
+          </div>
+          <div class="font-mono text-white mt-0.5">₹26,817 Cr</div>
+          <div class="text-dim">Indigenous R&amp;D</div>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-sm" style="background:#2A3C63"></span>
+            <span class="font-semibold text-white">Revenue / other</span>
+          </div>
+          <div class="font-mono text-white mt-0.5">₹5,05,554 Cr</div>
+          <div class="text-dim">Salaries · stores · pensions</div>
+        </div>
+      </div>
     </div>
-    <!-- KPI 3 -->
-    <div class="panel p-4 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">DRDO allocation</div>
-      <div class="kpi-value text-2xl mt-1 text-white">₹26,817<span class="text-dim text-sm ml-0.5">Cr</span></div>
-      <div class="mt-1 flex items-center gap-1.5">
-        <span class="text-positive text-xs font-semibold">▲ 12.41%</span>
-        <span class="text-[11px] text-dim">YoY · FY25-26</span>
+  </div>
+
+  <!-- Pipeline tiles row -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-10">
+    <!-- SRIJAN ring/progress -->
+    <div class="panel p-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="text-[11px] text-dim uppercase tracking-wider">SRIJAN indigenisation</div>
+        <span class="src-tag">DDP · Feb 2025</span>
       </div>
-      <div class="src-tag mt-2">Union Budget / PIB</div>
+      <div class="flex items-center gap-4">
+        <div class="relative w-16 h-16 shrink-0">
+          <svg viewBox="0 0 36 36" class="w-16 h-16 -rotate-90">
+            <circle cx="18" cy="18" r="15.915" fill="none" stroke="#1E2B47" stroke-width="3"/>
+            <circle cx="18" cy="18" r="15.915" fill="none" stroke="#E8B339" stroke-width="3"
+                    stroke-dasharray="36.84 100" stroke-linecap="round"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="kpi-value text-base text-white">37%</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-white text-lg leading-tight">14,000<span class="text-dim text-sm">+</span></div>
+          <div class="text-[11.5px] text-dim">indigenised</div>
+          <div class="text-[11px] text-dim mt-1">of 38,000+ items listed</div>
+        </div>
+      </div>
     </div>
-    <!-- KPI 4 -->
-    <div class="panel p-4 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">SRIJAN indigenised</div>
-      <div class="kpi-value text-2xl mt-1 text-white">14,000<span class="text-dim text-sm ml-0.5">+</span></div>
-      <div class="mt-1 flex items-center gap-1.5">
-        <span class="text-cyansoft text-xs">of 38,000+ items listed</span>
+
+    <!-- iDEX micro-bar -->
+    <div class="panel p-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="text-[11px] text-dim uppercase tracking-wider">iDEX innovation pipeline</div>
+        <span class="src-tag">iDEX / DIO</span>
       </div>
-      <div class="src-tag mt-2">DDP / PIB · Feb 2025</div>
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div>
+          <div class="kpi-value text-xl text-white">549</div>
+          <div class="text-[10.5px] text-dim mt-0.5">problems</div>
+        </div>
+        <div>
+          <div class="kpi-value text-xl text-cyansoft">619</div>
+          <div class="text-[10.5px] text-dim mt-0.5">startups</div>
+        </div>
+        <div>
+          <div class="kpi-value text-xl text-positive">430</div>
+          <div class="text-[10.5px] text-dim mt-0.5">contracts</div>
+        </div>
+      </div>
+      <!-- Funnel bar -->
+      <div class="flex items-center gap-1 mt-3">
+        <div class="h-1.5 rounded-full" style="width:100%;background:#2A3C63;"></div>
+      </div>
+      <div class="flex items-center gap-1 mt-1">
+        <div class="h-1.5 rounded-full" style="width:78%;background:#4CC9F0;"></div>
+      </div>
+      <div class="flex items-center gap-1 mt-1">
+        <div class="h-1.5 rounded-full" style="width:54%;background:#3DD68C;"></div>
+      </div>
     </div>
-    <!-- KPI 5 -->
-    <div class="panel p-4 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">iDEX contracts</div>
-      <div class="kpi-value text-2xl mt-1 text-white">430</div>
-      <div class="mt-1 flex items-center gap-1.5">
-        <span class="text-[11px] text-dim">619 startups · 549 problems</span>
+
+    <!-- FDI gauge -->
+    <div class="panel p-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="text-[11px] text-dim uppercase tracking-wider">FDI ceiling</div>
+        <span class="src-tag">DDP / PIB</span>
       </div>
-      <div class="src-tag mt-2">iDEX / DIO · Feb 2025</div>
-    </div>
-    <!-- KPI 6 -->
-    <div class="panel p-4 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">FDI ceiling</div>
-      <div class="kpi-value text-2xl mt-1 text-white">74<span class="text-dim text-sm">%</span></div>
-      <div class="mt-1 flex items-center gap-1.5">
-        <span class="text-[11px] text-dim">automatic · up to 100% via govt route</span>
+      <div class="flex items-end justify-between gap-3 mb-2">
+        <div>
+          <div class="kpi-value text-2xl text-white">74<span class="text-dim text-sm">%</span></div>
+          <div class="text-[11.5px] text-goldsoft">automatic route</div>
+        </div>
+        <div class="text-right">
+          <div class="kpi-value text-2xl text-cyansoft">100<span class="text-dim text-sm">%</span></div>
+          <div class="text-[11.5px] text-dim">via govt route</div>
+        </div>
       </div>
-      <div class="src-tag mt-2">DDP / PIB</div>
+      <!-- Stacked bar showing 74 vs 100 -->
+      <div class="relative h-2.5 rounded-full bg-panel2 overflow-hidden">
+        <div class="absolute left-0 top-0 h-full" style="width:74%;background:linear-gradient(90deg,#E8B339,#F5D27A);"></div>
+        <div class="absolute top-0 h-full" style="left:74%;width:26%;background:#4CC9F0;opacity:0.55;"></div>
+      </div>
     </div>
   </div>
 
@@ -501,45 +590,82 @@
     </div>
   </div>
 
-  <!-- KPI strip -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-    <div class="panel p-5 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">Total MoD · FY25-26</div>
-      <div class="kpi-value text-3xl mt-1 text-white">₹6,81,210<span class="text-dim text-sm ml-1">Cr</span></div>
-      <div class="mt-2 flex items-center gap-2">
-        <span class="text-positive text-xs font-semibold">▲ 9.53% YoY</span>
-        <span class="text-[11px] text-dim">≈ ₹6.81 L Cr</span>
+  <!-- Hero composition -->
+  <div class="panel p-6 mb-10">
+    <div class="flex flex-wrap items-end justify-between gap-3 mb-5">
+      <div>
+        <div class="section-title">FY25-26 defence spending</div>
+        <div class="flex items-baseline gap-3 mt-1">
+          <span class="kpi-value text-4xl text-white">₹6,81,210<span class="text-dim text-base ml-1">Cr</span></span>
+          <span class="pill pos !text-[11px] !py-1 !px-2.5">▲ 9.53% YoY</span>
+        </div>
+        <div class="text-[12px] text-dim mt-1">FY24-25 → FY25-26 · Union Budget / PIB</div>
       </div>
-      <div class="src-tag mt-2">Union Budget / PIB</div>
+      <div class="text-[11px] text-dim text-right hidden md:block">
+        Capital outlay drives procurement.<br>
+        DRDO drives R&amp;D.<br>
+        Revenue covers salaries, stores, pensions.
+      </div>
     </div>
 
-    <div class="panel p-5 panel-hover transition" style="border-color:#3A2C12;">
-      <div class="text-[11px] uppercase tracking-wider" style="color:#F5D27A">Capital · Defence Services</div>
-      <div class="kpi-value text-3xl mt-1 text-white">₹1,48,839<span class="text-dim text-sm ml-1">Cr</span></div>
-      <div class="mt-2 flex items-center gap-2">
-        <span class="pill gold !py-0 !px-2 !text-[10px]">21.85% of MoD</span>
+    <!-- Big annotated stacked bar -->
+    <div class="relative">
+      <div class="flex h-16 rounded-md overflow-hidden border hairline">
+        <div class="flex flex-col items-center justify-center text-ink"
+             style="width:21.85%;background:linear-gradient(180deg,#F5D27A,#E8B339);">
+          <div class="font-semibold text-[13px]">Capital</div>
+          <div class="font-mono text-[12px] hidden md:block">₹1,48,839 Cr</div>
+        </div>
+        <div class="flex flex-col items-center justify-center text-ink"
+             style="width:3.94%;background:linear-gradient(180deg,#93E1FA,#4CC9F0);">
+          <div class="font-semibold text-[11px]">DRDO</div>
+        </div>
+        <div class="flex flex-col items-center justify-center text-slate-200"
+             style="width:74.21%;background:linear-gradient(180deg,#2A3C63,#1E2B47);">
+          <div class="font-semibold text-[13px]">Revenue · pensions · other</div>
+          <div class="font-mono text-[12px] text-slate-300 hidden md:block">₹5,05,554 Cr</div>
+        </div>
       </div>
-      <div class="src-tag mt-2">FY25-26 BE · MP-IDSA / Budget docs</div>
+
+      <!-- Tick scale -->
+      <div class="flex justify-between text-[10px] text-dim mt-1.5 px-1">
+        <span>0%</span>
+        <span>25%</span>
+        <span>50%</span>
+        <span>75%</span>
+        <span>100%</span>
+      </div>
     </div>
 
-    <div class="panel p-5 panel-hover transition" style="border-color:#143142;">
-      <div class="text-[11px] uppercase tracking-wider" style="color:#93E1FA">DRDO · FY25-26</div>
-      <div class="kpi-value text-3xl mt-1 text-white">₹26,817<span class="text-dim text-sm ml-1">Cr</span></div>
-      <div class="mt-2 flex items-center gap-2">
-        <span class="text-positive text-xs font-semibold">▲ 12.41% YoY</span>
-        <span class="text-[11px] text-dim">3.94% of MoD</span>
+    <!-- Stat callouts -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5">
+      <div class="rounded-lg border hairline p-3" style="border-color:#3A2C12;background:rgba(48,36,16,0.18);">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] uppercase tracking-wider text-goldsoft">Capital · Defence Services</span>
+          <span class="pill gold !text-[10px] !py-0 !px-1.5">21.85%</span>
+        </div>
+        <div class="kpi-value text-2xl text-white mt-1">₹1,48,839<span class="text-dim text-xs ml-1">Cr</span></div>
+        <div class="text-[11.5px] text-dim mt-0.5">Procurement engine · capex headline</div>
       </div>
-      <div class="src-tag mt-2">Union Budget / PIB</div>
+      <div class="rounded-lg border hairline p-3" style="border-color:#143142;background:rgba(20,49,66,0.18);">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] uppercase tracking-wider text-cyansoft">DRDO</span>
+          <span class="pill pos !text-[10px] !py-0 !px-1.5">▲ 12.41%</span>
+        </div>
+        <div class="kpi-value text-2xl text-white mt-1">₹26,817<span class="text-dim text-xs ml-1">Cr</span></div>
+        <div class="text-[11.5px] text-dim mt-0.5">Indigenous-development intensity · 3.94% of MoD</div>
+      </div>
+      <div class="rounded-lg border hairline p-3">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] uppercase tracking-wider text-dim">Revenue / pensions / other</span>
+          <span class="pill !text-[10px] !py-0 !px-1.5">74.21%</span>
+        </div>
+        <div class="kpi-value text-2xl text-white mt-1">₹5,05,554<span class="text-dim text-xs ml-1">Cr*</span></div>
+        <div class="text-[11.5px] text-dim mt-0.5">*Implied: Total − Capital − DRDO</div>
+      </div>
     </div>
 
-    <div class="panel p-5 panel-hover transition">
-      <div class="text-[11px] text-dim uppercase tracking-wider">Revenue / pensions / other</div>
-      <div class="kpi-value text-3xl mt-1 text-white">₹5,05,554<span class="text-dim text-sm ml-1">Cr*</span></div>
-      <div class="mt-2 flex items-center gap-2">
-        <span class="text-[11px] text-dim">74.21% of MoD · residual</span>
-      </div>
-      <div class="src-tag mt-2">*Implied: Total − Capital − DRDO</div>
-    </div>
+    <p class="src-tag mt-4 pt-3 border-t hairline">Sources: Union Budget / PIB · DRDO official · MP-IDSA budget note citing budget documents.</p>
   </div>
 
   <!-- YoY charts -->
@@ -593,35 +719,6 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- Composition stacked bar -->
-  <div class="panel p-6 mb-10">
-    <div class="flex items-end justify-between mb-4">
-      <div>
-        <div class="section-title">FY25-26 budget composition</div>
-        <h3 class="text-lg font-semibold mt-1">How ₹6.81 L Cr breaks down</h3>
-      </div>
-      <div class="text-[11px] text-dim">Capital outlay (Defence Services) drives procurement; revenue spend covers salaries, maintenance, stores.</div>
-    </div>
-    <div class="relative h-24">
-      <canvas id="budgetComp"></canvas>
-    </div>
-    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-[12.5px]">
-      <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
-        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#E8B339"></span>Capital · Defence Services</span>
-        <span class="font-mono text-white">21.85%</span>
-      </div>
-      <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
-        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#4CC9F0"></span>DRDO</span>
-        <span class="font-mono text-white">3.94%</span>
-      </div>
-      <div class="flex items-center justify-between rounded-md border hairline px-3 py-2">
-        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-sm" style="background:#2A3C63"></span>Revenue / pensions / other</span>
-        <span class="font-mono text-white">74.21%</span>
-      </div>
-    </div>
-    <p class="src-tag mt-3">Sources: Union Budget / PIB · DRDO official · MP-IDSA budget note citing budget documents.</p>
   </div>
 
   <!-- Sector-level metrics tracker -->
@@ -1370,254 +1467,138 @@
       <span class="src-tag hidden md:block">Source: PDF Section 3 · DAP / procurement policy</span>
     </div>
 
-    <!-- Ladder visual -->
-    <div class="relative">
-      <!-- Vertical preference axis label -->
-      <div class="hidden lg:flex absolute -left-1 top-0 bottom-0 flex-col items-center justify-between text-[10px] uppercase tracking-widest text-dim pointer-events-none" style="width:30px;">
-        <span class="rotate-180" style="writing-mode:vertical-rl;color:#F5D27A">Highest preference</span>
-        <span class="rotate-180" style="writing-mode:vertical-rl;color:#8696B5">Lowest preference</span>
+    <!-- Pyramid visual -->
+    <div class="relative panel p-6">
+      <!-- Top label -->
+      <div class="flex items-center justify-between mb-3">
+        <span class="pill gold !text-[10px] !py-0 !px-2">▲ Highest preference</span>
+        <span class="text-[11px] text-dim hidden md:block">Width tapers with DAP preference · color tracks domestic value-add</span>
       </div>
 
-      <div class="space-y-3 lg:ml-10">
+      <!-- The pyramid -->
+      <div class="space-y-1.5">
 
-        <!-- 1. Buy (Indian-IDDM) -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339; background:linear-gradient(90deg, rgba(48,36,16,0.4), rgba(14,22,40,0.9) 35%);">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-goldsoft">01</span>
-                <span class="pill gold !py-0 !px-2 !text-[10px]">Highest preference</span>
-              </div>
-              <h4 class="font-semibold text-white">Buy (Indian-IDDM)</h4>
-              <div class="text-[11px] text-dim mt-0.5">Indigenously Designed, Developed &amp; Manufactured</div>
+        <!-- 1. Buy (Indian-IDDM) - 100% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:100%;background:linear-gradient(90deg, rgba(232,179,57,0.18), rgba(232,179,57,0.32), rgba(232,179,57,0.18));border:1px solid #3A2C12;">
+          <span class="font-mono text-[11px] text-goldsoft shrink-0 w-6">01</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Buy (Indian-IDDM)</span>
+              <span class="text-[11px] text-dim">Indigenously Designed, Developed &amp; Manufactured</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Indigenous design, development and manufacture &mdash; highest preference under DAP.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              Best for domestic IP, local value-add, and stronger moats.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill pos !py-0 !px-2 !text-[10px]">Best</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Best for domestic IP, local value-add, and stronger moats.</div>
           </div>
-          <!-- Domestic content visual -->
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:95%;background:linear-gradient(90deg,#E8B339,#F5D27A)"></div>
-            </div>
-            <span class="font-mono text-goldsoft">Highest</span>
-          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2 shrink-0">Best</span>
         </div>
 
-        <!-- 2. Buy (Indian) -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #D6A733;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-goldsoft">02</span>
-              </div>
-              <h4 class="font-semibold text-white">Buy (Indian)</h4>
-              <div class="text-[11px] text-dim mt-0.5">Indian vendor with content threshold</div>
+        <!-- 2. Buy (Indian) - 92% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:92%;background:linear-gradient(90deg, rgba(214,167,51,0.14), rgba(214,167,51,0.26), rgba(214,167,51,0.14));border:1px solid #3A2C12;">
+          <span class="font-mono text-[11px] text-goldsoft shrink-0 w-6">02</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Buy (Indian)</span>
+              <span class="text-[11px] text-dim">Indian vendor with content threshold</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Indian vendor supplies with a domestic content threshold.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              Good for local assembly/integration players &mdash; <span class="text-white">but check true value-add</span>.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill pos !py-0 !px-2 !text-[10px]">Good</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Good for assembly/integration &mdash; check true value-add.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:75%;background:#D6A733"></div>
-            </div>
-            <span class="font-mono">High</span>
-          </div>
+          <span class="pill pos !text-[10px] !py-0 !px-2 shrink-0">Good</span>
         </div>
 
-        <!-- 3. Buy & Make (Indian) -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #B89230;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-goldsoft">03</span>
-              </div>
-              <h4 class="font-semibold text-white">Buy &amp; Make (Indian)</h4>
-              <div class="text-[11px] text-dim mt-0.5">Indian-led with foreign tech support</div>
+        <!-- 3. Buy & Make (Indian) - 84% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:84%;background:linear-gradient(90deg, rgba(184,146,48,0.12), rgba(184,146,48,0.22), rgba(184,146,48,0.12));border:1px solid #2A3C63;">
+          <span class="font-mono text-[11px] text-goldsoft shrink-0 w-6">03</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Buy &amp; Make (Indian)</span>
+              <span class="text-[11px] text-dim">Indian-led + foreign tech support</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Indian company leads, often with foreign technology support.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              Good for firms with JV/ToT capability; <span class="text-white">localization pace matters</span>.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill !py-0 !px-2 !text-[10px]">Selective</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">JV / ToT route &mdash; localisation pace matters.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:60%;background:#B89230"></div>
-            </div>
-            <span class="font-mono">Mixed</span>
-          </div>
+          <span class="pill !text-[10px] !py-0 !px-2 shrink-0">Selective</span>
         </div>
 
-        <!-- 4. Buy & Make -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #4CC9F0;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-cyansoft">04</span>
-              </div>
-              <h4 class="font-semibold text-white">Buy &amp; Make</h4>
-              <div class="text-[11px] text-dim mt-0.5">Initial import → local manufacture</div>
+        <!-- 4. Buy & Make - 76% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:76%;background:linear-gradient(90deg, rgba(76,201,240,0.10), rgba(76,201,240,0.20), rgba(76,201,240,0.10));border:1px solid #143142;">
+          <span class="font-mono text-[11px] text-cyansoft shrink-0 w-6">04</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Buy &amp; Make</span>
+              <span class="text-[11px] text-dim">Initial import → local manufacture</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Initial import followed by local manufacture.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              Manufacturing opportunity, but <span class="text-white">often with limited IP capture</span>.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill !py-0 !px-2 !text-[10px]">Selective</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Manufacturing opportunity, often limited IP capture.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:45%;background:#4CC9F0"></div>
-            </div>
-            <span class="font-mono">Build-up</span>
-          </div>
+          <span class="pill !text-[10px] !py-0 !px-2 shrink-0">Selective</span>
         </div>
 
-        <!-- 5. Make -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #4CC9F0;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-cyansoft">05</span>
-              </div>
-              <h4 class="font-semibold text-white">Make</h4>
-              <div class="text-[11px] text-dim mt-0.5">Development route</div>
+        <!-- 5. Make - 68% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:68%;background:linear-gradient(90deg, rgba(76,201,240,0.10), rgba(76,201,240,0.18), rgba(76,201,240,0.10));border:1px solid #143142;">
+          <span class="font-mono text-[11px] text-cyansoft shrink-0 w-6">05</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Make</span>
+              <span class="text-[11px] text-dim">Development route</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Development route &mdash; government-supported or industry-funded.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              Important for emerging private players; <span class="text-white">long gestation, uncertain conversion</span>.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill !py-0 !px-2 !text-[10px]">Optionality</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Long gestation, uncertain conversion &mdash; emerging private upside.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:55%;background:#4CC9F0"></div>
-            </div>
-            <span class="font-mono">Targeted</span>
-          </div>
+          <span class="pill !text-[10px] !py-0 !px-2 shrink-0">Optionality</span>
         </div>
 
-        <!-- 6. Strategic Partnership -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #93E1FA;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-cyansoft">06</span>
-              </div>
-              <h4 class="font-semibold text-white">Strategic Partnership</h4>
-              <div class="text-[11px] text-dim mt-0.5">Private prime + foreign OEM</div>
+        <!-- 6. Strategic Partnership - 60% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:60%;background:linear-gradient(90deg, rgba(147,225,250,0.08), rgba(147,225,250,0.16), rgba(147,225,250,0.08));border:1px solid #143142;">
+          <span class="font-mono text-[11px] text-cyansoft shrink-0 w-6">06</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Strategic Partnership</span>
+              <span class="text-[11px] text-dim">Private prime + foreign OEM</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Private Indian strategic partner with a foreign OEM in selected segments.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              <span class="text-white">Potentially transformative</span> but slow and selective.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill !py-0 !px-2 !text-[10px]">Slow</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Potentially transformative but slow and selective.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:50%;background:#93E1FA"></div>
-            </div>
-            <span class="font-mono">Negotiated</span>
-          </div>
+          <span class="pill !text-[10px] !py-0 !px-2 shrink-0">Slow</span>
         </div>
 
-        <!-- 7. Leasing -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #8696B5;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px] text-dim">07</span>
-              </div>
-              <h4 class="font-semibold text-white">Leasing</h4>
-              <div class="text-[11px] text-dim mt-0.5">Capability access without buy</div>
+        <!-- 7. Leasing - 52% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:52%;background:linear-gradient(90deg, rgba(134,150,181,0.08), rgba(134,150,181,0.18), rgba(134,150,181,0.08));border:1px solid #1E2B47;">
+          <span class="font-mono text-[11px] text-dim shrink-0 w-6">07</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Leasing</span>
+              <span class="text-[11px] text-dim">Capability access without buy</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Capability access without outright purchase.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              Useful operationally, but <span class="text-white">lower manufacturing opportunity</span>.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill muted !py-0 !px-2 !text-[10px]">Limited</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Useful operationally · low manufacturing opportunity.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:15%;background:#8696B5"></div>
-            </div>
-            <span class="font-mono">Minimal</span>
-          </div>
+          <span class="pill muted !text-[10px] !py-0 !px-2 shrink-0">Limited</span>
         </div>
 
-        <!-- 8. Buy (Global) -->
-        <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
-          <div class="grid grid-cols-12 gap-4 items-center">
-            <div class="col-span-12 md:col-span-3">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-[11px]" style="color:#F87171">08</span>
-                <span class="pill warn !py-0 !px-2 !text-[10px]">Lowest preference</span>
-              </div>
-              <h4 class="font-semibold text-white">Buy (Global)</h4>
-              <div class="text-[11px] text-dim mt-0.5">Direct import</div>
+        <!-- 8. Buy (Global) - 44% -->
+        <div class="mx-auto rounded-md flex items-center gap-3 px-4 py-3 panel-hover transition"
+             style="width:44%;background:linear-gradient(90deg, rgba(239,68,68,0.10), rgba(239,68,68,0.22), rgba(239,68,68,0.10));border:1px solid #7F1D1D;">
+          <span class="font-mono text-[11px] shrink-0 w-6" style="color:#F87171">08</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-semibold text-white text-[13.5px]">Buy (Global)</span>
+              <span class="text-[11px] text-dim">Direct import</span>
             </div>
-            <div class="col-span-12 md:col-span-5 text-[12.5px] text-slate-300">
-              Direct import.
-            </div>
-            <div class="col-span-12 md:col-span-3 text-[12.5px] text-slate-300">
-              <span class="text-white">Weakest</span> direct opportunity for domestic listed names &mdash; except offsets / JV spillover.
-            </div>
-            <div class="col-span-12 md:col-span-1 flex md:justify-end">
-              <span class="pill warn !py-0 !px-2 !text-[10px]">Weakest</span>
-            </div>
+            <div class="text-[12px] text-slate-300 mt-0.5 hidden md:block">Weakest direct play for domestic names · offsets / JV spillover only.</div>
           </div>
-          <div class="mt-3 flex items-center gap-2 text-[10px] text-dim">
-            <span class="uppercase tracking-wider">Domestic content</span>
-            <div class="flex-1 h-1.5 rounded-full bg-panel2 overflow-hidden">
-              <div class="h-full" style="width:5%;background:#EF4444"></div>
-            </div>
-            <span class="font-mono" style="color:#F87171">None / offsets only</span>
-          </div>
+          <span class="pill warn !text-[10px] !py-0 !px-2 shrink-0" style="background:rgba(239,68,68,0.18);color:#FCA5A5;border-color:#7F1D1D;">Weakest</span>
         </div>
 
+      </div>
+
+      <!-- Bottom label -->
+      <div class="flex items-center justify-between mt-3">
+        <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">▼ Lowest preference</span>
+        <span class="text-[11px] text-dim hidden md:block">Width &amp; colour are directional. Exact thresholds vary by DAP version.</span>
       </div>
     </div>
-    <p class="src-tag mt-4">Domestic-content bars are a directional visualization based on the qualitative description of each category. Exact thresholds vary by category and policy version (DAP).</p>
+    <p class="src-tag mt-3">Pyramid width and colour shifts are a visual representation of DAP preference order. They are not literal procurement-volume figures.</p>
   </div>
 
   <!-- Domestic content questions + What category determines -->
@@ -2284,55 +2265,103 @@
       <span class="src-tag hidden md:block">PDF Section 4 · Company AR</span>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="panel p-6 panel-hover transition" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.32), rgba(17,28,51,0.85));">
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Pyramid -->
+      <div class="col-span-12 lg:col-span-9 panel p-6">
         <div class="flex items-center justify-between mb-3">
-          <span class="kpi-value text-2xl text-goldsoft">Tier-1</span>
-          <span class="pill gold !py-0 !px-2 !text-[10px]">Best visibility</span>
+          <span class="pill gold !text-[10px] !py-0 !px-2">▲ Few primes · biggest revenue per name</span>
+          <span class="text-[11px] text-dim hidden md:block">Width tracks number of players</span>
         </div>
-        <h4 class="font-semibold text-white mb-2">Prime / system integrator</h4>
-        <div class="flex flex-wrap gap-1.5 mb-3">
-          <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
-          <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
-          <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
-          <span class="pill !text-[10px] !py-0 !px-2">MDL</span>
-          <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
-          <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+
+        <div class="space-y-1.5">
+          <!-- Tier-1 - narrowest top -->
+          <div class="mx-auto rounded-md p-4 panel-hover transition"
+               style="width:50%;background:linear-gradient(180deg, rgba(232,179,57,0.28), rgba(232,179,57,0.12));border:1px solid #3A2C12;border-bottom:2px solid #E8B339;">
+            <div class="flex items-center justify-between gap-2 flex-wrap mb-2">
+              <span class="kpi-value text-lg text-goldsoft">Tier-1</span>
+              <span class="pill gold !py-0 !px-2 !text-[10px]">Best visibility</span>
+            </div>
+            <div class="text-[12.5px] font-semibold text-white">Prime / system integrator</div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="pill !text-[10px] !py-0 !px-2">HAL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BEL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">BDL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">MDL</span>
+              <span class="pill !text-[10px] !py-0 !px-2">GRSE</span>
+              <span class="pill !text-[10px] !py-0 !px-2">CSL</span>
+            </div>
+          </div>
+
+          <!-- Tier-2 - medium middle -->
+          <div class="mx-auto rounded-md p-4 panel-hover transition"
+               style="width:75%;background:linear-gradient(180deg, rgba(76,201,240,0.22), rgba(76,201,240,0.10));border:1px solid #143142;border-bottom:2px solid #4CC9F0;">
+            <div class="flex items-center justify-between gap-2 flex-wrap mb-2">
+              <span class="kpi-value text-lg text-cyansoft">Tier-2</span>
+              <span class="pill !py-0 !px-2 !text-[10px]">Niche margins</span>
+            </div>
+            <div class="text-[12.5px] font-semibold text-white">Major subsystem supplier</div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
+              <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
+              <span class="pill !text-[10px] !py-0 !px-2">Cyient DLM</span>
+              <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
+            </div>
+          </div>
+
+          <!-- Tier-3 - widest bottom -->
+          <div class="mx-auto rounded-md p-4 panel-hover transition"
+               style="width:100%;background:linear-gradient(180deg, rgba(134,150,181,0.15), rgba(134,150,181,0.05));border:1px solid #1E2B47;border-bottom:2px solid #8696B5;">
+            <div class="flex items-center justify-between gap-2 flex-wrap mb-2">
+              <span class="kpi-value text-lg text-dim">Tier-3</span>
+              <span class="pill muted !py-0 !px-2 !text-[10px]">Squeezed</span>
+            </div>
+            <div class="text-[12.5px] font-semibold text-white">Components &amp; process vendors</div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="pill muted !text-[10px] !py-0 !px-2">MSME machining</span>
+              <span class="pill muted !text-[10px] !py-0 !px-2">PCB vendors</span>
+              <span class="pill muted !text-[10px] !py-0 !px-2">Cable harness</span>
+              <span class="pill muted !text-[10px] !py-0 !px-2">Composites</span>
+              <span class="pill muted !text-[10px] !py-0 !px-2">Castings</span>
+              <span class="pill muted !text-[10px] !py-0 !px-2">Test fixtures</span>
+            </div>
+          </div>
         </div>
-        <p class="text-[12.5px] text-slate-300">Best visibility · mixed margins · large-ticket · long-cycle.</p>
+
+        <div class="flex items-center justify-between mt-3">
+          <span class="pill muted !text-[10px] !py-0 !px-2">▼ Many vendors · smaller per-name revenue</span>
+          <span class="text-[11px] text-dim hidden md:block">Pricing power weakens tier-down</span>
+        </div>
       </div>
 
-      <div class="panel p-6 panel-hover transition" style="border-color:#143142;background:linear-gradient(180deg, rgba(20,49,66,0.32), rgba(17,28,51,0.85));">
-        <div class="flex items-center justify-between mb-3">
-          <span class="kpi-value text-2xl text-cyansoft">Tier-2</span>
-          <span class="pill !py-0 !px-2 !text-[10px]">Niche margin</span>
-        </div>
-        <h4 class="font-semibold text-white mb-2">Major subsystem supplier</h4>
-        <div class="flex flex-wrap gap-1.5 mb-3">
-          <span class="pill !text-[10px] !py-0 !px-2">Astra</span>
-          <span class="pill !text-[10px] !py-0 !px-2">Data Patterns</span>
-          <span class="pill !text-[10px] !py-0 !px-2">Paras</span>
-          <span class="pill !text-[10px] !py-0 !px-2">Centum</span>
-          <span class="pill !text-[10px] !py-0 !px-2">MTAR</span>
-          <span class="pill !text-[10px] !py-0 !px-2">Cyient DLM</span>
-          <span class="pill !text-[10px] !py-0 !px-2">DCX</span>
-        </div>
-        <p class="text-[12.5px] text-slate-300">Better niche margins · concentration risk · qualification-heavy.</p>
-      </div>
-
-      <div class="panel p-6 panel-hover transition">
-        <div class="flex items-center justify-between mb-3">
-          <span class="kpi-value text-2xl text-dim">Tier-3</span>
-          <span class="pill muted !py-0 !px-2 !text-[10px]">Squeezed</span>
-        </div>
-        <h4 class="font-semibold text-white mb-2">Components / process vendors</h4>
-        <div class="flex flex-wrap gap-1.5 mb-3">
-          <span class="pill muted !text-[10px] !py-0 !px-2">MSME machining</span>
-          <span class="pill muted !text-[10px] !py-0 !px-2">PCB vendors</span>
-          <span class="pill muted !text-[10px] !py-0 !px-2">Cable harness</span>
-          <span class="pill muted !text-[10px] !py-0 !px-2">Composites</span>
-        </div>
-        <p class="text-[12.5px] text-slate-300">Lower margins · weaker bargaining power · low pricing leverage.</p>
+      <!-- Annotation rail -->
+      <div class="col-span-12 lg:col-span-3 panel p-5">
+        <div class="text-[10px] uppercase tracking-wider text-dim mb-3">Economic posture</div>
+        <ul class="space-y-3 text-[12.5px]">
+          <li class="flex items-start gap-2">
+            <span class="kpi-value text-goldsoft text-base shrink-0 w-12">T-1</span>
+            <div>
+              <div class="text-white font-medium">Scale &amp; visibility</div>
+              <div class="text-dim text-[11.5px]">Large ticket · long cycle · mixed margins.</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="kpi-value text-cyansoft text-base shrink-0 w-12">T-2</span>
+            <div>
+              <div class="text-white font-medium">Margin sweet spot</div>
+              <div class="text-dim text-[11.5px]">Higher gross margin · concentration risk · qualification-heavy.</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="kpi-value text-dim text-base shrink-0 w-12">T-3</span>
+            <div>
+              <div class="text-white font-medium">Pricing pressure</div>
+              <div class="text-dim text-[11.5px]">Lowest margins · payment-cycle stress · weak bargaining.</div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -4474,41 +4503,6 @@
     const cfg = yoyOpts('DRDO allocation (Cr)', 12.41, '#4CC9F0');
     cfg.data.datasets[0].data = [23856, 26817];
     new Chart(drdoCanvas, cfg);
-  }
-
-  const compCanvas = document.getElementById('budgetComp');
-  if (compCanvas) {
-    new Chart(compCanvas, {
-      type: 'bar',
-      data: {
-        labels: ['FY25-26'],
-        datasets: [
-          { label: 'Capital · Defence Services', data: [148839], backgroundColor: '#E8B339', borderRadius: 4, borderSkipped: false, barThickness: 48 },
-          { label: 'DRDO',                       data: [26817],  backgroundColor: '#4CC9F0', borderRadius: 4, borderSkipped: false, barThickness: 48 },
-          { label: 'Revenue / pensions / other', data: [505554], backgroundColor: '#2A3C63', borderRadius: 4, borderSkipped: false, barThickness: 48 },
-        ]
-      },
-      options: {
-        indexAxis: 'y',
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: '#0E1628',
-            borderColor: '#1E2B47',
-            borderWidth: 1,
-            padding: 10,
-            callbacks: {
-              label: (c) => ` ${c.dataset.label}: ₹${c.parsed.x.toLocaleString('en-IN')} Cr (${((c.parsed.x/681210)*100).toFixed(2)}%)`
-            }
-          }
-        },
-        scales: {
-          x: { stacked: true, display: false, grid: { display: false } },
-          y: { stacked: true, display: false, grid: { display: false } }
-        }
-      }
-    });
   }
 
   // ===== Tab switching (functional) =====
