@@ -99,6 +99,67 @@
   .shimmer {
     background: linear-gradient(90deg, rgba(232,179,57,0) 0%, rgba(232,179,57,0.12) 50%, rgba(232,179,57,0) 100%);
   }
+  /* Acronym tooltip styling — shows native browser tooltip on hover */
+  abbr[title] {
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(76,201,240,0.55);
+    cursor: help;
+  }
+  abbr[title]:hover {
+    color: #93E1FA;
+    border-bottom-color: #93E1FA;
+  }
+  /* "Explain this" expandable card — uses native <details> */
+  details.explainer {
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #143142;
+    background: linear-gradient(180deg, rgba(76,201,240,0.06), rgba(17,28,51,0.7));
+    overflow: hidden;
+    transition: border-color 120ms ease;
+  }
+  details.explainer[open] { border-color: #2A4F70; }
+  details.explainer > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #93E1FA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    transition: background 120ms ease;
+  }
+  details.explainer > summary:hover { background: rgba(76,201,240,0.08); }
+  details.explainer > summary::-webkit-details-marker { display: none; }
+  details.explainer > summary::before {
+    content: '';
+    width: 14px; height: 14px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2393E1FA'><path d='M9 21h6v-1H9v1Zm3-19a7 7 0 0 0-4 12.74V18h8v-3.26A7 7 0 0 0 12 2Zm0 2a5 5 0 0 1 3 9c-.4.3-.7.7-.86 1.16l-.14.5h-4l-.14-.5A2.86 2.86 0 0 0 9 13a5 5 0 0 1 3-9Z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  details.explainer > summary > .ex-label { font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; font-size: 10.5px; }
+  details.explainer > summary > .ex-tag { margin-left: auto; font-size: 10px; opacity: 0.7; }
+  details.explainer > summary > .ex-tag::before { content: '+ '; }
+  details.explainer[open] > summary > .ex-tag::before { content: '× '; }
+  details.explainer > .ex-body {
+    padding: 4px 14px 14px 14px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #E6ECF8;
+    border-top: 1px dashed rgba(20,49,66,0.7);
+  }
+  details.explainer > .ex-body p { margin-bottom: 8px; }
+  details.explainer > .ex-body p:last-child { margin-bottom: 0; }
+  details.explainer > .ex-body .ex-meta {
+    margin-top: 10px; padding-top: 8px; border-top: 1px dashed rgba(20,49,66,0.7);
+    font-size: 10px; color: #8696B5; font-style: italic;
+  }
+  details.explainer > .ex-body ul { padding-left: 16px; margin: 6px 0; }
+  details.explainer > .ex-body ul li { margin-bottom: 4px; list-style: disc; }
   /* Scrollbar */
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-track { background: #070B14; }
@@ -159,25 +220,42 @@
         <span class="pill muted">Buy-side primer</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
-        India's defence sector is <span class="text-goldsoft">policy-shaped</span>,
-        <span class="text-cyansoft">procurement-led</span>, and <em class="not-italic text-dim">not a normal manufacturing sector</em>.
+        Indian defence runs on <span class="text-goldsoft">government rules</span> and
+        <span class="text-cyansoft">slow government buying</span> &mdash;
+        <em class="not-italic text-dim">not on normal market forces</em>.
       </h1>
       <p class="mt-4 text-dim leading-relaxed">
-        A government-shaped industrial ecosystem built around national security demand, long procurement cycles,
-        public-sector incumbents, DRDO-led development, and a growing private supplier base.
-        The real drivers are procurement category, domestic value-add, execution readiness, imported-subsystem
-        dependence, and cash conversion &mdash; not budget headlines or gross order books.
+        Indian defence is a chain of companies that build weapons, ships, aircraft, and electronics &mdash;
+        but only the government buys from them. So policy decisions, slow tendering, and rules about how much
+        must be made in India shape every company&rsquo;s fortunes more than market demand.
+        When picking stocks, what matters most is which buying rule applies, how much value is genuinely added in India,
+        whether the company can actually deliver on time, what&rsquo;s still imported, and whether reported profits
+        turn into real cash.
       </p>
+      <details class="explainer" style="max-width:680px;">
+        <summary><span class="ex-label">Plain-English explainer</span><span class="ex-tag">Explain</span></summary>
+        <div class="ex-body">
+          <p>Imagine a country where only one customer exists for every weapons company &mdash; the army &amp; defence ministry. That&rsquo;s India.</p>
+          <p>Because of that, three things matter much more than a private-sector business:</p>
+          <ul>
+            <li><strong>Government rules</strong> decide who can supply what (these are called <abbr title="Defence Acquisition Procedure — the central rulebook for how India buys defence equipment">DAP</abbr> categories).</li>
+            <li><strong>Tendering takes years</strong>, so an &ldquo;order&rdquo; today may become revenue 3-5 years later.</li>
+            <li><strong>India still imports critical parts</strong> (engines, sensors, advanced chips) so a delay overseas can stop production at home.</li>
+          </ul>
+          <p>If you understand these three things, the rest of this dashboard makes sense.</p>
+          <div class="ex-meta">Editorial summary written for this dashboard.</div>
+        </div>
+      </details>
     </div>
 
     <div class="panel p-4 w-full lg:w-[320px] shrink-0">
-      <div class="section-title mb-2">Quick-read lens</div>
+      <div class="section-title mb-2">Five questions to keep in mind</div>
       <ul class="text-[13px] space-y-2 text-dim">
-        <li class="flex gap-2"><span class="text-goldsoft">01</span> Procurement category driving the opportunity</li>
-        <li class="flex gap-2"><span class="text-goldsoft">02</span> Platform owner vs. subsystem supplier</li>
-        <li class="flex gap-2"><span class="text-goldsoft">03</span> Where the real domestic value-add sits</li>
-        <li class="flex gap-2"><span class="text-goldsoft">04</span> Which imported subsystem can break execution</li>
-        <li class="flex gap-2"><span class="text-goldsoft">05</span> Whether cash follows reported profit</li>
+        <li class="flex gap-2"><span class="text-goldsoft">01</span> Which government buying rule applies?</li>
+        <li class="flex gap-2"><span class="text-goldsoft">02</span> Whole-product maker, or just parts supplier?</li>
+        <li class="flex gap-2"><span class="text-goldsoft">03</span> How much is genuinely made in India?</li>
+        <li class="flex gap-2"><span class="text-goldsoft">04</span> What imported part could break delivery?</li>
+        <li class="flex gap-2"><span class="text-goldsoft">05</span> Do reported profits actually become cash?</li>
       </ul>
     </div>
   </div>
@@ -186,14 +264,14 @@
   <div class="panel p-6 mb-6">
     <div class="flex flex-wrap items-end justify-between gap-3 mb-4">
       <div>
-        <div class="section-title">FY25-26 MoD Allocation</div>
+        <div class="section-title">FY25-26 <abbr title="Ministry of Defence — the government department that runs all of India's military spending">MoD</abbr> Allocation</div>
         <div class="flex items-baseline gap-3 mt-1">
           <span class="kpi-value text-4xl text-white">₹6,81,210<span class="text-dim text-base ml-1">Cr</span></span>
           <span class="pill pos !text-[11px] !py-1 !px-2.5">▲ 9.53% YoY</span>
         </div>
       </div>
       <div class="text-[11px] text-dim text-right">
-        <div>≈ ₹6.81 L Cr · Union Budget / PIB</div>
+        <div>≈ ₹6.81 L Cr · Union Budget / <abbr title="Press Information Bureau — the official Indian government press release service">PIB</abbr></div>
         <div>FY24-25 → FY25-26</div>
       </div>
     </div>
@@ -225,16 +303,16 @@
             <span class="font-semibold text-white">Capital outlay</span>
           </div>
           <div class="font-mono text-white mt-0.5">₹1,48,839 Cr</div>
-          <div class="text-dim">Drives procurement</div>
+          <div class="text-dim">Money for new equipment</div>
         </div>
         <div>
           <div class="flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-sm" style="background:#4CC9F0"></span>
-            <span class="font-semibold text-white">DRDO</span>
+            <span class="font-semibold text-white"><abbr title="Defence Research and Development Organisation — the government's main R&D body for missiles, radars, electronics and other defence systems">DRDO</abbr></span>
             <span class="pill pos !text-[9px] !py-0 !px-1.5 ml-auto">▲ 12.41%</span>
           </div>
           <div class="font-mono text-white mt-0.5">₹26,817 Cr</div>
-          <div class="text-dim">Indigenous R&amp;D</div>
+          <div class="text-dim">Money for R&amp;D</div>
         </div>
         <div>
           <div class="flex items-center gap-1.5">
@@ -242,10 +320,21 @@
             <span class="font-semibold text-white">Revenue / other</span>
           </div>
           <div class="font-mono text-white mt-0.5">₹5,05,554 Cr</div>
-          <div class="text-dim">Salaries · stores · pensions</div>
+          <div class="text-dim">Salaries, fuel, pensions</div>
         </div>
       </div>
     </div>
+
+    <details class="explainer">
+      <summary><span class="ex-label">Why this number is misleading</span><span class="ex-tag">Explain</span></summary>
+      <div class="ex-body">
+        <p>The headline ₹6.81 lakh-crore sounds huge &mdash; but only the gold slice (about ₹1.49 L Cr, or 22%) actually buys new aircraft, ships, missiles, radars and other equipment. That is what defence companies sell into.</p>
+        <p>The dark navy slice (74%) is mostly <strong>salaries, pensions, fuel, ammunition stocking, and base maintenance</strong>. It funds the armed forces but flows very little to private industry.</p>
+        <p>The cyan slice is <strong>DRDO</strong>, which designs new equipment in-house &mdash; sometimes handed to private firms to manufacture later.</p>
+        <p>Bottom line for an investor: when somebody says &ldquo;defence budget grew 9.5%&rdquo;, what you actually want to know is whether the <em>capital</em> portion grew, and whether contracts are getting signed and delivered.</p>
+        <div class="ex-meta">Editorial summary. Source figures: Union Budget / PIB / MP-IDSA budget note.</div>
+      </div>
+    </details>
   </div>
 
   <!-- Pipeline tiles row -->
@@ -253,8 +342,8 @@
     <!-- SRIJAN ring/progress -->
     <div class="panel p-5">
       <div class="flex items-center justify-between mb-3">
-        <div class="text-[11px] text-dim uppercase tracking-wider">SRIJAN indigenisation</div>
-        <span class="src-tag">DDP · Feb 2025</span>
+        <div class="text-[11px] text-dim uppercase tracking-wider"><abbr title="SRIJAN — government portal listing items currently imported, opening them up for Indian manufacturers to bid for">SRIJAN</abbr> &mdash; Make in India for Defence</div>
+        <span class="src-tag"><abbr title="Department of Defence Production — wing of the MoD that oversees defence manufacturing policy">DDP</abbr> · Feb 2025</span>
       </div>
       <div class="flex items-center gap-4">
         <div class="relative w-16 h-16 shrink-0">
@@ -269,30 +358,38 @@
         </div>
         <div>
           <div class="font-mono text-white text-lg leading-tight">14,000<span class="text-dim text-sm">+</span></div>
-          <div class="text-[11.5px] text-dim">indigenised</div>
-          <div class="text-[11px] text-dim mt-1">of 38,000+ items listed</div>
+          <div class="text-[11.5px] text-dim">made in India so far</div>
+          <div class="text-[11px] text-dim mt-1">out of 38,000+ items targeted</div>
         </div>
       </div>
+      <details class="explainer">
+        <summary><span class="ex-label">What is SRIJAN?</span><span class="ex-tag">Explain</span></summary>
+        <div class="ex-body">
+          <p><strong>SRIJAN</strong> is a government website where each defence-PSU (HAL, BEL, BDL etc.) publishes a list of items it currently imports. Indian companies can browse the list, register, and offer to make those items locally.</p>
+          <p>Why it matters for investors: every item moved from the &ldquo;imported&rdquo; column to the &ldquo;made-in-India&rdquo; column is a new business opportunity for some Indian supplier. As of Feb 2025, ~14,000 of 38,000+ listed items had been replaced by domestic alternatives.</p>
+          <div class="ex-meta">Source: DDP / PIB. Editorial summary written for this dashboard.</div>
+        </div>
+      </details>
     </div>
 
     <!-- iDEX micro-bar -->
     <div class="panel p-5">
       <div class="flex items-center justify-between mb-3">
-        <div class="text-[11px] text-dim uppercase tracking-wider">iDEX innovation pipeline</div>
-        <span class="src-tag">iDEX / DIO</span>
+        <div class="text-[11px] text-dim uppercase tracking-wider"><abbr title="Innovations for Defence Excellence — government programme that funds defence-tech startups and MSMEs to solve specific military problems">iDEX</abbr> &mdash; defence startup pipeline</div>
+        <span class="src-tag">iDEX / <abbr title="Defence Innovation Organisation — implementing body for iDEX challenges and contracts">DIO</abbr></span>
       </div>
       <div class="grid grid-cols-3 gap-3 text-center">
         <div>
           <div class="kpi-value text-xl text-white">549</div>
-          <div class="text-[10.5px] text-dim mt-0.5">problems</div>
+          <div class="text-[10.5px] text-dim mt-0.5">problems posted</div>
         </div>
         <div>
           <div class="kpi-value text-xl text-cyansoft">619</div>
-          <div class="text-[10.5px] text-dim mt-0.5">startups</div>
+          <div class="text-[10.5px] text-dim mt-0.5">startups working on them</div>
         </div>
         <div>
           <div class="kpi-value text-xl text-positive">430</div>
-          <div class="text-[10.5px] text-dim mt-0.5">contracts</div>
+          <div class="text-[10.5px] text-dim mt-0.5">contracts signed</div>
         </div>
       </div>
       <!-- Funnel bar -->
@@ -305,12 +402,20 @@
       <div class="flex items-center gap-1 mt-1">
         <div class="h-1.5 rounded-full" style="width:54%;background:#3DD68C;"></div>
       </div>
+      <details class="explainer">
+        <summary><span class="ex-label">What is iDEX?</span><span class="ex-tag">Explain</span></summary>
+        <div class="ex-body">
+          <p><strong>iDEX</strong> is the defence ministry&rsquo;s startup challenge programme. The army or navy posts a real problem (&ldquo;we need a counter-drone system that fits on a jeep&rdquo;), startups compete to solve it, and the winners get a development contract plus a path to actual orders.</p>
+          <p>Read the funnel: <strong>549</strong> problems have been posted, <strong>619</strong> startups have engaged with them, and <strong>430</strong> have actually signed contracts. It&rsquo;s the cleanest way to spot emerging private defence-tech companies before they show up on stock screens.</p>
+          <div class="ex-meta">Source: iDEX / DIO official, Feb 2025. Editorial summary.</div>
+        </div>
+      </details>
     </div>
 
     <!-- FDI gauge -->
     <div class="panel p-5">
       <div class="flex items-center justify-between mb-3">
-        <div class="text-[11px] text-dim uppercase tracking-wider">FDI ceiling</div>
+        <div class="text-[11px] text-dim uppercase tracking-wider"><abbr title="Foreign Direct Investment — money put into Indian defence companies by foreign investors">FDI</abbr> ceiling</div>
         <span class="src-tag">DDP / PIB</span>
       </div>
       <div class="flex items-end justify-between gap-3 mb-2">
@@ -320,7 +425,7 @@
         </div>
         <div class="text-right">
           <div class="kpi-value text-2xl text-cyansoft">100<span class="text-dim text-sm">%</span></div>
-          <div class="text-[11.5px] text-dim">via govt route</div>
+          <div class="text-[11.5px] text-dim">via govt approval</div>
         </div>
       </div>
       <!-- Stacked bar showing 74 vs 100 -->
@@ -328,6 +433,15 @@
         <div class="absolute left-0 top-0 h-full" style="width:74%;background:linear-gradient(90deg,#E8B339,#F5D27A);"></div>
         <div class="absolute top-0 h-full" style="left:74%;width:26%;background:#4CC9F0;opacity:0.55;"></div>
       </div>
+      <details class="explainer">
+        <summary><span class="ex-label">Why FDI rules matter</span><span class="ex-tag">Explain</span></summary>
+        <div class="ex-body">
+          <p>Foreign companies (Lockheed, Airbus, Rafael etc.) can&rsquo;t freely buy Indian defence companies. Government rules cap how much they can own.</p>
+          <p>The <strong>automatic route</strong> means a foreign investor can buy up to 74% of an Indian defence firm without prior approval. To go above 74% (up to 100%), they need explicit government clearance.</p>
+          <p>What this means for investors: liberalised rules invite global JVs and technology tie-ups, which in turn boost the order pipeline for Indian listed names. But each large foreign deal is still government-gated, so progress is uneven.</p>
+          <div class="ex-meta">Source: DDP / PIB. Editorial summary.</div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -340,39 +454,71 @@
         <span class="src-tag">As of 2026-04-24</span>
       </div>
       <p class="text-[14.5px] leading-relaxed text-slate-200">
-        The Indian defence sector is best understood as a
-        <span class="text-goldsoft">policy-driven, procurement-led industrial ecosystem</span>,
-        not a normal manufacturing sector. For investors, the real drivers are not just budget growth or headline
-        order books, but <strong class="text-white">procurement category</strong>, <strong class="text-white">domestic value-add</strong>,
-        <strong class="text-white">execution readiness</strong>, <strong class="text-white">imported-subsystem dependence</strong>,
-        and <strong class="text-white">cash conversion</strong>.
+        Indian defence is a sector where the government is the only customer, the rules of buying matter more than
+        the size of the order book, and a single delayed contract or imported part can wipe out a year of revenue.
+        For an investor, the real things to watch are not the headline budget number &mdash; they&rsquo;re
+        <strong class="text-white">which type of contract</strong> a company is on,
+        <strong class="text-white">how much they actually make in India</strong>,
+        <strong class="text-white">whether they can deliver on schedule</strong>,
+        <strong class="text-white">what&rsquo;s still imported</strong>, and
+        <strong class="text-white">whether reported profits show up as cash</strong>.
       </p>
       <p class="text-[14.5px] leading-relaxed text-slate-300 mt-4">
-        The most investable parts of the sector are generally
-        <span class="text-cyansoft">platform primes with durable program visibility</span>,
-        <span class="text-cyansoft">defence electronics franchises</span>, and
-        <span class="text-cyansoft">high-value subsystem suppliers with real design capability</span>.
-        <span class="text-dim">Risks, mistakes, and the closing playbook live in the
+        The most investable parts are typically the <span class="text-cyansoft">big platform builders</span>
+        with multi-year orders, the <span class="text-cyansoft">defence-electronics specialists</span>, and
+        the <span class="text-cyansoft">smaller suppliers with real design skills</span>.
+        <span class="text-dim">Risks and the closing playbook live in the
           <button class="text-goldsoft hover:underline" data-go-tab="diligence">Red Flags &amp; Diligence</button> tab.</span>
       </p>
 
       <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div class="rounded-lg border hairline p-3">
-          <div class="text-[11px] uppercase tracking-wider text-dim">Platform winner</div>
-          <div class="mt-1 text-sm font-semibold text-white">HAL · MDL · GRSE</div>
-        </div>
-        <div class="rounded-lg border hairline p-3">
-          <div class="text-[11px] uppercase tracking-wider text-dim">Electronics proxy</div>
-          <div class="mt-1 text-sm font-semibold text-white">BEL · Data Patterns</div>
-        </div>
-        <div class="rounded-lg border hairline p-3">
-          <div class="text-[11px] uppercase tracking-wider text-dim">Missile / replenishment</div>
-          <div class="mt-1 text-sm font-semibold text-white">BDL · Solar</div>
-        </div>
-        <div class="rounded-lg border hairline p-3">
-          <div class="text-[11px] uppercase tracking-wider text-dim">Subsystem enabler</div>
-          <div class="mt-1 text-sm font-semibold text-white">Astra · Centum · MTAR · MIDHANI</div>
-        </div>
+        <details class="explainer rounded-lg border hairline" style="background:transparent;border:1px solid #1E2B47;margin-top:0;">
+          <summary style="padding:10px 12px;flex-direction:column;align-items:flex-start;gap:4px;color:#E6ECF8;">
+            <span class="text-[11px] uppercase tracking-wider text-positive">Platform winner</span>
+            <span class="text-sm font-semibold text-white">HAL · MDL · GRSE</span>
+            <span class="text-[10px] text-dim">▸ Tap to explain</span>
+          </summary>
+          <div class="ex-body">
+            <p>Companies that build the <strong>actual aircraft, warships, or missiles</strong>. Big single contracts (one order can be ₹10,000+ Cr), multi-year visibility because deliveries stretch over 5-10 years, but slow to ramp.</p>
+            <p>Best for investors who want long-duration earnings visibility from the defence story.</p>
+          </div>
+        </details>
+
+        <details class="explainer rounded-lg border hairline" style="background:transparent;border:1px solid #1E2B47;margin-top:0;">
+          <summary style="padding:10px 12px;flex-direction:column;align-items:flex-start;gap:4px;color:#E6ECF8;">
+            <span class="text-[11px] uppercase tracking-wider text-cyansoft">Electronics proxy</span>
+            <span class="text-sm font-semibold text-white">BEL · Data Patterns</span>
+            <span class="text-[10px] text-dim">▸ Tap to explain</span>
+          </summary>
+          <div class="ex-body">
+            <p>Cleanest way to bet on the rising electronics share inside every modern weapon &mdash; <strong>radars, EW (electronic warfare), comms, avionics</strong>.</p>
+            <p>BEL is the broad incumbent (the &ldquo;defence-electronics index&rdquo; in one stock). Data Patterns is the design-led specialist with higher margins but smaller scale.</p>
+          </div>
+        </details>
+
+        <details class="explainer rounded-lg border hairline" style="background:transparent;border:1px solid #1E2B47;margin-top:0;">
+          <summary style="padding:10px 12px;flex-direction:column;align-items:flex-start;gap:4px;color:#E6ECF8;">
+            <span class="text-[11px] uppercase tracking-wider text-goldsoft">Missile / replenishment</span>
+            <span class="text-sm font-semibold text-white">BDL · Solar</span>
+            <span class="text-[10px] text-dim">▸ Tap to explain</span>
+          </summary>
+          <div class="ex-body">
+            <p>Missiles and ammunition get used &mdash; in training and in conflict &mdash; so the army has to keep restocking. That recurring demand is the &ldquo;replenishment&rdquo; story.</p>
+            <p>BDL makes guided missiles. Solar Industries is the leader in propellants &amp; energetics (the chemical fuel and explosive components).</p>
+          </div>
+        </details>
+
+        <details class="explainer rounded-lg border hairline" style="background:transparent;border:1px solid #1E2B47;margin-top:0;">
+          <summary style="padding:10px 12px;flex-direction:column;align-items:flex-start;gap:4px;color:#E6ECF8;">
+            <span class="text-[11px] uppercase tracking-wider text-cyansoft">Subsystem enabler</span>
+            <span class="text-sm font-semibold text-white">Astra · Centum · MTAR · MIDHANI</span>
+            <span class="text-[10px] text-dim">▸ Tap to explain</span>
+          </summary>
+          <div class="ex-body">
+            <p>Smaller specialists supplying <strong>high-value parts</strong> &mdash; RF modules (Astra), mission-critical electronics (Centum), precision-machined components (MTAR), special alloys (MIDHANI).</p>
+            <p>Higher margins than the big platform builders, but each is dependent on a few customers / programmes &mdash; so a single missed order can hurt.</p>
+          </div>
+        </details>
       </div>
     </div>
 
@@ -440,77 +586,91 @@
       <div class="panel p-5 panel-hover transition">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">01</span>
-          <span class="text-[12px] text-dim">Budget headline is not enough</span>
+          <span class="text-[12px] text-dim">The headline budget number lies</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          Allocation does not equal contract award, delivery, or revenue. Procurement category, milestone billing
-          and inspection sign-offs gate conversion.
+          Money allocated isn&rsquo;t money spent. Between the budget announcement and a company&rsquo;s revenue
+          line are years of approvals, trials, milestone payments, and inspection sign-offs.
         </p>
       </div>
 
       <div class="panel p-5 panel-hover transition">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">02</span>
-          <span class="text-[12px] text-dim">Procurement category matters</span>
+          <span class="text-[12px] text-dim">The &ldquo;how&rdquo; of buying matters more than &ldquo;how much&rdquo;</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          Buy (Indian-IDDM), Buy (Indian), Buy &amp; Make, Make, and Strategic Partnership each change eligibility,
-          local content, margin structure, and IP.
+          The government has 8 different ways to buy &mdash; pure-Indian, joint-venture, direct import, leasing.
+          Each one decides who can bid, how much must be made in India, and how good the margins are.
         </p>
       </div>
 
       <div class="panel p-5 panel-hover transition">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">03</span>
-          <span class="text-[12px] text-dim">Prime vs subsystem is a real split</span>
+          <span class="text-[12px] text-dim">Whole-product makers and parts suppliers are different businesses</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          Primes get scale and visibility; subsystem vendors may earn better margins but carry higher concentration risk.
+          The companies that build the whole jet/ship/missile have scale and visibility. The smaller suppliers
+          who sell sub-components into them often have better margins &mdash; but each depends on a few customers.
         </p>
       </div>
 
       <div class="panel p-5 panel-hover transition">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">04</span>
-          <span class="text-[12px] text-dim">Indigenisation is uneven</span>
+          <span class="text-[12px] text-dim">India makes ships and electronics well, but still imports the hard stuff</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          Strong in hulls, shipbuilding, and parts of electronics / ammunition. Weak in engines, seekers, chips, detectors.
+          Strong: warship hulls, missile bodies, ammunition, integration of electronics.
+          Still imported: <strong class="text-white">aero engines, advanced missile seekers, high-end chips, infrared detectors</strong>.
         </p>
       </div>
 
       <div class="panel p-5 panel-hover transition">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">05</span>
-          <span class="text-[12px] text-dim">Order book quality &gt; size</span>
+          <span class="text-[12px] text-dim">A pile of orders is worthless if they can&rsquo;t be delivered</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          What counts is the <em class="not-italic text-white">executable</em> order book &mdash; funded customer,
-          production readiness, and imports available.
+          Companies brag about huge &ldquo;order book&rdquo; numbers. What matters is the <em class="not-italic text-white">executable</em>
+          piece &mdash; orders where the customer has funding, the factory is ready, and parts are available.
         </p>
       </div>
 
       <div class="panel p-5 panel-hover transition">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">06</span>
-          <span class="text-[12px] text-dim">Working capital is critical</span>
+          <span class="text-[12px] text-dim">Reported profit ≠ cash in the bank</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          Receivables, inventory, milestone billing, and inspection delays can distort cash flow even when PAT looks fine.
+          The government is a slow-paying customer. Stuck receivables, growing inventory, and delayed inspections
+          can leave a company with healthy reported profit but very weak cash flow.
         </p>
       </div>
 
       <div class="panel p-5 panel-hover transition md:col-span-2 lg:col-span-3">
         <div class="flex items-center gap-2 mb-2">
           <span class="pill gold">07</span>
-          <span class="text-[12px] text-dim">Defence is not one stock basket</span>
+          <span class="text-[12px] text-dim">Don&rsquo;t lump all defence stocks together</span>
         </div>
         <p class="text-[13.5px] text-slate-200">
-          Aerospace, shipbuilding, electronics, missiles, drones, and materials have very different economics.
-          Value them in separate buckets with different metrics &mdash; not as a single &ldquo;defence&rdquo; theme.
+          Aerospace, shipbuilding, electronics, missiles, drones, and materials are <em class="not-italic">six different industries</em>
+          that happen to share one customer. They have different economics, different risks, and need different
+          valuation approaches. A single &ldquo;defence theme&rdquo; bucket destroys signal.
         </p>
       </div>
     </div>
+
+    <details class="explainer mt-4">
+      <summary><span class="ex-label">All seven findings, in one paragraph</span><span class="ex-tag">Explain</span></summary>
+      <div class="ex-body">
+        <p>If you remember <strong>only one thing</strong> from this dashboard, it&rsquo;s this:</p>
+        <p>The Indian defence sector looks simple from the outside (&ldquo;budget went up, defence stocks should rise&rdquo;) but is structurally complicated. The government is the only customer; it has eight different ways of buying; tendering takes years; many critical parts are still imported; payment is slow; and the companies under the &ldquo;defence&rdquo; label do completely different jobs &mdash; building aircraft, supplying chips, making explosives, writing software.</p>
+        <p>So instead of buying a &ldquo;defence basket&rdquo;, the analyst&rsquo;s job is to look <em class="not-italic">inside</em> each company: what kind of contracts, how much is made in India, can they actually deliver, what could break execution, and does the cash arrive when promised.</p>
+        <div class="ex-meta">Editorial summary written for this dashboard. Source: PDF Section 1.</div>
+      </div>
+    </details>
   </div>
 
   <!-- Actionable recommendations -->
@@ -519,21 +679,21 @@
       <div class="section-title mb-4">Actionable recommendations</div>
       <ul class="space-y-3 text-[13.5px]">
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Prioritize <strong class="text-white">procurement category</strong> before evaluating any order or company claim.</span></li>
+          <span>Always check the <strong class="text-white">contract type</strong> (which <abbr title="Defence Acquisition Procedure — the central rulebook for how India buys defence equipment">DAP</abbr> category) before reading any order announcement.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Separate platform primes, electronics/system houses, ammunition/missile players, and drone names into <strong class="text-white">different valuation buckets</strong>.</span></li>
+          <span>Don&rsquo;t value all defence stocks the same way &mdash; <strong class="text-white">platform builders, electronics specialists, missile makers, and drone names need different lenses</strong>.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Focus on <strong class="text-white">executable order book</strong> rather than gross order book.</span></li>
+          <span>Look at the <strong class="text-white">executable order book</strong> &mdash; orders the company can actually deliver in 12-24 months &mdash; not just the gross number.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Check domestic value-add at <strong class="text-white">subsystem level</strong>; do not accept &ldquo;indigenous&rdquo; claims at face value.</span></li>
+          <span>Don&rsquo;t accept &ldquo;made in India&rdquo; at face value. Check whether the <strong class="text-white">high-value parts inside</strong> (chips, seekers, engines) are genuinely local.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Monitor <strong class="text-white">receivables, inventory, milestone billing, and OCF</strong> alongside reported profit.</span></li>
+          <span>Watch <strong class="text-white">receivables, inventory, milestone billing, and operating cash flow</strong> alongside reported profit. The government pays slowly.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Treat ToT announcements cautiously &mdash; watch for real process know-how and rising local content.</span></li>
+          <span>Be sceptical of <abbr title="Transfer of Technology — when a foreign company licenses its know-how to an Indian partner">ToT</abbr> announcements. Verify they include real process know-how, not just assembly.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Track imported bottlenecks &mdash; especially <strong class="text-white">engines, seekers, RF chips, detectors, propulsion</strong>.</span></li>
+          <span>Track the import bottlenecks &mdash; especially <strong class="text-white">engines, missile seekers, <abbr title="Radio Frequency — chips that handle radio-wave signals in radars and communications">RF</abbr> chips, infrared detectors, and propulsion</strong>.</span></li>
         <li class="flex gap-3"><span class="text-goldsoft font-mono mt-0.5">→</span>
-          <span>Be cautious on high-valuation drone / &ldquo;defence exposure&rdquo; names where procurement scale, repeat orders, or cash conversion are not yet proven.</span></li>
+          <span>Be careful with high-valuation drone or &ldquo;defence exposure&rdquo; names where procurement scale, repeat orders, or actual cash conversion are not yet proven.</span></li>
       </ul>
     </div>
   </div>
