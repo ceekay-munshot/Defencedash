@@ -2375,60 +2375,88 @@
       </div>
     </div>
 
-    <div class="panel overflow-hidden">
-      <div class="overflow-x-auto">
-        <table class="w-full text-[13px]">
-          <thead class="text-left text-dim bg-panel2/50">
-            <tr class="border-b hairline">
-              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Segment</th>
-              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px]">Why</th>
-              <th class="px-4 py-3 font-medium uppercase tracking-wider text-[11px] text-right">Investor view</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Defence electronics, radar, EW</td>
-              <td class="px-4 py-3 text-slate-300">High value-add · repeat content · upgrade cycle</td>
-              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Missiles and ammunition</td>
-              <td class="px-4 py-3 text-slate-300">Replenishment demand · strategic priority</td>
-              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Naval systems and upgrades</td>
-              <td class="px-4 py-3 text-slate-300">Large-ticket · long visibility</td>
-              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">MRO and lifecycle support</td>
-              <td class="px-4 py-3 text-slate-300">Sticky annuity-like revenue</td>
-              <td class="px-4 py-3 text-right"><span class="pill pos !text-[10px] !py-0 !px-2">Attractive</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Special materials &amp; precision manufacturing</td>
-              <td class="px-4 py-3 text-slate-300">Qualification barriers</td>
-              <td class="px-4 py-3 text-right"><span class="pill gold !text-[10px] !py-0 !px-2">Niche</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Generic fabrication</td>
-              <td class="px-4 py-3 text-slate-300">Lower pricing power</td>
-              <td class="px-4 py-3 text-right"><span class="pill muted !text-[10px] !py-0 !px-2">Less attractive</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Small drones without scale</td>
-              <td class="px-4 py-3 text-slate-300">Fast obsolescence · uncertain procurement</td>
-              <td class="px-4 py-3 text-right"><span class="pill warn !text-[10px] !py-0 !px-2">Crowded · hype-prone</span></td>
-            </tr>
-            <tr class="hover:bg-panel2/40 transition">
-              <td class="px-4 py-3 font-medium text-white">Aero engines · advanced seekers · high-end chips</td>
-              <td class="px-4 py-3 text-slate-300">Hardest to localize</td>
-              <td class="px-4 py-3 text-right"><span class="pill warn !text-[10px] !py-0 !px-2">Tech-gated</span></td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- 2x2 quadrant matrix -->
+    <div class="panel p-6">
+      <div class="grid grid-cols-12 gap-4">
+
+        <!-- Y-axis label -->
+        <div class="col-span-1 hidden md:flex items-center justify-center">
+          <div class="text-[10px] uppercase tracking-widest text-dim text-center" style="writing-mode:vertical-rl;transform:rotate(180deg);">
+            <span class="text-positive">▲ More attractive</span>
+            <span class="text-dim mx-3">·</span>
+            <span class="text-warn">Less attractive ▼</span>
+          </div>
+        </div>
+
+        <!-- Matrix -->
+        <div class="col-span-12 md:col-span-11">
+          <div class="grid grid-cols-2 gap-2 rounded-md overflow-hidden border hairline" style="height:480px;">
+
+            <!-- Top-left: Attractive · Low moat -->
+            <div class="relative p-4 flex flex-col" style="background:linear-gradient(135deg,rgba(76,201,240,0.10), rgba(17,28,51,0.6));border-right:1px dashed #1E2B47;border-bottom:1px dashed #1E2B47;">
+              <div class="text-[10px] uppercase tracking-wider text-cyansoft mb-1">Attractive · Low moat</div>
+              <div class="text-[11px] text-dim mb-3">Demand exists, but defensibility is thin.</div>
+              <div class="flex flex-wrap gap-1.5 content-start">
+                <span class="pill !text-[10px] !py-0.5 !px-2" style="background:rgba(76,201,240,0.15);border-color:#143142;">MRO &amp; lifecycle support</span>
+              </div>
+              <div class="text-[10px] text-dim mt-auto">Sticky annuity-like revenue but accessible to many.</div>
+            </div>
+
+            <!-- Top-right: Attractive · High moat (sweet spot) -->
+            <div class="relative p-4 flex flex-col" style="background:linear-gradient(135deg,rgba(232,179,57,0.18), rgba(61,214,140,0.10));border-bottom:1px dashed #1E2B47;">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[10px] uppercase tracking-wider text-goldsoft">Sweet spot · Attractive + Defended</div>
+                <span class="pill pos !text-[10px] !py-0 !px-2">★ Best</span>
+              </div>
+              <div class="text-[11px] text-dim mb-3">High value-add, repeat content, hard to dislodge.</div>
+              <div class="flex flex-wrap gap-1.5 content-start">
+                <span class="pill !text-[10px] !py-0.5 !px-2" style="background:rgba(61,214,140,0.18);color:#86EFAC;border-color:#0e3d27;">Defence electronics, radar, EW</span>
+                <span class="pill !text-[10px] !py-0.5 !px-2" style="background:rgba(61,214,140,0.18);color:#86EFAC;border-color:#0e3d27;">Missiles &amp; ammunition</span>
+                <span class="pill !text-[10px] !py-0.5 !px-2" style="background:rgba(61,214,140,0.18);color:#86EFAC;border-color:#0e3d27;">Naval systems &amp; upgrades</span>
+                <span class="pill !text-[10px] !py-0.5 !px-2" style="background:rgba(232,179,57,0.18);color:#F5D27A;border-color:#3A2C12;">Special materials &amp; precision</span>
+              </div>
+              <div class="text-[10px] text-dim mt-auto">Strategic priority + qualification-heavy moat.</div>
+            </div>
+
+            <!-- Bottom-left: Less attractive · Low moat (avoid) -->
+            <div class="relative p-4 flex flex-col" style="background:linear-gradient(135deg,rgba(239,68,68,0.10), rgba(17,28,51,0.6));border-right:1px dashed #1E2B47;">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[10px] uppercase tracking-wider" style="color:#FCA5A5">Avoid · Crowded + Thin moat</div>
+                <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">!</span>
+              </div>
+              <div class="text-[11px] text-dim mb-3">Either commoditised or hype-prone with weak fundamentals.</div>
+              <div class="flex flex-wrap gap-1.5 content-start">
+                <span class="pill !text-[10px] !py-0.5 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Small drones without scale</span>
+                <span class="pill muted !text-[10px] !py-0.5 !px-2">Generic fabrication</span>
+              </div>
+              <div class="text-[10px] text-dim mt-auto">Fast obsolescence · uncertain procurement · low pricing power.</div>
+            </div>
+
+            <!-- Bottom-right: Less attractive (for Indian listed names) · High barrier -->
+            <div class="relative p-4 flex flex-col" style="background:linear-gradient(135deg,rgba(245,158,11,0.10), rgba(76,201,240,0.06));">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-[10px] uppercase tracking-wider text-warn">Tech-gated · Blocked by imports</div>
+                <span class="pill warn !text-[10px] !py-0 !px-2">⛔</span>
+              </div>
+              <div class="text-[11px] text-dim mb-3">Genuinely high barrier &mdash; but Indian players can&rsquo;t fully capture it yet.</div>
+              <div class="flex flex-wrap gap-1.5 content-start">
+                <span class="pill warn !text-[10px] !py-0.5 !px-2">Aero engines</span>
+                <span class="pill warn !text-[10px] !py-0.5 !px-2">Advanced seekers</span>
+                <span class="pill warn !text-[10px] !py-0.5 !px-2">High-end chips / MMICs</span>
+              </div>
+              <div class="text-[10px] text-dim mt-auto">Hardest to localise · high foreign dependence.</div>
+            </div>
+          </div>
+
+          <!-- X-axis label -->
+          <div class="text-[10px] uppercase tracking-widest text-dim text-center mt-3">
+            <span class="text-dim">Low moat / barrier ◀</span>
+            <span class="mx-3">·</span>
+            <span class="text-goldsoft">▶ High moat / barrier</span>
+          </div>
+        </div>
       </div>
+      <p class="src-tag mt-4">Quadrant placement is a directional read of the PDF&rsquo;s qualitative descriptions.</p>
     </div>
   </div>
 
@@ -2988,83 +3016,126 @@
       </div>
     </div>
 
-    <div class="space-y-3">
+    <!-- Heatmap matrix -->
+    <div class="panel p-6 overflow-x-auto">
+      <div class="min-w-[820px]">
+        <table class="w-full text-[12.5px] border-separate" style="border-spacing:4px;">
+          <thead>
+            <tr>
+              <th class="text-left text-[10px] uppercase tracking-wider text-dim font-medium align-bottom pr-2 pb-2" style="min-width:200px;">Company group</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">Engines</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">Seekers</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">Semis / RF / MMICs</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">EO / IR detectors</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">Naval propulsion</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">Specialty materials</th>
+              <th class="text-center text-[10px] uppercase tracking-wider text-dim font-medium pb-2 align-bottom">Obsolescence (electronics)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- HAL -->
+            <tr>
+              <td class="pr-3 align-middle">
+                <div class="font-semibold text-white">HAL</div>
+                <div class="text-[10.5px] text-dim">Aerospace prime</div>
+              </td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="High exposure: Engine integration is critical-path"
+                  style="background:rgba(239,68,68,0.32);color:#FCA5A5;border:1px solid #7F1D1D;height:46px;">High</td>
+              <td class="text-center rounded-md text-[11px]" title="Not exposed"
+                  style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="Moderate: imported aerospace electronics"
+                  style="background:rgba(245,158,11,0.20);color:#FCD34D;border:1px solid #92400E;height:46px;">Mod</td>
+              <td class="text-center rounded-md text-[11px]" title="Low"
+                  style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" title="Low"
+                  style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="Some specialty alloys / titanium"
+                  style="background:rgba(232,179,57,0.18);color:#F5D27A;border:1px solid #3A2C12;height:46px;">Some</td>
+              <td class="text-center rounded-md text-[11px]" title="Low"
+                  style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+            </tr>
 
-      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
-        <div class="grid grid-cols-12 gap-4 items-center">
-          <div class="col-span-12 md:col-span-3">
-            <h4 class="font-semibold text-white">HAL</h4>
-            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Aerospace prime</span>
-          </div>
-          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
-            Most exposed to <strong class="text-warn">engine</strong> and imported aerospace subsystem dependence.
-          </div>
-          <div class="col-span-12 md:col-span-2 text-right">
-            <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Highest exposure</span>
-          </div>
+            <!-- Electronics group -->
+            <tr>
+              <td class="pr-3 align-middle">
+                <div class="font-semibold text-white">BEL · DP · Astra · Centum · DCX</div>
+                <div class="text-[10.5px] text-dim">Electronics group</div>
+              </td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="High: RF / MMIC / chip lead times"
+                  style="background:rgba(239,68,68,0.32);color:#FCA5A5;border:1px solid #7F1D1D;height:46px;">High</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="Moderate: sensor integration"
+                  style="background:rgba(245,158,11,0.20);color:#FCD34D;border:1px solid #92400E;height:46px;">Mod</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="Moderate: rapid electronics refresh cycle"
+                  style="background:rgba(245,158,11,0.20);color:#FCD34D;border:1px solid #92400E;height:46px;">Mod</td>
+            </tr>
+
+            <!-- BDL -->
+            <tr>
+              <td class="pr-3 align-middle">
+                <div class="font-semibold text-white">BDL</div>
+                <div class="text-[10.5px] text-dim">Missiles</div>
+              </td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="High: critical missile subsystems"
+                  style="background:rgba(239,68,68,0.32);color:#FCA5A5;border:1px solid #7F1D1D;height:46px;">High</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="Moderate: guidance electronics"
+                  style="background:rgba(245,158,11,0.20);color:#FCD34D;border:1px solid #92400E;height:46px;">Mod</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+            </tr>
+
+            <!-- Shipyards -->
+            <tr>
+              <td class="pr-3 align-middle">
+                <div class="font-semibold text-white">MDL · GRSE · CSL</div>
+                <div class="text-[10.5px] text-dim">Shipyards</div>
+              </td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="Partial: long-lead imported equipment"
+                  style="background:rgba(232,179,57,0.18);color:#F5D27A;border:1px solid #3A2C12;height:46px;">Partial</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+            </tr>
+
+            <!-- Drones -->
+            <tr>
+              <td class="pr-3 align-middle">
+                <div class="font-semibold text-white">ideaForge · Zen · Paras</div>
+                <div class="text-[10.5px] text-dim">Drones / sensors</div>
+              </td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="High: payload electronics"
+                  style="background:rgba(239,68,68,0.32);color:#FCA5A5;border:1px solid #7F1D1D;height:46px;">High</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="High: sensor sourcing"
+                  style="background:rgba(239,68,68,0.32);color:#FCA5A5;border:1px solid #7F1D1D;height:46px;">High</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md text-[11px]" style="background:rgba(30,43,71,0.6);color:#4E5E80;height:46px;">·</td>
+              <td class="text-center rounded-md font-semibold text-[11px]" title="High: rapid product cycles"
+                  style="background:rgba(239,68,68,0.32);color:#FCA5A5;border:1px solid #7F1D1D;height:46px;">High</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Legend -->
+        <div class="flex items-center gap-4 mt-4 text-[11px]">
+          <span class="text-dim uppercase tracking-wider text-[10px]">Severity:</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:rgba(239,68,68,0.32);border:1px solid #7F1D1D;"></span>High</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:rgba(245,158,11,0.20);border:1px solid #92400E;"></span>Moderate</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:rgba(232,179,57,0.18);border:1px solid #3A2C12;"></span>Partial / some</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:rgba(30,43,71,0.6);"></span>Not material</span>
+          <span class="text-dim ml-auto hidden md:inline">Hover any cell for the rationale.</span>
         </div>
       </div>
-
-      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
-        <div class="grid grid-cols-12 gap-4 items-center">
-          <div class="col-span-12 md:col-span-3">
-            <h4 class="font-semibold text-white">BEL · Data Patterns · Astra · Centum · DCX</h4>
-            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Electronics group</span>
-          </div>
-          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
-            Exposed to <strong class="text-warn">semiconductor / RF / imported electronic component</strong> lead times. Single supply shock can move multiple programmes.
-          </div>
-          <div class="col-span-12 md:col-span-2 text-right">
-            <span class="pill warn !text-[10px] !py-0 !px-2">Lead-time risk</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #F59E0B;">
-        <div class="grid grid-cols-12 gap-4 items-center">
-          <div class="col-span-12 md:col-span-3">
-            <h4 class="font-semibold text-white">BDL</h4>
-            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Missiles</span>
-          </div>
-          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
-            Exposed to <strong class="text-warn">seeker</strong> and critical missile subsystem localization timelines.
-          </div>
-          <div class="col-span-12 md:col-span-2 text-right">
-            <span class="pill warn !text-[10px] !py-0 !px-2">Subsystem risk</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #E8B339;">
-        <div class="grid grid-cols-12 gap-4 items-center">
-          <div class="col-span-12 md:col-span-3">
-            <h4 class="font-semibold text-white">Shipyards (MDL · GRSE · CSL)</h4>
-            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Naval</span>
-          </div>
-          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
-            Exposed to <strong class="text-goldsoft">propulsion · combat systems · long-lead imported equipment</strong>.
-          </div>
-          <div class="col-span-12 md:col-span-2 text-right">
-            <span class="pill gold !text-[10px] !py-0 !px-2">Long-lead risk</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel p-5 panel-hover transition" style="border-left:4px solid #EF4444;">
-        <div class="grid grid-cols-12 gap-4 items-center">
-          <div class="col-span-12 md:col-span-3">
-            <h4 class="font-semibold text-white">ideaForge · Zen · Paras</h4>
-            <span class="pill !text-[10px] !py-0 !px-2 mt-1.5 inline-block">Drones / sensors</span>
-          </div>
-          <div class="col-span-12 md:col-span-7 text-[13px] text-slate-200">
-            Exposed to <strong class="text-warn">fast-moving electronics &amp; sensor supply chains</strong> plus product-obsolescence risk.
-          </div>
-          <div class="col-span-12 md:col-span-2 text-right">
-            <span class="pill warn !text-[10px] !py-0 !px-2" style="background:rgba(239,68,68,0.15);color:#FCA5A5;border-color:#7F1D1D;">Obsolescence + lead-time</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -3169,50 +3240,177 @@
       <span class="src-tag hidden md:block">PDF Section 10 · investor interpretation</span>
     </div>
 
-    <div class="panel p-6">
-      <!-- Three-lane horizontal -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- Horizontal Gantt timeline -->
+    <div class="panel p-6 overflow-x-auto">
+      <div class="min-w-[760px]">
 
-        <div class="rounded-lg border hairline p-4" style="border-color:#0e3d27;background:linear-gradient(180deg, rgba(14,61,39,0.4), rgba(17,28,51,0.6));">
-          <div class="flex items-center justify-between mb-3">
-            <div class="kpi-value text-positive text-lg">Near-term</div>
-            <span class="pill pos !text-[10px] !py-0 !px-2">Pays today</span>
+        <!-- Top scale -->
+        <div class="grid items-end mb-2" style="grid-template-columns:200px 1fr;">
+          <div></div>
+          <div class="relative h-6">
+            <!-- Vertical guides -->
+            <div class="absolute inset-0 grid" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div>
+              <div class="border-r hairline"></div>
+              <div class="border-r hairline"></div>
+              <div class="border-r hairline"></div>
+              <div></div>
+            </div>
+            <div class="absolute inset-0 flex justify-between text-[10px] uppercase tracking-wider text-dim items-end pb-0.5 px-0.5">
+              <span>Now</span>
+              <span>1 yr</span>
+              <span>2 yr</span>
+              <span>3 yr</span>
+              <span>5 yr+</span>
+            </div>
           </div>
-          <ul class="space-y-2 text-[13px]">
-            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Missiles &amp; ammunition</span></li>
-            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Radar &amp; EW</span></li>
-            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Naval execution</span></li>
-            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Upgrades &amp; MRO</span></li>
-            <li class="flex items-start gap-2"><span class="text-positive mt-0.5">▸</span><span class="text-slate-100">Secure communications</span></li>
-          </ul>
         </div>
 
-        <div class="rounded-lg border hairline p-4" style="border-color:#143142;background:linear-gradient(180deg, rgba(20,49,66,0.4), rgba(17,28,51,0.6));">
-          <div class="flex items-center justify-between mb-3">
-            <div class="kpi-value text-cyansoft text-lg">Medium-term</div>
-            <span class="pill !text-[10px] !py-0 !px-2">Structural</span>
+        <!-- Bars container -->
+        <div class="relative" style="display:grid;grid-template-columns:200px 1fr;row-gap:8px;">
+
+          <!-- Drones · Near + optionality -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Drones &amp; counter-drone</div>
+            <div class="text-[10.5px] text-dim">Fastest-changing</div>
           </div>
-          <ul class="space-y-2 text-[13px]">
-            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">Indigenous electronics</span></li>
-            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">Materials &amp; precision manufacturing</span></li>
-            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">Propulsion localisation</span></li>
-            <li class="flex items-start gap-2"><span class="text-cyansoft mt-0.5">▸</span><span class="text-slate-100">C4ISR integration</span></li>
-          </ul>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:100%;background:linear-gradient(90deg,#3DD68C 0%,#4CC9F0 60%,#E8B339 100%);">
+              Near + optionality
+            </div>
+          </div>
+
+          <!-- EW · Near to medium -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Electronic warfare</div>
+            <div class="text-[10.5px] text-dim">Survivability</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:65%;background:linear-gradient(90deg,#3DD68C,#4CC9F0);">Near → medium</div>
+          </div>
+
+          <!-- Radar · Near -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Radar &amp; surveillance</div>
+            <div class="text-[10.5px] text-dim">Repeat orders</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:42%;background:#3DD68C;">Near</div>
+          </div>
+
+          <!-- Missiles · Near -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Missiles &amp; munitions</div>
+            <div class="text-[10.5px] text-dim">Replenishment</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:42%;background:#3DD68C;">Near</div>
+          </div>
+
+          <!-- Naval · Medium -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Naval indigenisation</div>
+            <div class="text-[10.5px] text-dim">Long-cycle</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:20%;width:60%;background:#4CC9F0;">Medium</div>
+          </div>
+
+          <!-- Space-defence · Optionality + some near -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Space-defence convergence</div>
+            <div class="text-[10.5px] text-dim">ISR · satcom</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:100%;background:linear-gradient(90deg,#4CC9F0 0%,#E8B339 70%);">Some near + optionality</div>
+          </div>
+
+          <!-- AI · Medium -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">AI &amp; autonomy</div>
+            <div class="text-[10.5px] text-dim">Mission systems</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:30%;width:60%;background:#4CC9F0;">Medium</div>
+          </div>
+
+          <!-- Secure comms · Near -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Secure comms / C4ISR</div>
+            <div class="text-[10.5px] text-dim">Network-centric</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:42%;background:#3DD68C;">Near</div>
+          </div>
+
+          <!-- Simulation · Near to medium -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Simulation &amp; training</div>
+            <div class="text-[10.5px] text-dim">Cost-effective readiness</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:65%;background:linear-gradient(90deg,#3DD68C,#4CC9F0);">Near → medium</div>
+          </div>
+
+          <!-- Ammunition · Near -->
+          <div class="text-[12px] text-slate-200 self-center pr-3">
+            <div class="font-medium">Ammunition &amp; energetics</div>
+            <div class="text-[10.5px] text-dim">Less cyclical</div>
+          </div>
+          <div class="relative h-7 rounded-md" style="background:rgba(30,43,71,0.4);">
+            <div class="absolute inset-0 grid pointer-events-none" style="grid-template-columns:repeat(5,1fr);">
+              <div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div class="border-r hairline"></div><div></div>
+            </div>
+            <div class="absolute top-1 bottom-1 rounded flex items-center px-2 text-[11px] font-semibold text-ink"
+                 style="left:0%;width:42%;background:#3DD68C;">Near</div>
+          </div>
+
         </div>
 
-        <div class="rounded-lg border hairline p-4" style="border-color:#3A2C12;background:linear-gradient(180deg, rgba(48,36,16,0.4), rgba(17,28,51,0.6));">
-          <div class="flex items-center justify-between mb-3">
-            <div class="kpi-value text-goldsoft text-lg">Long-term</div>
-            <span class="pill gold !text-[10px] !py-0 !px-2">Optionality</span>
-          </div>
-          <ul class="space-y-2 text-[13px]">
-            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">AI / autonomy</span></li>
-            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">Space-defence convergence</span></li>
-            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">Advanced seekers</span></li>
-            <li class="flex items-start gap-2"><span class="text-goldsoft mt-0.5">▸</span><span class="text-slate-100">Next-gen propulsion</span></li>
-          </ul>
+        <!-- Legend -->
+        <div class="flex items-center gap-4 mt-5 text-[11px]">
+          <span class="text-dim uppercase tracking-wider text-[10px]">Horizon:</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:#3DD68C"></span>Near (0-2 yr)</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:#4CC9F0"></span>Medium (1-4 yr)</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm" style="background:#E8B339"></span>Long / optionality (3-5 yr+)</span>
+          <span class="text-dim ml-auto hidden md:inline">Bar position &amp; length are directional, not literal years.</span>
         </div>
-
       </div>
     </div>
   </div>
